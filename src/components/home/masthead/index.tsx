@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Box, Center, Flex, Heading, Text } from '@chakra-ui/core'
 
-import ContentSpacer from '../../content-spacer'
+import ContentSpacer from '../../ui/content-spacer'
 import Image from 'next/image'
 
 const Masthead: React.FC = () => {
