@@ -1,13 +1,15 @@
 import * as React from 'react'
 
-import { Heading } from '@chakra-ui/core'
+import Masthead from '../components/home/masthead'
 import Navbar from '../components/navbar'
 
 const HomePage: React.FC = () => {
-  return <>
-    <Navbar />
-    <Heading>Index Page</Heading>
-  </>
+  return (
+    <>
+      <Navbar />
+      <Masthead/>
+    </>
+  )
 }
 
 export default HomePage
