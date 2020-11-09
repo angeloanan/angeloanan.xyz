@@ -7,9 +7,9 @@ import NavbarButton from './navbar-button'
 const Navbar: React.FC = () => {
   return (
     <>
-      <Flex as="nav" maxW="6xl" mx="auto" px={4}>
-        <Box p={4}>
-          <Heading size="md">Christopher Angelo</Heading>
+      <Flex as="nav" maxW="6xl" mx="auto" >
+        <Box py={4}>
+          <Heading size="md">Angelo</Heading>
         </Box>
         <Spacer/>
         <Flex>
