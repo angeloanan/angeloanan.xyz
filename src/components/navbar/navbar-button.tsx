@@ -11,7 +11,7 @@ interface NavbarButtonProps {
 }
 
 const NavbarButton: React.FC<NavbarButtonProps> = (props: NavbarButtonProps) => {
-  const isActive = useRouter().asPath === props.link
+  const isActive = useRouter().pathname === props.link
 
   return (
     <Link href={props.link} passHref>
