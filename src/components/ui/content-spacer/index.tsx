@@ -1,14 +1,10 @@
 import * as React from 'react'
 
-import { Flex, VStack } from '@chakra-ui/core'
+import { Flex, FlexProps } from '@chakra-ui/react'
 
-const ContentSpacer: React.FC = (props) => {
+const ContentSpacer: React.FC<FlexProps> = (props) => {
   return (
-    <Flex maxW="6xl" mx="auto">
-      <VStack spacing={2}>
-        {props.children}
-      </VStack>
-    </Flex>
+    <Flex maxW="6xl" mx="auto" {...props}/>
   )
 }
 
