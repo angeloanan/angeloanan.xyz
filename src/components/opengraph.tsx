@@ -16,6 +16,9 @@ const OpenGraph: React.FC<OpenGraphProps> = (props: OpenGraphProps) => {
 
   return (
     <Head>
+      <meta property="title" content={props.title != null ? `${props.title} | Christopher Angelo's Website` : 'Christopher Angelo\'s Website'} />
+      <meta property="description" content={props.desc ?? "Hello, I'm Christopher Angelo. This is my website which includes my projects, portfolio and more awesome stuff!"}/>
+
       <meta property="og:title" content={props.title != null ? `${props.title} | Christopher Angelo's Website` : 'Christopher Angelo\'s Website'} />
       <meta property="og:type" content={props.type ?? 'website'} />
       <meta property="og:description" content={props.desc ?? "Hello, I'm Christopher Angelo. This is my website which includes my projects, portfolio and more awesome stuff!"}/>
