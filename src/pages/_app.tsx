@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { AppProps } from 'next/dist/next-server/lib/router/router'
-import { ChakraProvider } from '@chakra-ui/core'
+import { ChakraProvider } from '@chakra-ui/react'
 import theme from '../theme'
 
 const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {

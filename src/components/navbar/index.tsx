@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Flex, Heading, Spacer } from '@chakra-ui/core'
+import { Box, Flex, Heading, Spacer } from '@chakra-ui/react'
 
 import NavbarButton from './navbar-button'
 
