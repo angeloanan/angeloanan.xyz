@@ -4,9 +4,14 @@ import { Text, VStack, Wrap } from '@chakra-ui/react'
 import Navbar from '../components/navbar'
 import ContentSpacer from '../components/ui/content-spacer'
 import ProjectCard from '../components/ui/content-spacer/project-section/project-card'
+import AppHeader from '../components/app-header'
+import OpenGraph from '../components/opengraph'
 
 const ProjectsPage: React.FC = () => {
   return <>
+    <AppHeader/>
+    <OpenGraph/>
+
     <Navbar />
     <ContentSpacer p={4}>
       <VStack spacing={4}>
