@@ -1,31 +1,36 @@
 import * as React from 'react'
 
-import { Box, Center, Flex, Heading, Text } from '@chakra-ui/core'
+import { Box, Flex, Heading, HStack, Text, useBreakpointValue } from '@chakra-ui/react'
+import type { ThemingProps, TypographyProps } from '@chakra-ui/react'
 
 import ContentSpacer from '../../ui/content-spacer'
 import Image from 'next/image'
 
 const Masthead: React.FC = () => {
+  const excerptSize = useBreakpointValue<TypographyProps['fontSize']>({ base: 'xs', lg: 'sm' })
+  const headingSize = useBreakpointValue<ThemingProps['size']>({ sm: '2xl', md: '2xl', lg: '3xl' })
+  const descriptionSize = useBreakpointValue<TypographyProps['fontSize']>({ base: 'sm', md: 'sm', lg: 'md' })
+
   return (
-    <ContentSpacer>
-      <Flex minH="80vh" direction="row">
-        <Flex direction="column" justify="center" flex={6} px={4}>
-          <Text size="sm" color="gray.200" letterSpacing="widest" my={2} fontWeight="400">CHRISTOPHER ANGELO</Text>
-          <Heading size="3xl" mb={4} lineHeight="none">Fullstack Web Developer</Heading>
-          <Text color="gray.200" fontWeight="500" fontSize="lg">I am a University student studying while tinkering with code. I self thought myself how to program when I was in the 8th grade out of curiosity. Ended up creating Discord bots for friends, one of which are in more than 3.5k server with over 400k unique users.</Text>
+    <ContentSpacer p={4} minH="80vh">
+      <HStack direction="row">
+        <Flex direction="column" flex={6} px={4}>
+          <Text fontSize={excerptSize} color="gray.200" letterSpacing="widest" my={2} fontWeight="400">CHRISTOPHER ANGELO</Text>
+          <Heading as="h1" size={headingSize} mb={4} lineHeight="none">Fullstack Web Developer </Heading>
+          <Text as="p" fontSize={descriptionSize} color="gray.200" fontWeight="500">I am an university student studying while tinkering with code. I self taught myself how to code out of curiosity at grade 8th. I've ended up creating Discord bots, one of which are in more than 3.5k server with over 400k unique users.</Text>
         </Flex>
-        <Box flex={1}/>
-        <Center flex={4} px={4}>
+        <Box flex={{ base: 0, sm: 1 / 8, md: 1 / 4, lg: 1 / 2 }}/>
+        <Box flex={{ lg: 2, md: 3, base: 4 }} alignSelf="center">
           <Image
             src="/pfp.png"
             alt="Angelo's Profile Picture"
-            width={500}
-            height={500}
-            layout="intrinsic"
+            width="100%"
+            height="100%"
+            layout="responsive"
             priority
           />
-        </Center>
-      </Flex>
+        </Box>
+      </HStack>
     </ContentSpacer>
   )
 }
