@@ -6,7 +6,7 @@ import Navbar from '../components/navbar'
 const AboutPage: React.FC = () => {
   return (
     <>
-      <AppHeader/>
+      <AppHeader />
 
       <Navbar />
       <Heading>Hello</Heading>

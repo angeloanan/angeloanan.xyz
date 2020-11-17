@@ -131,7 +131,8 @@ const theme = {
   fonts: {
     body: `Inter, ${systemFonts}`,
     heading: `Inter, ${systemFonts}`,
-    mono: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
+    mono:
+      'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
   }
 }
 

@@ -7,10 +7,10 @@ import Navbar from '../components/navbar'
 const HomePage: React.FC = () => {
   return (
     <>
-      <AppHeader/>
+      <AppHeader />
 
       <Navbar />
-      <Masthead/>
+      <Masthead />
     </>
   )
 }

@@ -5,12 +5,14 @@ import Navbar from '../components/navbar'
 import AppHeader from '../components/app-header'
 
 const HomePage: React.FC = () => {
-  return <>
-    <AppHeader/>
+  return (
+    <>
+      <AppHeader />
 
-    <Navbar />
-    <Heading>Contacts Page</Heading>
-  </>
+      <Navbar />
+      <Heading>Contacts Page</Heading>
+    </>
+  )
 }
 
 export default HomePage

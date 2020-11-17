@@ -11,8 +11,8 @@ const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <ChakraProvider theme={ theme }>
-        <Component {...pageProps}/>
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
       </ChakraProvider>
     </>
   )
