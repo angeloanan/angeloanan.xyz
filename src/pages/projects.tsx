@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import { Text, VStack, Wrap } from '@chakra-ui/react'
+import { TextHeading, TextParagraph } from '../components/typography'
 
 import AppHeader from '../components/app-header'
+import { Box } from '@chakra-ui/react'
 import ContentSpacer from '../components/ui/content-spacer'
 import Navbar from '../components/navbar'
-import ProjectCard from '../components/ui/project-section/project-card'
 
 const ProjectsPage: React.FC = () => {
   return (
@@ -13,19 +13,17 @@ const ProjectsPage: React.FC = () => {
       <AppHeader />
 
       <Navbar />
-      <ContentSpacer p={4}>
-        <VStack spacing={4}>
-          <Text size='lg' fontWeight={600} p={4} alignSelf='flex-start'>
-            Here are some projects that I've been working on:
-          </Text>
+      <ContentSpacer>
+        <Box mb={4}>
+          <TextHeading as='h1'>Projects</TextHeading>
+          <TextParagraph>
+            Here are every project that I've worked for in the past
+          </TextParagraph>
+        </Box>
 
-          <Wrap spacing={{ base: 16, lg: 32 }} justify='center'>
-            <ProjectCard title='Lyrics Finder' />
-            <ProjectCard title='KawalCovid19' />
-            <ProjectCard title='Hello World' />
-            <ProjectCard />
-          </Wrap>
-        </VStack>
+        <TextParagraph as='em'>
+          This page is still work in progress...
+        </TextParagraph>
       </ContentSpacer>
     </>
   )

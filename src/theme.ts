@@ -1,14 +1,10 @@
-import { theme as baseTheme } from '@chakra-ui/react'
-
 const systemFonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
 
 const theme = {
-  ...baseTheme,
-
   colors: {
     white: '#ffffff',
-    black: '#16161d',
+    black: '#000000',
     gray: {
       50: '#e7e7e8',
       100: '#cfcfd1',
@@ -124,6 +120,19 @@ const theme = {
       body: {
         bg: 'black',
         color: 'white'
+      }
+    }
+  },
+
+  components: {
+    Heading: {
+      baseStyle: {
+        fontWeight: 700
+      }
+    },
+    Text: {
+      baseStyle: {
+        fontWeight: 400
       }
     }
   },

@@ -1,8 +1,10 @@
 import * as React from 'react'
 
-import { Heading } from '@chakra-ui/react'
-import Navbar from '../components/navbar'
+import { TextHeading, TextParagraph } from '../components/typography'
+
 import AppHeader from '../components/app-header'
+import ContentSpacer from '../components/ui/content-spacer'
+import Navbar from '../components/navbar'
 
 const HomePage: React.FC = () => {
   return (
@@ -10,7 +12,12 @@ const HomePage: React.FC = () => {
       <AppHeader />
 
       <Navbar />
-      <Heading>Contacts Page</Heading>
+      <ContentSpacer>
+        <TextHeading>Contact Me</TextHeading>
+        <TextParagraph>
+          Whew, wanna talk about something with me? Let's talk!
+        </TextParagraph>
+      </ContentSpacer>
     </>
   )
 }
