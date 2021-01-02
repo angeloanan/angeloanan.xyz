@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Frontend Indonesia",
+    "description": "Indonesian Frontend Web Developer community",
+    "imageUrl": "/img/projects/frontend-id.png",
+    "url": "https://feid.dev"
+  },
+  {
+    "name": "Lyrics Finder",
+    "description": "A Discord bot to search for Lyrics of a song on Genius",
+    "imageUrl": "/img/projects/lyrics-finder.png",
+    "url": "https://lyrics-finder.angeloanan.xyz"
+  }
+]

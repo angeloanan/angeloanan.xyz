@@ -8,6 +8,7 @@ import AppHeader from '../components/app-header'
 import ContentSpacer from '../components/ui/content-spacer'
 import Navbar from '../components/navbar'
 import { ProjectEntry } from '../components/ui/project'
+import projectList from '../_data/projects.json'
 
 const HomePage: React.FC = () => {
   return (
@@ -30,18 +31,9 @@ const HomePage: React.FC = () => {
         <Box mb={16}>
           <TextHeading as='h2'>Recent Project</TextHeading>
           <Stack spacing={4}>
-            <ProjectEntry
-              name='Frontend Indonesia'
-              description='Indonesian Frontend Web Developer community'
-              imageUrl='/img/projects/frontend-id.png'
-              url='https://feid.dev'
-            />
-            <ProjectEntry
-              name='Lyrics Finder'
-              description='A Discord bot to search for Lyrics of a song on Genius'
-              imageUrl='/img/projects/lyrics-finder.png'
-              url='https://lyrics-finder.angeloanan.xyz'
-            />
+            {projectList.map(projectDetails => (
+              <ProjectEntry {...projectDetails} />
+            ))}
           </Stack>
         </Box>
       </ContentSpacer>
