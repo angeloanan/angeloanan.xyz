@@ -1,9 +1,9 @@
 import { NextSeoProps } from 'next-seo'
 
 const NextSEOConfig: NextSeoProps = {
-  title: "Christopher Angelo's Website",
+  title: 'Christopher Angelo - Fullstack Web Developer.',
   description:
-    "Hello, I'm Angelo. This is my website which includes my projects, portfolio and more awesome stuff!",
+    "Yo, I'm Angelo. I am a fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!",
   canonical: 'https://angeloanan.xyz',
   additionalMetaTags: [
     {
@@ -15,9 +15,9 @@ const NextSEOConfig: NextSeoProps = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.angeloanan.xyz/',
-    title: "Christopher Angelo's Website",
+    title: 'Christopher Angelo - Fullstack Web Developer.',
     description:
-      "Hello, I'm Angelo. This is my website which includes my projects, portfolio and more awesome stuff!",
+      "Yo, I'm Angelo. I am a fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!",
     site_name: 'Personal Website',
     images: [
       {
