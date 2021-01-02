@@ -118,7 +118,7 @@ const theme = {
   styles: {
     global: {
       body: {
-        bg: 'black',
+        bg: '#121212',
         color: 'white'
       }
     }
