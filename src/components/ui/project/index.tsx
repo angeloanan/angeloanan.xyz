@@ -21,7 +21,12 @@ export const ProjectEntry: React.FC<ProjectCardProps> = props => {
         <Box p={6} h='inherit' w='full' borderWidth='1px' borderRadius={4}>
           <HStack>
             <Box mr={4}>
-              <Image height={64} width={64} src={props.imageUrl} />
+              <Image
+                height={64}
+                width={64}
+                src={props.imageUrl}
+                alt={`${props.name}'s Logo`}
+              />
             </Box>
             <Flex w='full' direction='column'>
               <TextHeading as='h3' m={0}>

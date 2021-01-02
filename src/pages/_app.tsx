@@ -13,10 +13,13 @@ import SEO from '../next-seo.config'
 import theme from '../theme'
 
 const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
-  // 2. Use at the root of your app
   return (
     <>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo
+        {...SEO}
+        dangerouslySetAllPagesToNoIndex={true}
+        dangerouslySetAllPagesToNoFollow={true}
+      />
       <ChakraProvider theme={extendTheme(theme)}>
         <AppHeader />
         <Navbar />

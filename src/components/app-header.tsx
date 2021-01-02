@@ -9,11 +9,6 @@ interface AppHeaderProps {
 const AppHeader: React.FC<AppHeaderProps> = props => {
   return (
     <Head>
-      <title>
-        {props.title != null
-          ? `${props.title} | Christopher Angelo's Website`
-          : "Christopher Angelo's Website"}
-      </title>
       <link
         rel='apple-touch-icon'
         sizes='180x180'

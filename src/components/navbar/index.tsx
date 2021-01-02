@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     <Flex as='nav' maxW='4xl' mx='auto' my={16}>
       <Link href='/' passHref>
         <Box p={4} as='button'>
-          <Heading size='md'>Angelo</Heading>
+          <Heading size='md' as="p">Angelo</Heading>
         </Box>
       </Link>
       <Spacer />

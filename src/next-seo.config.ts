@@ -1,7 +1,7 @@
 import { NextSeoProps } from 'next-seo'
 
 const NextSEOConfig: NextSeoProps = {
-  title: 'Christopher Angelo - Fullstack Web Developer.',
+  titleTemplate: '%s - Christopher Angelo',
   description:
     "Yo, I'm Angelo. I am a fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!",
   canonical: 'https://angeloanan.xyz',
@@ -18,18 +18,17 @@ const NextSEOConfig: NextSeoProps = {
     title: 'Christopher Angelo - Fullstack Web Developer.',
     description:
       "Yo, I'm Angelo. I am a fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!",
-    site_name: 'Personal Website',
     images: [
       {
-        url: '/pfp.png',
-        alt: "Angelo's Profile Picture"
+        url: 'https://angeloanan.xyz/img/banner.png',
+        alt: 'Christopher Angelo - Fullstack Web Developer'
       }
     ]
   },
   twitter: {
     handle: '@UwUngelo',
     site: '@UwUngelo',
-    cardType: 'summary'
+    cardType: 'summary_large_image'
   }
 }
 
