@@ -2,11 +2,7 @@ import * as React from 'react'
 
 import Head from 'next/head'
 
-interface AppHeaderProps {
-  title?: string
-}
-
-const AppHeader: React.FC<AppHeaderProps> = props => {
+const AppHeader: React.FC = () => {
   return (
     <Head>
       <link
