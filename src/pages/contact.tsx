@@ -28,7 +28,9 @@ const ContactsPage: React.FC = () => {
               placement='top'
               closeDelay={500}
             >
-              <Code colorScheme='yellow' onClick={onCopy}>{email}</Code>
+              <Code colorScheme='yellow' onClick={onCopy}>
+                {email}
+              </Code>
             </Tooltip>
           </TextParagraph>
         </Box>
