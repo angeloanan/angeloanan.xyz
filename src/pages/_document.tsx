@@ -22,7 +22,7 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head />
-        <body>
+        <body style={{ minHeight: '100vh' }}>
           <ColorModeScript initialColorMode='dark' />
           <Main />
           <NextScript />
