@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:angelo@angeloanan.xyz
+Encryption: https://keybase.io/angeloanan
+Preferred-Languages: en, id
+Canonical: https://angeloanan.xyz/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+wsFcBAABCgAGBQJehSTOAAoJEMxIBY4ZzK5lwWkP/15vQiJDzMlg0y9lHF2ZInYR
+A/sBguaWOj9Z+39zSO3KchdTOjcshxf0K55fI8XUe9c0VqEVgU6Qz0bPv/K/IpKW
+FwlzbOXhpcOUcq/N92bI4yVpNOdIGN/J8m/2V0LZcp/sCAqcEAOVO9V47qAca69e
+LdEiOU53cpp39HO3odbWA6YzdGrNGD4gJLbfriIx3cL+cTkhE/hyRp0yraiB9kFZ
+Ri1yc+gW69AdGH463gZjQXvs+zcmQwE5e1V5SDH4M+Q1jXY1VKtS7cxEaLBJ1UAf
+I9jbiPy7rZhwNihaBjsBnW0jROffvdSu90Uoyxhy4SAhykPAWESmSLs1xnADagjS
+m3CxGh21GzXTnno625XHwvOLjzaSJHi8XUKk2QceiDGBLX1yNZjKE1N0esbdWI0E
+d6rQSQjJaFMJPKioDLc9gWyGJ7COJ6FQKWBfUghlpiTfKAs2dl/OSKf9MT8X7Q/S
+5cyyHYEke0yiOHoUDcpEU8EekroRyMopaRf53RTOGwurwFQmUy3F7Eq8laVOxPTH
+PqSo26pzckRQxFFBYc5YqbXfkUGGFUExQ3qwmAuMB5tDc3oWaTIjqVLzJFUTZz6g
+v0U6EPAruO/G6r9gnXVhUqm38zjsyrQ3RNbpW0eVPSswaoeL71hvJHs0RC9Fl+jN
+fQXUMo59YgyuR59IsaG4
+=Jrns
+-----END PGP SIGNATURE-----
+

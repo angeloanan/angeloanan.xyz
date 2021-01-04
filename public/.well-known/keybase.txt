@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/angeloanan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://angeloanan.xyz
+  * I am angeloanan (https://keybase.io/angeloanan) on keybase.
+  * I have a public key with fingerprint 5B4C 4658 12B2 4BFE 874C  7227 CC48 058E 19CC AE65
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01016114b3f53daefb5dfef31b017fea2c30ee8b66c788807869a5c3c217fab77ea70a",
+      "fingerprint": "5b4c465812b24bfe874c7227cc48058e19ccae65",
+      "host": "keybase.io",
+      "key_id": "cc48058e19ccae65",
+      "kid": "01016114b3f53daefb5dfef31b017fea2c30ee8b66c788807869a5c3c217fab77ea70a",
+      "uid": "1e12647333e06b1f30c0f998986ecc19",
+      "username": "angeloanan"
+    },
+    "service": {
+      "hostname": "angeloanan.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1579893760,
+  "expire_in": 157680000,
+  "prev": "f9ab6971dd6945bcd6bde500a32f11aed441c294831e64bbaf524070e3230fd8",
+  "seqno": 59,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMNAAnicrVJ/TFVlGL78uCq3Ad5KUNCEYyvEC57v/D6Xmi0kRaGVSsSCez0/vsM9
+gude7j3gvVyoHKGWG0NIUIRgJpsu0jUGI4QGyIAlxpbOtXKgRZAgKUwhbFw6l9Vf
+9WffP9++532e53ved29/aJDOEDC8W1+xYfgyDLjeW1+os2zbqfMivF30IGYvkgdX
+LpgvQpdqzZNFxIygAAUUAASPSyQuclDiSVGCEg54FNAS5DABRyFkeIoSaIZhUJqh
+WI4UcAHTyhxP05CjUQ4xIZKs5EKnwykrqmZL8oRAUCQDMB4jeAkyNCHQGEYLAsGg
+JAMBKwgcpEhNaLO7/AotHM+5YKJs1zDtYV2J9x/8/zl34YodgACjCBrHcYhSPJBw
+VEAllmVYhoKCAFg/0QWdCncYamxOazXfzimcgpSaEA0vkgXoH62/l39xEt2eYk3v
+cNpVu2DP12o2VXW4zH6t6nH4yUcgb/3bxsrLiqjNUlMUQadLtiuIGWhMQZX9voCk
+tVQ4TaEmBLodshNaZWUFphhUO/5/YJFmKbEcT7E0EEWKJUheEClehCSKcjgmAcBB
+kSCAgLEEgwNIETzPSSRGoDQKcQxHJZFB/I0VKHbETLJaTi5X83TJuQqnFjohUtrX
+mx2sCzDoVukD/UumM4Ss/Wf1omLCl0tHsBeIG73d69/xntphsuhKrE1ts4XXmJk3
+qs5Hp0UuNkCjbyGRN/WkLh02LtRaVo1btnge/TxU3dFddWXg3Xq5NSSjL+hTBtUv
+eAfWtU3eedgTF715vH5z1e4gVn7/tfa0srq8Z+4YJ1o+xsH8h7seHt/qiGk9YpKb
+mg+++Oemi7qiuHNESfuFjT+M/ZH+7Fk9bjK67ycVN8Z2ZZ9p9DRM5RQbohbVo9N7
+jp39In4s3Tg1VLfx2vxPlWV7Jir3hj0/c6/v1eW57780hzre3u+LKS+//1nnJ1/7
+5ht20MzyN68H3CxFRti9L6FVlZOZIxsaT4+6q9/6tWSJnemKuB1+sO3AYGBE7W8V
+q4vVk9snol8e9T09oEuJSO/3HQ38/KsCd83aYb3lzJPvkqsn0g7dmuwOfq4fG8y1
+jaauyUqus8UPxr4S3mZoiOnQe98bOlY7MPCLLSmqxdb/pOPcBVPJiaupDupWxiaf
+0REQnHxp6vK+zKHS03xdUGtY9/bQ2OkP5sieK5HxoYZO0OTq+jEhZIHIoWbnd/W2
+5X877Pzd8zjnwXhFAt0+vc7rehw4GJlFbCuLq7p5PfvG+oRLd5Wa8y1bm9dcfWQ6
+pC9vzNh5cf/JN8Nqk+5FNBfUzBqZB2VZ+synKe7Ij253qvLx1qWMsbnoxIFFJZbu
+POW9m7wvpabOEpPZmfcXLp28zA==
+=ueds
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/angeloanan
+
+==================================================================
