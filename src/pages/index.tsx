@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
         titleTemplate='%s'
       />
       <ContentSpacer>
-        <Box>
+        <Box as='header'>
           <AngeloAvatar mb={4} />
           <TextHeading as='h1'>Yo, I'm Christopher Angelo</TextHeading>
           <TextParagraph>
@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
         </Box>
 
         {/* Project Section */}
-        <Box mt={8}>
+        <Box mt={8} as='section'>
           <TextHeading as='h2'>Recent Project</TextHeading>
           <Stack spacing={4}>
             {projectList.map(projectDetails => (
