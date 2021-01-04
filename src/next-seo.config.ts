@@ -21,7 +21,7 @@ const NextSEOConfig: NextSeoProps = {
     images: [
       {
         url: 'https://angeloanan.xyz/img/banner.png',
-        alt: 'Christopher Angelo - Fullstack Web Developer'
+        alt: 'Christopher Angelo - Fullstack Web Developer.'
       }
     ]
   },
