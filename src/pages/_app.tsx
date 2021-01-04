@@ -17,8 +17,8 @@ const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     <>
       <DefaultSeo
         {...SEO}
-        dangerouslySetAllPagesToNoIndex={true}
-        dangerouslySetAllPagesToNoFollow={true}
+        // dangerouslySetAllPagesToNoIndex={true}
+        // dangerouslySetAllPagesToNoFollow={true}
       />
       <ChakraProvider theme={extendTheme(theme)}>
         <AppHeader />
