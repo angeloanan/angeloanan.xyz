@@ -1,14 +1,14 @@
 import * as React from 'react'
 
 import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi'
-import { HStack, Icon, Link, VisuallyHidden } from '@chakra-ui/react'
+import { HStack, Icon, Link, VStack, VisuallyHidden } from '@chakra-ui/react'
 
 import NextLink from 'next/link'
 import footerLinks from '../_data/footerLinks.json'
 
 const SocialMediaSection: React.FC = () => {
   return (
-    <HStack mb={4} spacing={4} justify='center'>
+    <HStack spacing={4} justify='center'>
       <NextLink href='https://github.com/angeloanan' passHref>
         <a>
           <VisuallyHidden>GitHub</VisuallyHidden>
@@ -39,9 +39,9 @@ const SocialMediaSection: React.FC = () => {
 
 export const AppFooter: React.FC = () => {
   return (
-    <>
+    <VStack as='footer' mt={16} mb={8} spacing={4}>
       <SocialMediaSection />
-      <HStack mb={8} spacing={4} justify='center'>
+      <HStack spacing={4} justify='center'>
         {footerLinks.map(link => (
           <NextLink key={link} href={link} passHref>
             <Link fontSize='sm' opacity={0.7}>
@@ -50,6 +50,6 @@ export const AppFooter: React.FC = () => {
           </NextLink>
         ))}
       </HStack>
-    </>
+    </VStack>
   )
 }
