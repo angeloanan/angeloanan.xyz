@@ -43,7 +43,7 @@ export const AppFooter: React.FC = () => {
       <SocialMediaSection />
       <HStack mb={8} spacing={4} justify='center'>
         {footerLinks.map(link => (
-          <NextLink href={link} passHref>
+          <NextLink key={link} href={link} passHref>
             <Link fontSize='sm' opacity={0.7}>
               {link}
             </Link>
