@@ -17,7 +17,7 @@ const AboutPage: React.FC = () => {
           when I was 13 years old.
         </TextParagraph>
 
-        <TextParagraph as='em'>
+        <TextParagraph as='em' mt={8}>
           This page is still work in progress...
         </TextParagraph>
       </ContentSpacer>
