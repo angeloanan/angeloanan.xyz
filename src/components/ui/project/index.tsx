@@ -9,7 +9,7 @@ import Link from 'next/link'
 interface ProjectCardProps {
   year?: string
   name: string
-  description: string
+  shortDescription: string
   imageUrl: string
   url: string
 }
@@ -33,7 +33,7 @@ export const ProjectEntry: React.FC<ProjectCardProps> = props => {
                 {props.name}
               </TextHeading>
               <TextParagraph m={0} opacity={0.8}>
-                {props.description}
+                {props.shortDescription}
               </TextParagraph>
             </Flex>
           </HStack>
