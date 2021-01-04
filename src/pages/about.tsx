@@ -3,11 +3,13 @@ import * as React from 'react'
 import { TextHeading, TextParagraph } from '../components/typography'
 
 import ContentSpacer from '../components/ui/content-spacer'
+import { NextSeo } from 'next-seo'
 
 const AboutPage: React.FC = () => {
   return (
     <ContentSpacer>
-      <TextHeading>About Me</TextHeading>
+      <NextSeo title='About Me' />
+      <TextHeading as='h1'>About Me</TextHeading>
       <TextParagraph>
         Hi, I'm Christopher Angelo - A full-stack web developer based on
         Jakarta, Indonesia. I've started to learn how to code out of curiosity
