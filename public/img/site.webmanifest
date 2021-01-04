@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Christopher Angelo - Fullstack Web Developer",
+  "short_name": "Angelo - Web Developer",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#2234ce",
+  "background_color": "#121212",
   "display": "standalone"
 }
