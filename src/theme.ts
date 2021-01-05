@@ -132,16 +132,16 @@ const theme = {
     },
     Text: {
       baseStyle: {
-        fontWeight: 400
+        fontWeight: 300
       }
     }
   },
 
   fonts: {
-    body: `Inter, ${systemFonts}`,
-    heading: `Inter, ${systemFonts}`,
+    body: `InterVariable, Inter, ${systemFonts}`,
+    heading: `InterVariable, Inter, ${systemFonts}`,
     mono:
-      'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
+      'Jetbrains Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
   }
 }
 

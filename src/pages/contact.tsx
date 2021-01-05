@@ -1,3 +1,5 @@
+import '@fontsource/jetbrains-mono/400.css'
+
 import * as React from 'react'
 
 import { Box, Code, Tooltip, useClipboard } from '@chakra-ui/react'

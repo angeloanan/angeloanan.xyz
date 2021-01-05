@@ -1130,6 +1130,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@fontsource/inter@npm:4.1.0"
+  checksum: a3b44d7665d9b703c0344c11f423ae51b9e795273143a9188086b3dd0df9ba3c571509110447ca3cf47303740cc76569b7bff56855ddd23916331bfc5a84b6f1
+  languageName: node
+  linkType: hard
+
+"@fontsource/jetbrains-mono@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@fontsource/jetbrains-mono@npm:4.1.0"
+  checksum: c8767e719d3da37bfccf8914e3a1b1b16e37205020191702908340c81e66e43b55794f647f6357f7de723ab9fc29f2e88c7c722d1d152b2d96d59c82d39625bb
+  languageName: node
+  linkType: hard
+
 "@glimmer/interfaces@npm:^0.41.4":
   version: 0.41.4
   resolution: "@glimmer/interfaces@npm:0.41.4"
@@ -4873,13 +4887,6 @@ __metadata:
   version: 0.7.0
   resolution: "focus-lock@npm:0.7.0"
   checksum: 6514d31e8193ffd03280d58da5ab62f2b6bbd02412d4c3dc03e8948315107c44f634bb10881875afcd513b5fcf23a56e850d67dc4f4bb54e6c09da20a7f85791
-  languageName: node
-  linkType: hard
-
-"fontsource-inter@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "fontsource-inter@npm:4.0.0"
-  checksum: a59484cc01e5aebfce385b3895f7b4c2dcdc91732779f1b72727f9731d90efab530652d8f631504a799e4e1102a05e68cb5c87a7aa6da2c29bed703b90c0c7e0
   languageName: node
   linkType: hard
 
@@ -9001,6 +9008,8 @@ resolve@1.15.1:
     "@chakra-ui/react": ^1.1.0
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.0.0
+    "@fontsource/inter": ^4.1.0
+    "@fontsource/jetbrains-mono": ^4.1.0
     "@types/node": ^14.14.19
     "@types/react": ^17.0.0
     "@typescript-eslint/eslint-plugin": ^4.11.1
@@ -9011,7 +9020,6 @@ resolve@1.15.1:
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^4.2.1
     eslint-plugin-standard: ^4.1.0
-    fontsource-inter: ^4.0.0
     framer-motion: ^3.1.1
     globby: ^11.0.1
     husky: ^4.3.6

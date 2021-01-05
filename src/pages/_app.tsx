@@ -1,4 +1,5 @@
-import 'fontsource-inter/variable.css'
+import '@fontsource/inter/400.css' // Weight 400.
+import '@fontsource/inter/variable-full.css' // Contains ONLY variable weights and no other axes.
 
 import * as React from 'react'
 
