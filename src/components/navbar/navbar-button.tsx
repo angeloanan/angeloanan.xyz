@@ -19,7 +19,7 @@ const NavbarButton: React.FC<NavbarButtonProps> = (
     <Link href={props.link} passHref>
       <Flex as='button' _hover={{ bg: 'gray.500' }} p={4}>
         {isActive ? (
-          <Text fontSize='md' as='em' fontWeight={800}>
+          <Text fontSize='md' as='em' fontWeight={600}>
             {props.title}
           </Text>
         ) : (

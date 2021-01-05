@@ -8,9 +8,9 @@ export const AngeloAvatar: React.FC<StackProps> = props => {
       <Avatar size='sm' name='Christopher Angelo' src='/pfp.png' />
       <Text
         opacity={0.7}
-        fontWeight={200}
+        fontWeight={300}
         fontSize='md'
-        letterSpacing={2}
+        letterSpacing={1}
         as='label'
       >
         @ANGELOANAN
