@@ -121,9 +121,9 @@ const theme = {
         bg: '#121212',
         color: 'white',
         minHeight: '100vh',
-        'text-rendering': 'optimizeLegibility',
-        '-webkit-font-smoothing': 'antialiased',
-        '-moz-osx-font-smoothing': 'grayscale'
+        textRendering: 'optimizeLegibility',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale'
       }
     }
   },
