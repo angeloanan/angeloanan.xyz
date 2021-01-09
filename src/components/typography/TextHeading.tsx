@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Heading, TextProps } from '@chakra-ui/react'
 
 interface TextHeadingProps extends TextProps {
-  asStyle?: React.ElementType
+  asstyle?: React.ElementType
 }
 
 const resolveFontSize = (elementName: React.ElementType = 'h1'): string => {
@@ -27,8 +27,8 @@ const resolveFontWeight = (elementName: React.ElementType = 'h1'): number => {
 }
 
 export const TextHeading: React.FC<TextHeadingProps> = props => {
-  const fontSize = resolveFontSize(props.asStyle ?? props.as)
-  const fontWeight = resolveFontWeight(props.asStyle ?? props.as)
+  const fontSize = resolveFontSize(props.asstyle ?? props.as)
+  const fontWeight = resolveFontWeight(props.asstyle ?? props.as)
 
   return (
     <Heading

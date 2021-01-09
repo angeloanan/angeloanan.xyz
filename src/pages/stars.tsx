@@ -35,16 +35,16 @@ const StarsPage: React.FC = () => {
           </ListItem>
         </UnorderedList>
 
-        <TextHeading as='h2' asStyle='h3' mt={8}>
+        <TextHeading as='h2' asstyle='h3' mt={8}>
           Lyrics Finder
         </TextHeading>
         <StargazerEntry repoName='lyrics-finder' />
 
-        <TextHeading as='h2' asStyle='h3' mt={16}>
+        <TextHeading as='h2' asstyle='h3' mt={16}>
           This website
         </TextHeading>
         <StargazerEntry repoName='angeloanan.xyz' />
-        <TextHeading as='h2' asStyle='h3' mt={16}>
+        <TextHeading as='h2' asstyle='h3' mt={16}>
           My extension pack
         </TextHeading>
         <StargazerEntry repoName='extension-pack' />
