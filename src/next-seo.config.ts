@@ -3,7 +3,7 @@ import { NextSeoProps } from 'next-seo'
 const NextSEOConfig: NextSeoProps = {
   titleTemplate: '%s - Christopher Angelo',
   description:
-    "Yo, I'm Angelo. I am a fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!",
+    'Christopher Angelo. A fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!',
   canonical: 'https://angeloanan.xyz',
   additionalMetaTags: [
     {
@@ -17,7 +17,7 @@ const NextSEOConfig: NextSeoProps = {
     url: 'https://www.angeloanan.xyz/',
     title: 'Christopher Angelo - Fullstack Web Developer.',
     description:
-      "Yo, I'm Angelo. I am a fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!",
+      'Christopher Angelo. A fullstack web developer based in Indonesia. This is my website which includes my projects, portfolio and more awesome stuff!',
     images: [
       {
         url: 'https://angeloanan.xyz/img/banner.png',
