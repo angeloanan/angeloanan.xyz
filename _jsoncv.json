@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "theme": "flat"
+  },
+  "basics": {
+    "name": "Angelo ~ Curriculum Vitae",
+    "label": "Multidisciplinary developer",
+    "picture": "https://angeloanan.xyz/pfp.png",
+    "email": "angelo@angeloanan.xyz",
+    "website": "https://angeloanan.xyz",
+    "summary": "A 18 year old developer from Indonesia. Interested and involved in a wide range of disciplines, from fullstack web development as a day job, to community moderation and management as a volunteer",
+    "location": {
+      "city": "Jakarta",
+      "countryCode": "ID"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "angeloanan",
+        "url": "https://twitter.com/angeloanan"
+      },
+      {
+        "network": "Twitter",
+        "username": "UwUngelo",
+        "url": "https://twitter.com/UwUngelo"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "REDACTED",
+      "position": "Product Manager",
+      "website": "REDACTED",
+      "startDate": "2020-10-01",
+      "summary": "REDACTED DUE TO NDA",
+      "highlights": []
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Frontend Indonesia",
+      "position": "Community Moderation and Management",
+      "website": "https://feid.dev",
+      "startDate": "2020-08-25",
+      "summary": "A \"melting pot\" of many Indonesian Frontend community, targeting beginners to seniors to come and talk about frontend.",
+      "highlights": [
+        "Initialized the community from scratch, with help from many community leader"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Shopee National Data Science Competition 2020 - Beginners Category",
+      "date": "2020-11-28",
+      "awarder": "Shopee",
+      "summary": "Ranked top 50 out of 150 team"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Bina Nusantara University",
+      "area": "Computer Science",
+      "studyType": "Undergraduate",
+      "startDate": "2020-07-30",
+      "endDate": "2024-07-30",
+      "courses": ["COMP6047 - Algorithm and Programming"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software and Technical",
+      "keywords": [
+        "General proficiency with a range of systems and software",
+        "Experience in web hosting on Linux and management with Docker / Kubernetes",
+        "8+ years of experience in NodeJS",
+        "Additionally proficient in Dart, SQL, LaTeX and C (Competitive Programming)",
+        "Currently researching and learning Rust and Elixir"
+      ]
+    },
+    {
+      "name": "Full-stack Web Development",
+      "keywords": [
+        "Backend with NodeJS using Express",
+        "Frontend with JS using React",
+        "Testing with Jest",
+        "CI/CD with GitHub Actions",
+        "Deployment with Docker / Kubernetes"
+      ]
+    },
+    {
+      "name": "Community Moderation",
+      "keywords": [
+        "2+ years moderating online communities",
+        "Experience with a range of platforms and communities"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Indonesian",
+      "fluency": "5 - Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "5 - Bilingual proficiency"
+    },
+    {
+      "language": "Deutsch",
+      "fluency": "2 - Limited working proficiency"
+    }
+  ]
+}
