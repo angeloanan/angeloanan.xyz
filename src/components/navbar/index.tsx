@@ -9,14 +9,14 @@ const Navbar: React.FC = () => {
   return (
     <Flex as='nav' maxW='4xl' mx='auto' py={16}>
       <Link href='/' passHref>
-        <Box p={4} as='button'>
-          <Heading size='md' as='p'>
+        <Box p={4} as='button' aria-label='Home'>
+          <Heading size='md' as='p' aria-hidden>
             Angelo
           </Heading>
         </Box>
       </Link>
       <Spacer />
-      <Flex>
+      <Flex as='section' aria-label='Navbar Buttons'>
         <NavbarButton title='About' link='/about' />
         <NavbarButton title='Projects' link='/projects' />
         <NavbarButton title='Contact' link='/contact' />

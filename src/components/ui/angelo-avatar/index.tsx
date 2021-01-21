@@ -4,7 +4,7 @@ import { Avatar, HStack, StackProps, Text } from '@chakra-ui/react'
 
 export const AngeloAvatar: React.FC<StackProps> = props => {
   return (
-    <HStack {...props}>
+    <HStack {...props} aria-hidden>
       <Avatar size='sm' name='Christopher Angelo' src='/pfp.png' />
       <Text
         opacity={0.7}

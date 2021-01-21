@@ -17,13 +17,21 @@ const NavbarButton: React.FC<NavbarButtonProps> = (
 
   return (
     <Link href={props.link} passHref>
-      <Flex as='button' _hover={{ bg: 'gray.500' }} p={4}>
+      <Flex
+        as='button'
+        _hover={{ bg: 'gray.500' }}
+        p={4}
+        aria-label={props.title}
+      >
         {isActive ? (
-          <Text fontSize='md' as='em' fontWeight={600}>
+          <Text fontSize='md' as='em' fontWeight={600} aria-hidden>
             {props.title}
           </Text>
         ) : (
-          <Text fontSize='md'> {props.title} </Text>
+          <Text fontSize='md' aria-hidden>
+            {' '}
+            {props.title}{' '}
+          </Text>
         )}
       </Flex>
     </Link>
