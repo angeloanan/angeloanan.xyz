@@ -1,13 +1,25 @@
 import * as React from 'react'
 
-import { Box, Link, Text } from '@chakra-ui/react'
+import { Box, Divider, HStack, Link, Text } from '@chakra-ui/react'
+import { FaLastfm, FaSpotify } from 'react-icons/fa'
 import { TextHeading, TextParagraph } from '../components/typography'
 
 import ContentSpacer from '../components/ui/content-spacer'
+import { GetStaticProps } from 'next'
 import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
+import SpotifyTrack from '../components/ui/spotify-track'
 
-const AboutPage: React.FC = () => {
+interface AboutPageProps {
+  lastfm: Array<{
+    title: string
+    artist: string
+    image: string
+    url: string
+  }>
+}
+
+const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
   return (
     <>
       <NextSeo title='About Me' />
@@ -28,12 +40,69 @@ const AboutPage: React.FC = () => {
           </NextLink>
         </Box>
 
+        <Divider mt={8} />
+
+        <Box mt={8}>
+          <TextHeading as='h2'>What I've been listening</TextHeading>
+          <TextParagraph mb={4}>
+            Wondering what's my music taste like? Here's my top 5 played music
+            this week!{' '}
+          </TextParagraph>
+          {/* TODO: Improve Copywriting */}
+
+          {topTracks.map(track => {
+            return (
+              <SpotifyTrack
+                key={track.url}
+                title={track.title}
+                artist={track.artist}
+                image={track.image}
+                url={track.url}
+              />
+            )
+          })}
+        </Box>
+
         <TextParagraph as='em' mt={8}>
           This page is still work in progress...
         </TextParagraph>
       </ContentSpacer>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
+  const craftedEnpointURL = `http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=angeloanan&api_key=${process
+    .env.LASTFM_KEY as string}&format=json`
+  const fetchData = await (await fetch(craftedEnpointURL)).json()
+
+  const trackList = fetchData.weeklytrackchart.track
+  trackList.length = 5
+
+  const convertedTrackList = await Promise.all([
+    ...trackList.map(async track => {
+      const trackInfoFetch = await fetch(
+        `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${process
+          .env
+          .LASTFM_KEY as string}&track=${track.name as string}&artist=${track
+          .artist['#text'] as string}&format=json`
+      )
+      const { track: trackInfo } = await trackInfoFetch.json()
+
+      return {
+        title: track.name,
+        artist: track.artist['#text'],
+        image: trackInfo.album.image[1]['#text'],
+        url: track.url
+      }
+    })
+  ])
+
+  return {
+    props: {
+      lastfm: convertedTrackList
+    }
+  }
 }
 
 export default AboutPage
