@@ -28,11 +28,6 @@ module.exports = {
             value: 'DENY'
           },
           {
-            key: 'Content-Security-Policy',
-            value:
-              "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';base-uri 'self';form-action 'self'"
-          },
-          {
             key: 'Strict-Transport-Security',
             value: 'max-age=86400; includeSubDomains; preload' // 1 Day
           }
