@@ -13,5 +13,30 @@ module.exports = {
     }
 
     return config
+  },
+  async headers () {
+    return [
+      {
+        source: '/',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'"
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=86400; includeSubDomains; preload' // 1 Day
+          }
+        ]
+      }
+    ]
   }
 }
