@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-import { Box, Divider, HStack, Link, Text } from '@chakra-ui/react'
-import { FaLastfm, FaSpotify } from 'react-icons/fa'
+import { Box, Divider, Link, Text } from '@chakra-ui/react'
 import { TextHeading, TextParagraph } from '../components/typography'
 
 import ContentSpacer from '../components/ui/content-spacer'
@@ -101,7 +100,8 @@ export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
   return {
     props: {
       lastfm: convertedTrackList
-    }
+    },
+    revalidate: 300 // 5 Mins
   }
 }
 
