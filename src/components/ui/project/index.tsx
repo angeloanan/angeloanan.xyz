@@ -32,7 +32,7 @@ export const ProjectEntry: React.FC<ProjectCardProps> = props => {
               <TextHeading as='h3' m={0}>
                 {props.name}
               </TextHeading>
-              <TextParagraph m={0} opacity={0.8}>
+              <TextParagraph m={0} color='gray.200'>
                 {props.shortDescription}
               </TextParagraph>
             </Flex>
