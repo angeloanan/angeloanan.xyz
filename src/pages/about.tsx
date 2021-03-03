@@ -91,7 +91,8 @@ export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
       return {
         title: track.name,
         artist: track.artist['#text'],
-        image: trackInfo?.album?.image?.[1]['#text'] ?? '/img/unknown-album.webp',
+        image:
+          trackInfo?.album?.image?.[1]['#text'] ?? '/img/unknown-album.webp',
         url: track.url
       }
     })
