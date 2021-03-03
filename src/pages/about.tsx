@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
   trackList.length = 5
 
   const convertedTrackList = await Promise.all([
-    ...trackList.map(async track => {
+    ...trackList.map(async (track: Record<string, any>) => {
       const trackInfoFetch = await fetch(
         `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${process
           .env
