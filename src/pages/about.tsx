@@ -1,11 +1,10 @@
 import * as React from 'react'
 
-import { Box, Divider, Link, Text } from '@chakra-ui/react'
-import { TextHeading, TextParagraph } from '../components/typography'
+import { Box, Divider } from '@chakra-ui/react'
+import { TextHeading, TextLink, TextParagraph } from '../components/typography'
 
 import ContentSpacer from '../components/ui/content-spacer'
 import { GetStaticProps } from 'next'
-import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
 import SpotifyTrack from '../components/ui/spotify-track'
 
@@ -25,19 +24,56 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
       <ContentSpacer>
         <TextHeading as='h1'>About Me</TextHeading>
         <TextParagraph>
-          Hi, I'm Christopher Angelo - A full-stack web developer based on
-          Jakarta, Indonesia. I've started to learn how to code out of curiosity
-          when I was 13 years old.
+          Hi, I'm Christopher Angelo - A full-stack web developer based in
+          Bekasi, Indonesia; Currently studying for my bachelors degree in IT at{' '}
+          <TextLink href='https://binus.ac.id'>Binus University</TextLink> while
+          doing remote web dev work on a Canadian startup.
         </TextParagraph>
 
-        <Box mt={8} fontWeight='400'>
-          <Text as='span' fontWeight='400'>
-            See my CV at
-          </Text>{' '}
-          <NextLink href='https://cv.angelo.fyi' passHref>
-            <Link color='blue.200'>cv.angelo.fyi</Link>
-          </NextLink>
-        </Box>
+        <TextParagraph pt={4}>
+          I've self taught myself to code out of curiosity when I was 13 years
+          old (HTML and CSS). I then ventured out to learn backend stuff and
+          built{' '}
+          <TextLink href='https://lyrics-finder.angeloanan.xyz/about'>
+            Lyrics Finder
+          </TextLink>
+          , a Discord bot that scrapes lyrics from the Internet. It surprisingly
+          went popular due to the already existing music bots did not have a
+          reliable lyrics searching function. After understanding backend, I
+          continued my journey to learn new languages, contribute to open
+          source projects, participating in community moderation and ultimately,
+          creating my own things.
+        </TextParagraph>
+
+        <TextParagraph pt={4}>
+          I joined{' '}
+          <TextLink href='https://kawalcovid19.id'>Kawal COVID-19</TextLink>, a
+          volunteer effort to serve accurate and reliable information about the
+          COVID-19 pandemic in Indonesia, and helped their content team to
+          manage and communicate with our developers. I am also a co-founder of{' '}
+          <TextLink href='https://feid.dev'>Frontend Indonesia</TextLink>, an
+          Indonesian community of frontend developers which attempts to unify
+          the separated and clustered Indonesian community into a one big
+          community.
+        </TextParagraph>
+
+        <TextParagraph pt={4}>
+          I want to learn everything that's connected to technology. To this
+          day, I'm still learning a lot of things daily while balancing between
+          university and work.
+        </TextParagraph>
+
+        <TextParagraph pt={4}>
+          You can find my CV at{' '}
+          <TextLink href='https://cv.angelo.fyi'>cv.angelo.fyi</TextLink>
+        </TextParagraph>
+
+        <TextHeading as='h2' mt={8}>
+          Skills and Stuff
+        </TextHeading>
+        <TextParagraph>
+          Please refer to the <TextLink href='/uses'>/uses page!</TextLink>
+        </TextParagraph>
 
         <Divider mt={8} />
 
