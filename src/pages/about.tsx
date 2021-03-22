@@ -1,12 +1,62 @@
 import * as React from 'react'
 
-import { Box, Divider } from '@chakra-ui/react'
+import { Box, Divider, HStack } from '@chakra-ui/react'
+import {
+  SiAdobeillustrator,
+  SiAdobepremiere,
+  SiArduino,
+  SiBlender,
+  SiC,
+  SiCloudflare,
+  SiCss3,
+  SiDatadog,
+  SiDebian,
+  SiDocker,
+  SiEslint,
+  SiFigma,
+  SiFilezilla,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiGithubactions,
+  SiGrafana,
+  SiGraphql,
+  SiHtml5,
+  SiInfluxdb,
+  SiJava,
+  SiJavascript,
+  SiJest,
+  SiKubernetes,
+  SiLinux,
+  SiMariadb,
+  SiMongodb,
+  SiMusescore,
+  SiNetlify,
+  SiNextDotJs,
+  SiNodeDotJs,
+  SiNotion,
+  SiPostgresql,
+  SiPowershell,
+  SiRaspberrypi,
+  SiReact,
+  SiRust,
+  SiStyledComponents,
+  SiTailwindcss,
+  SiTypescript,
+  SiUbuntu,
+  SiVisualstudiocode,
+  SiVultr,
+  SiWindows,
+  SiZeit
+} from 'react-icons/si'
 import { TextHeading, TextLink, TextParagraph } from '../components/typography'
 
 import ContentSpacer from '../components/ui/content-spacer'
 import { GetStaticProps } from 'next'
+import { HoverIcon } from '../components/ui/hover-icon'
 import { NextSeo } from 'next-seo'
 import SpotifyTrack from '../components/ui/spotify-track'
+import UpCloudIcon from '../components/icons/upcloud'
 
 interface AboutPageProps {
   lastfm: Array<{
@@ -40,8 +90,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
           , a Discord bot that scrapes lyrics from the Internet. It surprisingly
           went popular due to the already existing music bots did not have a
           reliable lyrics searching function. After understanding backend, I
-          continued my journey to learn new languages, contribute to open
-          source projects, participating in community moderation and ultimately,
+          continued my journey to learn new languages, contribute to open source
+          projects, participating in community moderation and ultimately,
           creating my own things.
         </TextParagraph>
 
@@ -69,11 +119,131 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
         </TextParagraph>
 
         <TextHeading as='h2' mt={8}>
-          Skills and Stuff
+          Knowledgebase
         </TextHeading>
         <TextParagraph>
-          Please refer to the <TextLink href='/uses'>/uses page!</TextLink>
+          Below are some of the things that I have used.
+          <br />
+          <em>Pro tip: Hover over the icons to see what it means!</em>
         </TextParagraph>
+
+        <Box>
+          <TextHeading as='h3' mt={4}>
+            Languages
+          </TextHeading>
+          <HStack spacing={4}>
+            <HoverIcon label='HTML5' icon={SiHtml5} />
+            <HoverIcon label='CSS3' icon={SiCss3} />
+            <HoverIcon label='Javascript' icon={SiJavascript} />
+            <HoverIcon label='Typescript' icon={SiTypescript} />
+            <HoverIcon label='NodeJS' icon={SiNodeDotJs} />
+            <HoverIcon label='GraphQL' icon={SiGraphql} />
+            <HoverIcon label='C' icon={SiC} />
+            <HoverIcon label='Java' icon={SiJava} />
+            <HoverIcon label='Rust (Learning)' icon={SiRust} />
+          </HStack>
+        </Box>
+
+        <HStack justify='space-between' flexWrap='wrap'>
+          <Box>
+            <TextHeading as='h3' mt={4}>
+              Frontend
+            </TextHeading>
+            <HStack spacing={4} flexWrap='wrap'>
+              <HoverIcon label='React' icon={SiReact} />
+              <HoverIcon label='Next.JS' icon={SiNextDotJs} />
+              <HoverIcon label='Styled Components' icon={SiStyledComponents} />
+              <HoverIcon
+                label='TailwindCSS (twin.macro / Chakra UI)'
+                icon={SiTailwindcss}
+              />
+            </HStack>
+          </Box>
+
+          <Box>
+            <TextHeading as='h3' mt={4}>
+              Backend
+            </TextHeading>
+            <HStack spacing={4} flexWrap='wrap'>
+              <HoverIcon label='Firebase' icon={SiFirebase} />
+              <HoverIcon label='MariaDB / MySQL' icon={SiMariadb} />
+              <HoverIcon label='PostgreSQL' icon={SiPostgresql} />
+              <HoverIcon label='MongoDB' icon={SiMongodb} />
+              <HoverIcon label='InfluxDB' icon={SiInfluxdb} />
+            </HStack>
+          </Box>
+        </HStack>
+
+        <Box>
+          <TextHeading as='h3' mt={4}>
+            Infrastructure
+          </TextHeading>
+          <HStack spacing={4} flexWrap='wrap'>
+            <HoverIcon label='Cloudflare' icon={SiCloudflare} />
+            <HoverIcon label='Vultr' icon={SiVultr} />
+            <HoverIcon label='UpCloud' icon={UpCloudIcon} />
+            <HoverIcon label='Netlify' icon={SiNetlify} />
+            <HoverIcon label='Vercel' icon={SiZeit} />
+          </HStack>
+        </Box>
+
+        <HStack justify='space-between' flexWrap='wrap'>
+          <Box>
+            <TextHeading as='h3' mt={4}>
+              Programming Tools
+            </TextHeading>
+            <HStack spacing={4} flexWrap='wrap'>
+              <HoverIcon label='Git' icon={SiGit} />
+              <HoverIcon label='VSCode' icon={SiVisualstudiocode} />
+              <HoverIcon label='ESLint' icon={SiEslint} />
+              <HoverIcon label='Jest' icon={SiJest} />
+            </HStack>
+          </Box>
+
+          <Box>
+            <TextHeading as='h3' mt={4}>
+              General Tools
+            </TextHeading>
+            <HStack spacing={4} flexWrap='wrap'>
+              <HoverIcon label='Docker' icon={SiDocker} />
+              <HoverIcon label='Kubernetes' icon={SiKubernetes} />
+              <HoverIcon label='DataDog' icon={SiDatadog} />
+              <HoverIcon label='Grafana' icon={SiGrafana} />
+              <HoverIcon label='Bash' icon={SiPowershell} />
+            </HStack>
+          </Box>
+        </HStack>
+
+        <Box>
+          <TextHeading as='h3' mt={4}>
+            Other Services / Software
+          </TextHeading>
+          <HStack spacing={4} flexWrap='wrap' alignItems='center'>
+            <HoverIcon label='GitHub' icon={SiGithub} />
+            <HoverIcon label='GitHub Actions' icon={SiGithubactions} />
+            <HoverIcon label='Figma' icon={SiFigma} />
+            <HoverIcon label='Notion' icon={SiNotion} />
+            <HoverIcon label='FileZilla' icon={SiFilezilla} />
+            <HoverIcon label='Adobe Premiere Pro' icon={SiAdobepremiere} />
+            <HoverIcon label='Adobe Illustrator' icon={SiAdobeillustrator} />
+            <HoverIcon label='Musescore' icon={SiMusescore} />
+            <HoverIcon label='Blender (Learning)' icon={SiBlender} />
+            <HoverIcon label='Arduino (Learning)' icon={SiArduino} />
+          </HStack>
+        </Box>
+
+        <Box>
+          <TextHeading as='h3' mt={4}>
+            Operating Systems
+          </TextHeading>
+          <HStack spacing={4} flexWrap='wrap'>
+            <HoverIcon label='Windows' icon={SiWindows} />
+            <HoverIcon label='Linux' icon={SiLinux} />
+            <HoverIcon label='Debian' icon={SiDebian} />
+            <HoverIcon label='Ubuntu' icon={SiUbuntu} />
+            <HoverIcon label='Raspbian' icon={SiRaspberrypi} />
+          </HStack>
+        </Box>
 
         <Divider mt={8} />
 
@@ -97,10 +267,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
             )
           })}
         </Box>
-
-        <TextParagraph as='em' mt={8}>
-          This page is still work in progress...
-        </TextParagraph>
       </ContentSpacer>
     </>
   )
