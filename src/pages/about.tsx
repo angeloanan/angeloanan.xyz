@@ -9,6 +9,7 @@ import {
   SiC,
   SiCloudflare,
   SiCss3,
+  SiDart,
   SiDatadog,
   SiDebian,
   SiDocker,
@@ -27,6 +28,7 @@ import {
   SiJavascript,
   SiJest,
   SiKubernetes,
+  SiLatex,
   SiLinux,
   SiMariadb,
   SiMongodb,
@@ -35,8 +37,10 @@ import {
   SiNextDotJs,
   SiNodeDotJs,
   SiNotion,
+  SiOvh,
   SiPostgresql,
   SiPowershell,
+  SiPrettier,
   SiRaspberrypi,
   SiReact,
   SiRust,
@@ -131,16 +135,21 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
           <TextHeading as='h3' mt={4}>
             Languages
           </TextHeading>
-          <HStack spacing={4}>
+          <HStack spacing={4} flexWrap='wrap'>
             <HoverIcon label='HTML5' icon={SiHtml5} />
             <HoverIcon label='CSS3' icon={SiCss3} />
             <HoverIcon label='Javascript' icon={SiJavascript} />
             <HoverIcon label='Typescript' icon={SiTypescript} />
             <HoverIcon label='NodeJS' icon={SiNodeDotJs} />
             <HoverIcon label='GraphQL' icon={SiGraphql} />
-            <HoverIcon label='C' icon={SiC} />
-            <HoverIcon label='Java' icon={SiJava} />
+            <HoverIcon label='Dart (Flutter)' icon={SiDart} />
+            <HoverIcon label='C (Competitive programming)' icon={SiC} />
             <HoverIcon label='Rust (Learning)' icon={SiRust} />
+            <HoverIcon label='Java (Basic programming)' icon={SiJava} />
+            <HoverIcon
+              label='LaTeX (Katex, Technical Writing)'
+              icon={SiLatex}
+            />
           </HStack>
         </Box>
 
@@ -154,7 +163,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
               <HoverIcon label='Next.JS' icon={SiNextDotJs} />
               <HoverIcon label='Styled Components' icon={SiStyledComponents} />
               <HoverIcon
-                label='TailwindCSS (twin.macro / Chakra UI)'
+                label='TailwindCSS (twin.macro / ChakraUI)'
                 icon={SiTailwindcss}
               />
             </HStack>
@@ -182,6 +191,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
             <HoverIcon label='Cloudflare' icon={SiCloudflare} />
             <HoverIcon label='Vultr' icon={SiVultr} />
             <HoverIcon label='UpCloud' icon={UpCloudIcon} />
+            <HoverIcon label='OVH' icon={SiOvh} />
             <HoverIcon label='Netlify' icon={SiNetlify} />
             <HoverIcon label='Vercel' icon={SiZeit} />
           </HStack>
@@ -196,6 +206,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
               <HoverIcon label='Git' icon={SiGit} />
               <HoverIcon label='VSCode' icon={SiVisualstudiocode} />
               <HoverIcon label='ESLint' icon={SiEslint} />
+              <HoverIcon label='Prettier' icon={SiPrettier} />
               <HoverIcon label='Jest' icon={SiJest} />
             </HStack>
           </Box>
