@@ -284,8 +284,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
 }
 
 export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
-  const craftedEnpointURL = `http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=angeloanan&api_key=${process
-    .env.LASTFM_KEY as string}&format=json`
+  const craftedEnpointURL = `http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=angeloanan&api_key=${encodeURIComponent(
+    process.env.LASTFM_KEY as string
+  )}&format=json`
   const fetchData = await (await fetch(craftedEnpointURL)).json()
 
   const trackList = fetchData.weeklytrackchart.track
@@ -294,10 +295,13 @@ export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
   const convertedTrackList = await Promise.all([
     ...trackList.map(async (track: Record<string, any>) => {
       const trackInfoFetch = await fetch(
-        `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${process
-          .env
-          .LASTFM_KEY as string}&track=${track.name as string}&artist=${track
-          .artist['#text'] as string}&format=json`
+        `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${encodeURIComponent(
+          process.env.LASTFM_KEY as string
+        )}&track=${encodeURIComponent(
+          track.name as string
+        )}&artist=${encodeURIComponent(
+          track.artist['#text'] as string
+        )}&format=json`
       )
       const { track: trackInfo } = await trackInfoFetch.json()
 
