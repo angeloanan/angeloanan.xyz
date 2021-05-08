@@ -6,6 +6,7 @@
     "@emotion/styled": "^11.0.0",
     "@fontsource/inter": "^4.1.0",
     "@fontsource/jetbrains-mono": "^4.1.1",
+    "@sentry/nextjs": "^6.3.5",
     "@types/google.analytics": "^0.0.41",
     "framer-motion": "^3.2.1",
     "globby": "^11.0.1",
