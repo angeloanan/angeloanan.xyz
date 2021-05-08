@@ -6,65 +6,47 @@ I hereby claim:
 
   * I am an admin of https://angeloanan.xyz
   * I am angeloanan (https://keybase.io/angeloanan) on keybase.
-  * I have a public key with fingerprint 5B4C 4658 12B2 4BFE 874C  7227 CC48 058E 19CC AE65
+  * I have a public key ASDn_dHVEd84Y0kKqDS5lLyW5TOMbCic-dYGxCYrFuDptwo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "01016114b3f53daefb5dfef31b017fea2c30ee8b66c788807869a5c3c217fab77ea70a",
-      "fingerprint": "5b4c465812b24bfe874c7227cc48058e19ccae65",
+      "eldest_kid": "0120e7fdd1d511df3863490aa834b994bc96e5338c6c289cf9d606c4262b16e0e9b70a",
       "host": "keybase.io",
-      "key_id": "cc48058e19ccae65",
-      "kid": "01016114b3f53daefb5dfef31b017fea2c30ee8b66c788807869a5c3c217fab77ea70a",
+      "kid": "0120e7fdd1d511df3863490aa834b994bc96e5338c6c289cf9d606c4262b16e0e9b70a",
       "uid": "1e12647333e06b1f30c0f998986ecc19",
       "username": "angeloanan"
     },
+    "merkle_root": {
+      "ctime": 1620493838,
+      "hash": "118b4845035f858902a47482864c7b00d6dc98c2cea4cc56970c13fe86d5a2cb0295af22484c1f16a2b6f79272dc2f2651fc87b7a9c281d1809155779e028e69",
+      "hash_meta": "008721a3b7d7b90e47141780fa2167924f0816550d52e328b0146122f5c1f493",
+      "seqno": 19877495
+    },
     "service": {
+      "entropy": "g+O2gOSzXlpgF7CmjGioUJlL",
       "hostname": "angeloanan.xyz",
       "protocol": "https:"
     },
     "type": "web_service_binding",
-    "version": 1
+    "version": 2
   },
-  "ctime": 1579893760,
-  "expire_in": 157680000,
-  "prev": "f9ab6971dd6945bcd6bde500a32f11aed441c294831e64bbaf524070e3230fd8",
-  "seqno": 59,
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.0"
+  },
+  "ctime": 1620493887,
+  "expire_in": 504576000,
+  "prev": "9452d605200adf1c2500776331f2f0d40427cf77a759c53b78c0bbb94149081a",
+  "seqno": 93,
   "tag": "signature"
 }
 
 which yields the signature:
 
------BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.1.3
-Comment: https://keybase.io/crypto
-
-yMNAAnicrVJ/TFVlGL78uCq3Ad5KUNCEYyvEC57v/D6Xmi0kRaGVSsSCez0/vsM9
-gude7j3gvVyoHKGWG0NIUIRgJpsu0jUGI4QGyIAlxpbOtXKgRZAgKUwhbFw6l9Vf
-9WffP9++532e53ved29/aJDOEDC8W1+xYfgyDLjeW1+os2zbqfMivF30IGYvkgdX
-LpgvQpdqzZNFxIygAAUUAASPSyQuclDiSVGCEg54FNAS5DABRyFkeIoSaIZhUJqh
-WI4UcAHTyhxP05CjUQ4xIZKs5EKnwykrqmZL8oRAUCQDMB4jeAkyNCHQGEYLAsGg
-JAMBKwgcpEhNaLO7/AotHM+5YKJs1zDtYV2J9x/8/zl34YodgACjCBrHcYhSPJBw
-VEAllmVYhoKCAFg/0QWdCncYamxOazXfzimcgpSaEA0vkgXoH62/l39xEt2eYk3v
-cNpVu2DP12o2VXW4zH6t6nH4yUcgb/3bxsrLiqjNUlMUQadLtiuIGWhMQZX9voCk
-tVQ4TaEmBLodshNaZWUFphhUO/5/YJFmKbEcT7E0EEWKJUheEClehCSKcjgmAcBB
-kSCAgLEEgwNIETzPSSRGoDQKcQxHJZFB/I0VKHbETLJaTi5X83TJuQqnFjohUtrX
-mx2sCzDoVukD/UumM4Ss/Wf1omLCl0tHsBeIG73d69/xntphsuhKrE1ts4XXmJk3
-qs5Hp0UuNkCjbyGRN/WkLh02LtRaVo1btnge/TxU3dFddWXg3Xq5NSSjL+hTBtUv
-eAfWtU3eedgTF715vH5z1e4gVn7/tfa0srq8Z+4YJ1o+xsH8h7seHt/qiGk9YpKb
-mg+++Oemi7qiuHNESfuFjT+M/ZH+7Fk9bjK67ycVN8Z2ZZ9p9DRM5RQbohbVo9N7
-jp39In4s3Tg1VLfx2vxPlWV7Jir3hj0/c6/v1eW57780hzre3u+LKS+//1nnJ1/7
-5ht20MzyN68H3CxFRti9L6FVlZOZIxsaT4+6q9/6tWSJnemKuB1+sO3AYGBE7W8V
-q4vVk9snol8e9T09oEuJSO/3HQ38/KsCd83aYb3lzJPvkqsn0g7dmuwOfq4fG8y1
-jaauyUqus8UPxr4S3mZoiOnQe98bOlY7MPCLLSmqxdb/pOPcBVPJiaupDupWxiaf
-0REQnHxp6vK+zKHS03xdUGtY9/bQ2OkP5sieK5HxoYZO0OTq+jEhZIHIoWbnd/W2
-5X877Pzd8zjnwXhFAt0+vc7rehw4GJlFbCuLq7p5PfvG+oRLd5Wa8y1bm9dcfWQ6
-pC9vzNh5cf/JN8Nqk+5FNBfUzBqZB2VZ+synKe7Ij253qvLx1qWMsbnoxIFFJZbu
-POW9m7wvpabOEpPZmfcXLp28zA==
-=ueds
------END PGP MESSAGE-----
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg5/3R1RHfOGNJCqg0uZS8luUzjGwonPnWBsQmKxbg6bcKp3BheWxvYWTESpcCXcQglFLWBSAK3xwlAHdjMfLw1AQnz3enWcU7eMC7uUFJCBrEIEEaKTDIP672iW6x90OtRJenKb8aqLIltbDCkC8u1OovAgHCo3NpZ8RAQ+NupD8FEK9Ol7Rj4SmtuYzEvz68kXReoEvYw0PXfv7h85TLe/siad5vsCt5KLLpNTvAQdmlbuhkOhx6/GjNA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGp5SvqN9MAzbYmSldtNemvLvUBVQ5PvHVLzcjK5QK+5o3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
