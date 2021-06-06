@@ -23,7 +23,7 @@ const SpotifyTrack: React.FC<SpotifyTrackProps> = ({
       <a>
         <Box my={4} p={2} borderWidth='1px' borderRadius='md'>
           <HStack>
-            <Image src={image} />
+            <Image src={image} boxSize="64px"/>
             <Box>
               <HStack alignContent='center'>
                 <Link fontSize='xl' fontWeight={700} isExternal>
