@@ -283,41 +283,54 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
   )
 }
 
+interface LastFMTrack {
+  name: string
+  artist: { mbid: string }
+  playcount: string
+  mbid: ''
+  url: string
+  image: [{
+    size: 'small'
+  }, {
+    size: 'medium'
+  }, {
+    size: 'large'
+  }]
+}
+
 export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
-  const craftedEnpointURL = `http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=angeloanan&api_key=${encodeURIComponent(
-    process.env.LASTFM_KEY as string
-  )}&format=json`
+  const encodedLastFMToken = encodeURIComponent(process.env.LASTFM_KEY as string)
+  const craftedEnpointURL = `http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=angeloanan&api_key=${encodedLastFMToken}&format=json`
   const fetchData = await (await fetch(craftedEnpointURL)).json()
 
-  const trackList = fetchData.weeklytrackchart.track
-  trackList.length = 5
+  const trackList = fetchData.weeklytrackchart.track as LastFMTrack[]
+  // Limit to 5 index
+  trackList.splice(5);
 
-  const convertedTrackList = await Promise.all([
-    ...trackList.map(async (track: Record<string, any>) => {
-      const trackInfoFetch = await fetch(
-        `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${encodeURIComponent(
-          process.env.LASTFM_KEY as string
-        )}&track=${encodeURIComponent(
-          track.name as string
-        )}&artist=${encodeURIComponent(
-          track.artist['#text'] as string
-        )}&format=json`
-      )
+  const generatedTrackList = await Promise.all(
+    trackList.map(async (track) => {
+      const encodedTrackName = encodeURIComponent(track.name)
+      const encodedArtistName = encodeURIComponent(track.artist['#text'])
+
+      const trackInfoFetch = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${encodedLastFMToken}&track=${encodedTrackName}&artist=${encodedArtistName}&format=json`)
       const { track: trackInfo } = await trackInfoFetch.json()
+
+      let trackImageUrl = trackInfo?.album?.image?.[1]['#text']
+      if (trackImageUrl == null || trackImageUrl === '') trackImageUrl = '/img/unknown-album.webp'
 
       return {
         title: track.name,
         artist: track.artist['#text'],
         image:
-          trackInfo?.album?.image?.[1]['#text'] ?? '/img/unknown-album.webp',
+          trackImageUrl,
         url: track.url
       }
     })
-  ])
+  )
 
   return {
     props: {
-      lastfm: convertedTrackList
+      lastfm: generatedTrackList
     },
     revalidate: 300 // 5 Mins
   }
