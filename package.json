@@ -8,7 +8,7 @@
     "@fontsource/jetbrains-mono": "^4.4.5",
     "@sentry/nextjs": "^6.3.5",
     "@types/google.analytics": "^0.0.41",
-    "eslint": "^7.28.0",
+    "eslint": "^7.29.0",
     "framer-motion": "^4.1.17",
     "globby": "^11.0.1",
     "next": "11",
