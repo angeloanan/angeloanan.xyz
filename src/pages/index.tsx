@@ -6,12 +6,13 @@ import { TextHeading, TextParagraph } from '../components/typography'
 import { NextSeo } from 'next-seo'
 import { ProjectEntry } from '../components/ui/project'
 import Image from 'next/image'
+import AngeloProfilePic from '../../public/pfp.png'
 import projectList from '../_data/projects.json'
 
 const AngeloAvatar: React.FC = props => {
   return (
     <HStack {...props} aria-hidden>
-      <Image src='/pfp.png' alt="Christopher Angelo's Potrait Photo" width="32px" height="32px"/>
+      <Image placeholder="blur" src={AngeloProfilePic} alt="Christopher Angelo's Potrait Photo" width="32px" height="32px"/>
       <Text
         fontWeight={300}
         fontFamily="text.secondary"
