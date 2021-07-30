@@ -17,28 +17,24 @@ interface ProjectCardProps {
 export const ProjectEntry: React.FC<ProjectCardProps> = props => {
   return (
     <Link href={props.url} passHref>
-      <a>
-        <Box p={6} h='inherit' w='full' borderWidth='1px' borderRadius={4}>
-          <HStack>
-            <Box mr={4}>
-              <Image
-                height={64}
-                width={64}
-                src={props.imageUrl}
-                alt={`${props.name}'s Logo`}
-              />
-            </Box>
-            <Flex w='full' direction='column'>
-              <TextHeading as='h3' m={0}>
-                {props.name}
-              </TextHeading>
-              <TextParagraph m={0} color='gray.200'>
-                {props.shortDescription}
-              </TextParagraph>
-            </Flex>
-          </HStack>
+      <HStack as="a" p={6} h='inherit' w='full' borderWidth='1px' borderRadius={6} borderColor="gray.600">
+        <Box mr={4}>
+          <Image
+            height={64}
+            width={64}
+            src={props.imageUrl}
+            alt={`${props.name}'s Logo`}
+          />
         </Box>
-      </a>
+        <Flex w='full' direction='column'>
+          <TextHeading as='h3' m={0}>
+            {props.name}
+          </TextHeading>
+          <TextParagraph>
+            {props.shortDescription}
+          </TextParagraph>
+          </Flex>
+      </HStack>
     </Link>
   )
 }

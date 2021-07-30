@@ -3,29 +3,29 @@ import '@fontsource/inter/variable-full.css' // Contains ONLY variable weights a
 
 import * as React from 'react'
 
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
 
 import { AppFooter } from '../components/app-footer'
 import AppHeader from '../components/app-header'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import { DefaultSeo } from 'next-seo'
 import Navbar from '../components/navbar'
-import SEO from '../next-seo.config'
 import theme from '../theme'
+import SEO from '../next-seo.config'
 
 const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <DefaultSeo
         {...SEO}
-        // dangerouslySetAllPagesToNoIndex={true}
-        // dangerouslySetAllPagesToNoFollow={true}
       />
-      <ChakraProvider theme={extendTheme(theme)}>
+      <ChakraProvider theme={theme}>
         <AppHeader />
         <Navbar />
 
-        <Component {...pageProps} />
+        <Flex px={8} maxW='2xl' mx='auto' flexDir='column'as='main'>
+          <Component {...pageProps} />
+        </Flex>
 
         <AppFooter />
       </ChakraProvider>

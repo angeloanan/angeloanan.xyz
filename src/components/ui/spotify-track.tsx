@@ -1,8 +1,9 @@
 import * as React from 'react'
 
-import { Box, HStack, Image, Link, Text } from '@chakra-ui/react'
+import { Box, HStack, Link as ChakraLink, Text } from '@chakra-ui/react'
 
 import { ExternalLinkIcon } from '@chakra-ui/icons'
+import Image from 'next/image'
 import NextLink from 'next/link'
 
 interface SpotifyTrackProps {
@@ -20,23 +21,19 @@ const SpotifyTrack: React.FC<SpotifyTrackProps> = ({
 }) => {
   return (
     <NextLink href={url} passHref>
-      <a>
-        <Box my={4} p={2} borderWidth='1px' borderRadius='md'>
-          <HStack>
-            <Image src={image} boxSize="64px"/>
-            <Box>
-              <HStack alignContent='center'>
-                <Link fontSize='xl' fontWeight={700} isExternal>
-                  {title} <ExternalLinkIcon mx='2px' />
-                </Link>
-              </HStack>
-              <Text fontSize='sm' fontWeight={200}>
-                {artist}
-              </Text>
-            </Box>
-          </HStack>
+      <HStack as="a" my={4} p={4} borderWidth='1px' borderRadius='8' borderColor="gray.600">
+        <Box mr={4}>
+          <Image src={image} alt={`Album art for ${title} by ${artist}`} height={64} width={64} layout='fixed'/>
         </Box>
-      </a>
+        <Box>
+          <ChakraLink fontSize='2xl' fontWeight={600} isExternal>
+            {title} <ExternalLinkIcon mx='2px' />
+          </ChakraLink>
+          <Text fontSize='sm' fontWeight={200}>
+            {artist}
+          </Text>
+        </Box>
+      </HStack>
     </NextLink>
   )
 }

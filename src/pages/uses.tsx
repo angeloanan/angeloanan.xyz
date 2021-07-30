@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react'
 import { TextHeading, TextParagraph } from '../components/typography'
 
-import ContentSpacer from '../components/ui/content-spacer'
 import { FiPlus } from 'react-icons/fi'
 import { NextSeo } from 'next-seo'
 
@@ -18,11 +17,10 @@ const UsesPage: React.FC = () => {
   return (
     <>
       <NextSeo title='/uses' />
-      <ContentSpacer as='article'>
         <Box as='header'>
           <TextHeading as='h1'>Things That Angelo Uses</TextHeading>
           <TextParagraph>
-            Here is a list on the things I've used currently
+            Here is a list on the things I&apos;ve used currently
           </TextParagraph>
         </Box>
 
@@ -36,7 +34,7 @@ const UsesPage: React.FC = () => {
                 <ListItem>AMD Ryzen 7 3700X</ListItem>
                 <ListItem>MSI GeForce GTX 1660 Ventus XS 6</ListItem>
                 <ListItem>KLEVV BOLT X DDR4 (32GB)</ListItem>
-                <ListItem>LG 22MK430 (22")</ListItem>
+                <ListItem>LG 22MK430 (22&quot;)</ListItem>
                 <ListItem>Keychron v2 Blue Mechanical Keyboard</ListItem>
                 <ListItem>Glorious Model O Matte Black</ListItem>
               </UnorderedList>
@@ -45,7 +43,7 @@ const UsesPage: React.FC = () => {
             <Box as='section' mt={4}>
               <TextHeading as='h3'>Secondary Setup (Laptop)</TextHeading>
               <UnorderedList>
-                <ListItem>Lenovo Ideapad 310 (15" 2015)</ListItem>
+                <ListItem>Lenovo Ideapad 310 (15&quot; 2015)</ListItem>
                 <List>
                   <ListItem>
                     <ListIcon as={FiPlus} />
@@ -96,7 +94,6 @@ const UsesPage: React.FC = () => {
             </Box>
           </Box>
         </Box>
-      </ContentSpacer>
     </>
   )
 }

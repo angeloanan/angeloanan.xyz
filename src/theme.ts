@@ -1,21 +1,40 @@
+import type { ThemeExtension, ThemeOverride } from '@chakra-ui/react'
+import { theme, extendTheme } from '@chakra-ui/react'
+
 const systemFonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
 
-const theme = {
+  const themeExtension: ThemeExtension | ThemeOverride = {
+  styles: {
+    global: {
+      body: {
+        bg: '#121212',
+        color: theme.colors.white,
+        minHeight: '100vh',
+        textRendering: 'optimizeLegibility',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale'
+      }
+    }
+  },
+
   colors: {
-    white: '#ffffff',
-    black: '#000000',
-    gray: {
-      50: '#e7e7e8',
-      100: '#cfcfd1',
-      200: '#b8b8ba',
-      300: '#a1a1a5',
-      400: '#8b8b8f',
-      500: '#76757a',
-      600: '#616166',
-      700: '#4d4d53',
-      800: '#393940',
-      900: '#27272e'
+    accent: theme.colors.yellow,
+    contrast: {
+      50: '#e7f3fe',
+      100: '#b6dcfc',
+      200: '#85c2f9',
+      300: '#55a5f7',
+      400: '#2488f5',
+      500: '#0070f3',
+      600: '#0050b6',
+      700: '#003986',
+      800: '#002255',
+      900: '#000e25'
+    },
+    text: {
+      primary: theme.colors.white,
+      secondary: theme.colors.gray[300]
     },
     red: {
       50: '#fde7e7',
@@ -41,6 +60,7 @@ const theme = {
       800: '#4c320a',
       900: '#211604'
     },
+    spotify: '#1DB954',
     green: {
       50: '#ebfaf6',
       100: '#c2f0e4',
@@ -64,18 +84,6 @@ const theme = {
       700: '#008668',
       800: '#005641',
       900: '#00251c'
-    },
-    blue: {
-      50: '#e7f3fe',
-      100: '#b6dcfc',
-      200: '#85c2f9',
-      300: '#55a5f7',
-      400: '#2488f5',
-      500: '#0070f3',
-      600: '#0050b6',
-      700: '#003986',
-      800: '#002255',
-      900: '#000e25'
     },
     ultramarine: {
       50: '#eaeefa',
@@ -115,19 +123,6 @@ const theme = {
     }
   },
 
-  styles: {
-    global: {
-      body: {
-        bg: '#121212',
-        color: 'white',
-        minHeight: '100vh',
-        textRendering: 'optimizeLegibility',
-        WebkitFontSmoothing: 'antialiased',
-        MozOsxFontSmoothing: 'grayscale'
-      }
-    }
-  },
-
   components: {
     Heading: {
       baseStyle: {
@@ -136,7 +131,7 @@ const theme = {
     },
     Text: {
       baseStyle: {
-        fontWeight: 300
+        fontWeight: 300,
       }
     }
   },
@@ -149,4 +144,6 @@ const theme = {
   }
 }
 
-export default theme
+const customTheme = extendTheme(themeExtension)
+
+export default customTheme

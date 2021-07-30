@@ -12,7 +12,6 @@ import {
 } from '@chakra-ui/react'
 import { TextHeading, TextParagraph } from '../components/typography'
 
-import ContentSpacer from '../components/ui/content-spacer'
 import { ListItemWithLink } from '../components/typography/ListItemWithProps'
 import { NextSeo } from 'next-seo'
 
@@ -29,7 +28,7 @@ const ContactsListItem: React.FC<ContactsListItemProps> = ({
 }) => {
   return (
     <ListItemWithLink url={url}>
-      <Text color='blue.200' as='span'>
+      <Text color='contrast.200' as='span'>
         {platform}
       </Text>{' '}
       &mdash; {description}
@@ -44,12 +43,11 @@ const ContactsPage: React.FC = () => {
   return (
     <>
       <NextSeo title='Contact Me' />
-      <ContentSpacer>
         <Box as='article'>
           <Box as='header'>
-            <TextHeading as='h1'>Let's talk!</TextHeading>
+            <TextHeading as='h1'>Let&apos;s talk!</TextHeading>
             <TextParagraph>
-              Whew, wanna talk about something with me? Let's get in touch!
+              Whew, wanna talk about something with me? Let&apos;s get in touch!
             </TextParagraph>
             <UnorderedList mt={2}>
               <ContactsListItem
@@ -101,13 +99,12 @@ const ContactsPage: React.FC = () => {
               placement='top'
               closeDelay={500}
             >
-              <Code colorScheme='yellow' onClick={onCopy}>
+              <Code color="yellow.200" backgroundColor="yellow.900" type="outline" onClick={onCopy}>
                 {email}
               </Code>
             </Tooltip>
           </Box>
         </Box>
-      </ContentSpacer>
     </>
   )
 }

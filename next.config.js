@@ -7,6 +7,7 @@ module.exports = {
     // a non-locale prefixed path e.g. `/hello`
     defaultLocale: 'en-US'
   },
+
   webpack: (config, { isServer }) => {
     if (isServer) {
       require('./scripts/generate-sitemap')()
@@ -14,6 +15,7 @@ module.exports = {
 
     return config
   },
+
   async headers () {
     return [
       {
@@ -34,5 +36,9 @@ module.exports = {
         ]
       }
     ]
+  },
+
+  images: {
+    domains: ['lastfm.freetls.fastly.net']
   }
 }

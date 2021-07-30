@@ -4,30 +4,79 @@ import {
   Avatar,
   Box,
   HStack,
-  Link,
+  Link as ChakraLink,
   ListItem,
   SimpleGrid,
   Skeleton,
-  Text,
   UnorderedList
 } from '@chakra-ui/react'
 import { TextHeading, TextParagraph } from '../components/typography'
 
-import ContentSpacer from '../components/ui/content-spacer'
 import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
 import { RepositoryStargazers } from '../types/github'
 import useSWR from 'swr'
 
+interface StargazerEntryProps {
+  repoName: string
+}
+
+const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
+  const { data, error } = useSWR<RepositoryStargazers[], Error>(
+    `https://api.github.com/repos/angeloanan/${repoName}/stargazers`,
+    { refreshInterval: 60 * 1000, errorRetryCount: 2 }
+  )
+
+  if (error != null) {
+    console.error(error)
+    return (
+      <TextParagraph as='em' mt={4}>
+        Whoops, an error has occured. Seems like you have achieved the maximum
+        number api requests 😔
+      </TextParagraph>
+    )
+  }
+  
+  if (data == null) {
+    return (
+      <SimpleGrid columns={3} spacing={3} mt={2}>
+        {[...Array(9)].map((_, i) => (
+          <Skeleton key={i} height={8} />
+        ))}
+      </SimpleGrid>
+    )
+  }
+
+  return (
+    <SimpleGrid columns={3} spacing={3}>
+      {data
+        .filter(user => user.login !== 'angeloanan')
+        .map(user => {
+          return (
+            <NextLink href={user.login} key={user.login}>
+              <a>
+                <HStack>
+                  <Avatar src={user.avatar_url} name={user.login} size='sm' />
+                  <ChakraLink isTruncated opacity={0.7} flex={1}>
+                    {user.login}
+                  </ChakraLink>
+                </HStack>
+              </a>
+            </NextLink>
+          )
+        })}
+    </SimpleGrid>
+  )
+}
+
 const StarsPage: React.FC = () => {
   return (
     <>
       <NextSeo title='Stars' />
-      <ContentSpacer as='article'>
         <Box as='header'>
           <TextHeading as='h1'>Stargazers 🌟</TextHeading>
           <TextParagraph>
-            Thanks for everyone who's been supporting and starring my projects!
+            Thanks for everyone who&apos;s been supporting and starring my projects!
           </TextParagraph>
         </Box>
 
@@ -36,12 +85,12 @@ const StarsPage: React.FC = () => {
         <UnorderedList mt={4}>
           <ListItem>
             <NextLink href='https://github.com/angeloanan' passHref>
-              <Link>GitHub (@angeloanan)</Link>
+              <ChakraLink>GitHub (@angeloanan)</ChakraLink>
             </NextLink>
           </ListItem>
           <ListItem>
             <NextLink href='https://gitlab.com/angeloanan' passHref>
-              <Link>GitLab (@angeloanan)</Link>
+              <ChakraLink>GitLab (@angeloanan)</ChakraLink>
             </NextLink>
           </ListItem>
         </UnorderedList>
@@ -67,59 +116,8 @@ const StarsPage: React.FC = () => {
           This website
         </TextHeading>
         <StargazerEntry repoName='angeloanan.xyz' />
-      </ContentSpacer>
     </>
   )
-}
-
-interface StargazerEntryProps {
-  repoName: string
-}
-
-const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
-  const { data, error } = useSWR<RepositoryStargazers[], Error>(
-    `https://api.github.com/repos/angeloanan/${repoName}/stargazers`,
-    { refreshInterval: 60 * 1000, errorRetryCount: 2 }
-  )
-
-  if (error != null) {
-    console.error(error)
-    return (
-      <TextParagraph as='em' mt={4}>
-        Whoops, an error has occured. Seems like you have achieved the maximum
-        number api requests.
-      </TextParagraph>
-    )
-  } else if (data == null) {
-    return (
-      <>
-        <SimpleGrid columns={3} spacing={2} mt={2}>
-          {[...Array(9)].map((_, i) => (
-            <Skeleton key={i} height={8} />
-          ))}
-        </SimpleGrid>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <SimpleGrid columns={3} spacing={2}>
-          {data
-            .filter(user => user.login !== 'angeloanan')
-            .map(user => {
-              return (
-                <HStack key={user.login}>
-                  <Avatar src={user.avatar_url} name={user.login} size='sm' />
-                  <Text isTruncated opacity={0.7} flex={1}>
-                    {user.login}
-                  </Text>
-                </HStack>
-              )
-            })}
-        </SimpleGrid>
-      </>
-    )
-  }
 }
 
 export default StarsPage

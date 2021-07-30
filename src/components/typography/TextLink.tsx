@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import { Link, LinkProps } from '@chakra-ui/react'
+import type { LinkProps } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 
 export const TextLink: React.FC<NextLinkProps & LinkProps> = ({
@@ -22,7 +23,7 @@ export const TextLink: React.FC<NextLinkProps & LinkProps> = ({
       prefetch={prefetch}
       locale={locale}
     >
-      <Link fontWeight={500} color='yellow.200' {...rest}></Link>
+      <Link fontWeight={500} color='accent.200' {...rest}></Link>
     </NextLink>
   )
 }

@@ -12,25 +12,25 @@ const SocialMediaSection: React.FC = () => {
       <NextLink href='https://github.com/angeloanan' passHref>
         <a>
           <VisuallyHidden>GitHub</VisuallyHidden>
-          <Icon as={FiGithub} opacity={0.7} w={5} h={5} />
+          <Icon as={FiGithub} boxSize={5} />
         </a>
       </NextLink>
       <NextLink href='https://twitter.com/UwUngelo' passHref>
         <a>
           <VisuallyHidden>Twitter</VisuallyHidden>
-          <Icon as={FiTwitter} opacity={0.7} w={5} h={5} />
+          <Icon as={FiTwitter} boxSize={5} />
         </a>
       </NextLink>
       <NextLink href='https://linkedin.com/in/angeloanan' passHref>
         <a>
           <VisuallyHidden>Linkedin</VisuallyHidden>
-          <Icon as={FiLinkedin} opacity={0.7} w={5} h={5} />
+          <Icon as={FiLinkedin} boxSize={5} />
         </a>
       </NextLink>
       <NextLink href='mailto:angelo@angeloanan.xyz' passHref>
         <a>
           <VisuallyHidden>Email</VisuallyHidden>
-          <Icon as={FiMail} opacity={0.7} w={5} h={5} />
+          <Icon as={FiMail} boxSize={5} />
         </a>
       </NextLink>
     </HStack>
@@ -39,12 +39,12 @@ const SocialMediaSection: React.FC = () => {
 
 export const AppFooter: React.FC = () => {
   return (
-    <VStack as='footer' mt={16} mb={8} spacing={4}>
+    <VStack as='footer' color="text.secondary" mt={16} mb={8} spacing={4}>
       <SocialMediaSection />
       <HStack spacing={4} justify='center'>
         {footerLinks.map(link => (
           <NextLink key={link} href={link} passHref>
-            <Link fontSize='sm' opacity={0.7}>
+            <Link fontSize='sm'>
               {link}
             </Link>
           </NextLink>

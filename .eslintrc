@@ -1,3 +1,11 @@
 {
-  "extends": "next"
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "rules": {
+    "no-tabs": ["error", { "allowIndentationTabs": false }],
+    "quotes": [
+      "error", 
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ]
+  }
 }
