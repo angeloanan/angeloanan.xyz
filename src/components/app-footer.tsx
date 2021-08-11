@@ -39,14 +39,12 @@ const SocialMediaSection: React.FC = () => {
 
 export const AppFooter: React.FC = () => {
   return (
-    <VStack as='footer' color="text.secondary" mt={16} mb={8} spacing={4}>
+    <VStack as='footer' color='text.secondary' mt={16} mb={8} spacing={4}>
       <SocialMediaSection />
       <HStack spacing={4} justify='center'>
         {footerLinks.map(link => (
           <NextLink key={link} href={link} passHref>
-            <Link fontSize='sm'>
-              {link}
-            </Link>
+            <Link fontSize='sm'>{link}</Link>
           </NextLink>
         ))}
       </HStack>

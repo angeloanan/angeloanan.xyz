@@ -4,7 +4,7 @@ import { theme, extendTheme } from '@chakra-ui/react'
 const systemFonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
 
-  const themeExtension: ThemeExtension | ThemeOverride = {
+const themeExtension: ThemeExtension | ThemeOverride = {
   styles: {
     global: {
       body: {
@@ -131,7 +131,7 @@ const systemFonts =
     },
     Text: {
       baseStyle: {
-        fontWeight: 300,
+        fontWeight: 300
       }
     }
   },
@@ -139,8 +139,7 @@ const systemFonts =
   fonts: {
     body: `InterVariable, Inter, ${systemFonts}`,
     heading: `InterVariable, Inter, ${systemFonts}`,
-    mono:
-      'Jetbrains Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
+    mono: 'Jetbrains Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
   }
 }
 

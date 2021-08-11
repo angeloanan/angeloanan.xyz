@@ -20,8 +20,8 @@ const NavbarButton: React.FC<NavbarButtonProps> = (
       <Box
         as='a'
         _hover={{ bg: 'accent.800' }}
-        transition="all"
-        transitionDuration="0.1s"
+        transition='all'
+        transitionDuration='0.1s'
         p={4}
         aria-label={props.title}
       >

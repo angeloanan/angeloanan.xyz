@@ -16,14 +16,12 @@ import SEO from '../next-seo.config'
 const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <DefaultSeo
-        {...SEO}
-      />
+      <DefaultSeo {...SEO} />
       <ChakraProvider theme={theme}>
         <AppHeader />
         <Navbar />
 
-        <Flex px={8} maxW='2xl' mx='auto' flexDir='column'as='main'>
+        <Flex px={8} maxW='2xl' mx='auto' flexDir='column' as='main'>
           <Component {...pageProps} />
         </Flex>
 

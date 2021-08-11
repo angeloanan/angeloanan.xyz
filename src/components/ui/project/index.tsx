@@ -17,7 +17,15 @@ interface ProjectCardProps {
 export const ProjectEntry: React.FC<ProjectCardProps> = props => {
   return (
     <Link href={props.url} passHref>
-      <HStack as="a" p={6} h='inherit' w='full' borderWidth='1px' borderRadius={6} borderColor="gray.600">
+      <HStack
+        as='a'
+        p={6}
+        h='inherit'
+        w='full'
+        borderWidth='1px'
+        borderRadius={6}
+        borderColor='gray.600'
+      >
         <Box mr={4}>
           <Image
             height={64}
@@ -30,10 +38,8 @@ export const ProjectEntry: React.FC<ProjectCardProps> = props => {
           <TextHeading as='h3' m={0}>
             {props.name}
           </TextHeading>
-          <TextParagraph>
-            {props.shortDescription}
-          </TextParagraph>
-          </Flex>
+          <TextParagraph>{props.shortDescription}</TextParagraph>
+        </Flex>
       </HStack>
     </Link>
   )

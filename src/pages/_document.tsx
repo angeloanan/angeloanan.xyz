@@ -12,13 +12,13 @@ import NextDocument, {
 import { ColorModeScript } from '@chakra-ui/react'
 
 export default class Document extends NextDocument {
-  static async getInitialProps (
+  static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
     return await NextDocument.getInitialProps(ctx)
   }
 
-  render (): JSX.Element {
+  render(): JSX.Element {
     return (
       <Html>
         <Head>

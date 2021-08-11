@@ -36,7 +36,7 @@ const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
       </TextParagraph>
     )
   }
-  
+
   if (data == null) {
     return (
       <SimpleGrid columns={3} spacing={3} mt={2}>
@@ -73,49 +73,50 @@ const StarsPage: React.FC = () => {
   return (
     <>
       <NextSeo title='Stars' />
-        <Box as='header'>
-          <TextHeading as='h1'>Stargazers 🌟</TextHeading>
-          <TextParagraph>
-            Thanks for everyone who&apos;s been supporting and starring my projects!
-          </TextParagraph>
-        </Box>
-
-        <TextParagraph>You can see my public projects here</TextParagraph>
-
-        <UnorderedList mt={4}>
-          <ListItem>
-            <NextLink href='https://github.com/angeloanan' passHref>
-              <ChakraLink>GitHub (@angeloanan)</ChakraLink>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href='https://gitlab.com/angeloanan' passHref>
-              <ChakraLink>GitLab (@angeloanan)</ChakraLink>
-            </NextLink>
-          </ListItem>
-        </UnorderedList>
-
-        <TextHeading as='h2' mt={8}>
-          Top GitHub Repository
-        </TextHeading>
+      <Box as='header'>
+        <TextHeading as='h1'>Stargazers 🌟</TextHeading>
         <TextParagraph>
-          Below are stargazers from my top GitHub OSS projects. You guys rocks!
+          Thanks for everyone who&apos;s been supporting and starring my
+          projects!
         </TextParagraph>
+      </Box>
 
-        <TextHeading as='h3' mt={8}>
-          MPC-HC Discord Rich Presence
-        </TextHeading>
-        <StargazerEntry repoName='MPC-DiscordRPC' />
+      <TextParagraph>You can see my public projects here</TextParagraph>
 
-        <TextHeading as='h3' mt={8}>
-          Lyrics Finder
-        </TextHeading>
-        <StargazerEntry repoName='lyrics-finder' />
+      <UnorderedList mt={4}>
+        <ListItem>
+          <NextLink href='https://github.com/angeloanan' passHref>
+            <ChakraLink>GitHub (@angeloanan)</ChakraLink>
+          </NextLink>
+        </ListItem>
+        <ListItem>
+          <NextLink href='https://gitlab.com/angeloanan' passHref>
+            <ChakraLink>GitLab (@angeloanan)</ChakraLink>
+          </NextLink>
+        </ListItem>
+      </UnorderedList>
 
-        <TextHeading as='h3' mt={8}>
-          This website
-        </TextHeading>
-        <StargazerEntry repoName='angeloanan.xyz' />
+      <TextHeading as='h2' mt={8}>
+        Top GitHub Repository
+      </TextHeading>
+      <TextParagraph>
+        Below are stargazers from my top GitHub OSS projects. You guys rocks!
+      </TextParagraph>
+
+      <TextHeading as='h3' mt={8}>
+        MPC-HC Discord Rich Presence
+      </TextHeading>
+      <StargazerEntry repoName='MPC-DiscordRPC' />
+
+      <TextHeading as='h3' mt={8}>
+        Lyrics Finder
+      </TextHeading>
+      <StargazerEntry repoName='lyrics-finder' />
+
+      <TextHeading as='h3' mt={8}>
+        This website
+      </TextHeading>
+      <StargazerEntry repoName='angeloanan.xyz' />
     </>
   )
 }

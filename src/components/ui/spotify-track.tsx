@@ -21,9 +21,22 @@ const SpotifyTrack: React.FC<SpotifyTrackProps> = ({
 }) => {
   return (
     <NextLink href={url} passHref>
-      <HStack as="a" my={4} p={4} borderWidth='1px' borderRadius='8' borderColor="gray.600">
+      <HStack
+        as='a'
+        my={4}
+        p={4}
+        borderWidth='1px'
+        borderRadius='8'
+        borderColor='gray.600'
+      >
         <Box mr={4}>
-          <Image src={image} alt={`Album art for ${title} by ${artist}`} height={64} width={64} layout='fixed'/>
+          <Image
+            src={image}
+            alt={`Album art for ${title} by ${artist}`}
+            height={64}
+            width={64}
+            layout='fixed'
+          />
         </Box>
         <Box>
           <ChakraLink fontSize='2xl' fontWeight={600} isExternal>

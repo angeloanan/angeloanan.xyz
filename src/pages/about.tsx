@@ -53,7 +53,7 @@ import {
   Vultr as SiVultr,
   Windows as SiWindows,
   Vercel as SiZeit,
-  Upcloud as SiUpcloud,
+  Upcloud as SiUpcloud
 } from '@icons-pack/react-simple-icons'
 import { TextHeading, TextLink, TextParagraph } from '../components/typography'
 
@@ -96,14 +96,14 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
       <TextHeading as='h1'>About Me</TextHeading>
       <TextParagraph>
         Hi, I&apos;m Christopher Angelo - A full-stack web developer based in
-        Bekasi, Indonesia; Currently studying for my bachelors degree in IT at
-        {' '}<TextLink href='https://binus.ac.id'>Binus University</TextLink>{' '}
-        while doing remote web dev work on a Canadian startup.
+        Bekasi, Indonesia; Currently studying for my bachelors degree in IT at{' '}
+        <TextLink href='https://binus.ac.id'>Binus University</TextLink> while
+        doing remote web dev work on a Canadian startup.
       </TextParagraph>
 
       <TextParagraph pt={4}>
-        I&apos;ve self taught myself to code out of curiosity when I was 13 years
-        old (HTML and CSS). I then ventured out to learn backend stuff and
+        I&apos;ve self taught myself to code out of curiosity when I was 13
+        years old (HTML and CSS). I then ventured out to learn backend stuff and
         built{' '}
         <TextLink href='https://lyrics-finder.angeloanan.xyz/about'>
           Lyrics Finder
@@ -112,26 +112,25 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
         went popular due to the already existing music bots did not have a
         reliable lyrics searching function. After understanding backend, I
         continued my journey to learn new languages, contribute to open source
-        projects, participating in community moderation and ultimately,
-        creating my own things.
+        projects, participating in community moderation and ultimately, creating
+        my own things.
       </TextParagraph>
 
       <TextParagraph pt={4}>
         I joined{' '}
         <TextLink href='https://kawalcovid19.id'>KawalCOVID-19</TextLink>, a
         volunteer effort to serve accurate and reliable information about the
-        COVID-19 pandemic in Indonesia, and helped their content team to
-        manage and communicate with our developers. I am also a co-founder of{' '}
+        COVID-19 pandemic in Indonesia, and helped their content team to manage
+        and communicate with our developers. I am also a co-founder of{' '}
         <TextLink href='https://feid.dev'>Frontend Indonesia</TextLink>, an
-        Indonesian community of frontend developers which attempts to unify
-        the separated and clustered Indonesian community into a one big
-        community.
+        Indonesian community of frontend developers which attempts to unify the
+        separated and clustered Indonesian community into a one big community.
       </TextParagraph>
 
       <TextParagraph pt={4}>
         I want to learn everything that&apos;s connected to technology. To this
-        day, I&apos;m still learning a lot of things daily while balancing between
-        university and work.
+        day, I&apos;m still learning a lot of things daily while balancing
+        between university and work.
       </TextParagraph>
 
       <TextParagraph pt={4}>
@@ -163,10 +162,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
           <HoverIcon label='C (Competitive programming)' icon={SiC} />
           <HoverIcon label='Rust (Learning)' icon={SiRust} />
           <HoverIcon label='Java (Basic programming)' icon={SiJava} />
-          <HoverIcon
-            label='LaTeX (Katex, Technical Writing)'
-            icon={SiLatex}
-          />
+          <HoverIcon label='LaTeX (Katex, Technical Writing)' icon={SiLatex} />
         </HStack>
       </Box>
 
@@ -277,12 +273,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
 
       <Box>
         <HStack>
-          <Icon as={SiSpotify} color="spotify" boxSize='10' mr={2}/>
+          <Icon as={SiSpotify} color='spotify' boxSize='10' mr={2} />
           <TextHeading as='h2'>What I&apos;ve been listening</TextHeading>
         </HStack>
         <TextParagraph my={4}>
-          Wondering what&apos;s my music taste like? Here&apos;s my top 5 played music
-          this week!{' '}
+          Wondering what&apos;s my music taste like? Here&apos;s my top 5 played
+          music this week!{' '}
         </TextParagraph>
         {/* TODO: Improve Copywriting */}
 
@@ -308,41 +304,49 @@ interface LastFMTrack {
   playcount: string
   mbid: ''
   url: string
-  image: [{
-    size: 'small'
-  }, {
-    size: 'medium'
-  }, {
-    size: 'large'
-  }]
+  image: [
+    {
+      size: 'small'
+    },
+    {
+      size: 'medium'
+    },
+    {
+      size: 'large'
+    }
+  ]
 }
 
 export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
-  const encodedLastFMToken = encodeURIComponent(process.env.LASTFM_KEY as string)
+  const encodedLastFMToken = encodeURIComponent(
+    process.env.LASTFM_KEY as string
+  )
   const craftedEnpointURL = `http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=angeloanan&api_key=${encodedLastFMToken}&format=json`
 
-  const fetchRequest = await fetch(craftedEnpointURL);
+  const fetchRequest = await fetch(craftedEnpointURL)
   const fetchData = await fetchRequest.json()
 
   const trackList = fetchData.weeklytrackchart.track as LastFMTrack[]
-  trackList.splice(5);
+  trackList.splice(5)
 
   const generatedTrackList = await Promise.all(
-    trackList.map(async (track) => {
+    trackList.map(async track => {
       const encodedTrackName = encodeURIComponent(track.name)
       const encodedArtistName = encodeURIComponent(track.artist['#text'])
 
-      const trackInfoFetch = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${encodedLastFMToken}&track=${encodedTrackName}&artist=${encodedArtistName}&format=json`)
+      const trackInfoFetch = await fetch(
+        `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${encodedLastFMToken}&track=${encodedTrackName}&artist=${encodedArtistName}&format=json`
+      )
       const { track: trackInfo } = await trackInfoFetch.json()
 
       let trackImageUrl = trackInfo?.album?.image?.[1]['#text']
-      if (trackImageUrl == null || trackImageUrl === '') trackImageUrl = '/img/unknown-album.webp'
+      if (trackImageUrl == null || trackImageUrl === '')
+        trackImageUrl = '/img/unknown-album.webp'
 
       return {
         title: track.name,
         artist: track.artist['#text'],
-        image:
-          trackImageUrl,
+        image: trackImageUrl,
         url: track.url
       }
     })
