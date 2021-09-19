@@ -57,7 +57,7 @@ const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
         .filter(user => user.login !== 'angeloanan')
         .map(user => {
           return (
-            <NextLink href={`https://github.com/${user.login}`} key={user.login}>
+            <NextLink href={`https://github.com/${user.login}`} key={user.login} passHref>
               <HStack as="a">
                 <Avatar src={user.avatar_url} name={user.login} size='sm' />
                 <ChakraLink isTruncated opacity={0.7} flex={1}>
