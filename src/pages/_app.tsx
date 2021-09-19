@@ -7,7 +7,7 @@ import { ChakraProvider, Flex } from '@chakra-ui/react'
 
 import { AppFooter } from '../components/app-footer'
 import AppHeader from '../components/app-header'
-import { AppProps } from 'next/dist/next-server/lib/router/router'
+import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 import Navbar from '../components/navbar'
 import theme from '../theme'
