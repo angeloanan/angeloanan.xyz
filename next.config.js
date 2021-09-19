@@ -1,4 +1,11 @@
-module.exports = {
+const withPlugins = require('next-compose-plugins')
+
+const withPreact = require('next-plugin-preact')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
+
+module.exports = withPlugins([withPreact, withBundleAnalyzer], {
   i18n: {
     // These are all the locales you want to support in
     // your application
@@ -16,7 +23,7 @@ module.exports = {
     return config
   },
 
-  async headers () {
+  async headers() {
     return [
       {
         source: '/',
@@ -41,4 +48,4 @@ module.exports = {
   images: {
     domains: ['lastfm.freetls.fastly.net']
   }
-}
+})
