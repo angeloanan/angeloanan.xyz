@@ -8,8 +8,6 @@
     "@fontsource/jetbrains-mono": "^4.5.0",
     "@icons-pack/react-simple-icons": "^4.6.1",
     "@next/bundle-analyzer": "^11.1.2",
-    "@swc/cli": "^0.1.50",
-    "@swc/core": "^1.2.88",
     "critters": "^0.0.10",
     "framer-motion": "^4.1.17",
     "globby": "^11.0.1",
@@ -23,7 +21,6 @@
     "react-dom": "npm:@preact/compat",
     "react-icons": "^4.1.0",
     "react-ssr-prepass": "npm:preact-ssr-prepass",
-    "swc-loader": "^0.1.15",
     "swr": "^1.0.1"
   },
   "scripts": {
