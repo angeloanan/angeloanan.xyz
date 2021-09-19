@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
-import useSWR from 'swr'
+import useSWRImmutable from 'swr/immutable'
 
 import { TextHeading, TextParagraph } from '../components/typography'
 import type { RepositoryStargazers } from '../types/github'
@@ -21,10 +21,12 @@ interface StargazerEntryProps {
   repoName: string
 }
 
+const swrFetcher = url => fetch(url).then(r => r.json())
+
 const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
-  const { data, error } = useSWR<RepositoryStargazers[], Error>(
+  const { data, error } = useSWRImmutable<RepositoryStargazers[], Error>(
     `https://api.github.com/repos/angeloanan/${repoName}/stargazers`,
-    { refreshInterval: 60 * 1000, errorRetryCount: 2 }
+    swrFetcher
   )
 
   if (error != null) {
@@ -46,6 +48,8 @@ const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
       </SimpleGrid>
     )
   }
+
+  console.log(data)
 
   return (
     <SimpleGrid columns={3} spacing={3}>
