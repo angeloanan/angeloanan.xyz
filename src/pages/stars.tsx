@@ -10,12 +10,12 @@ import {
   Skeleton,
   UnorderedList
 } from '@chakra-ui/react'
-import { TextHeading, TextParagraph } from '../components/typography'
-
 import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
-import { RepositoryStargazers } from '../types/github'
 import useSWR from 'swr'
+
+import { TextHeading, TextParagraph } from '../components/typography'
+import type { RepositoryStargazers } from '../types/github'
 
 interface StargazerEntryProps {
   repoName: string
@@ -53,15 +53,13 @@ const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
         .filter(user => user.login !== 'angeloanan')
         .map(user => {
           return (
-            <NextLink href={user.login} key={user.login}>
-              <a>
-                <HStack>
-                  <Avatar src={user.avatar_url} name={user.login} size='sm' />
-                  <ChakraLink isTruncated opacity={0.7} flex={1}>
-                    {user.login}
-                  </ChakraLink>
-                </HStack>
-              </a>
+            <NextLink href={`https://github.com/${user.login}`} key={user.login}>
+              <HStack as="a">
+                <Avatar src={user.avatar_url} name={user.login} size='sm' />
+                <ChakraLink isTruncated opacity={0.7} flex={1}>
+                  {user.login}
+                </ChakraLink>
+              </HStack>
             </NextLink>
           )
         })}
