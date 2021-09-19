@@ -74,6 +74,11 @@ const ContactsPage: React.FC = () => {
         <TextParagraph>Come and find my online presence!</TextParagraph>
         <UnorderedList mt={2}>
           <ContactsListItem
+            platform='Linkedin'
+            description='angeloanan'
+            url='https://www.linkedin.com/in/angeloanan/'
+          />
+          <ContactsListItem
             platform='Twitter'
             description='@UwUngelo'
             url='https://twitter.com/uwungelo'
