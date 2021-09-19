@@ -6,6 +6,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withPlugins([withPreact, withBundleAnalyzer], {
+  reactStrictMode: true,
+  experimental: {
+    swcMinify: true,
+    swcLoader: true,
+    optimizeImages: true,
+    optimizeCss: true,
+    stats: true
+  },
   i18n: {
     // These are all the locales you want to support in
     // your application
