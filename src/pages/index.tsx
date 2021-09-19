@@ -13,7 +13,6 @@ const AngeloAvatar: React.FC = props => {
   return (
     <HStack {...props} aria-hidden>
       <Image
-        placeholder='blur'
         src={AngeloProfilePic}
         alt="Christopher Angelo's Potrait Photo"
         width='32px'
