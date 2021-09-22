@@ -28,7 +28,19 @@ const ListItemWithPrefix = ({ prefix, ...rest }) => (
 const UsesPage: React.FC = () => {
   return (
     <>
-      <NextSeo title='/uses' />
+      <NextSeo
+        title='/uses'
+        openGraph={{
+          title: '/uses - Things that Angelo uses',
+          description: 'These are some things that I have on my desk',
+          images: [
+            {
+              url: 'https://angeloanan.xyz/img/uses_header.webp',
+              alt: "A picture of Angelo's desk"
+            }
+          ]
+        }}
+      />
       <Box as='header'>
         <TextHeading as='h1'>/uses</TextHeading>
         <TextParagraph>
@@ -87,6 +99,9 @@ const UsesPage: React.FC = () => {
             <UnorderedList>
               <ListItemWithPrefix prefix='Screen recorder'>
                 OBS Studio
+              </ListItemWithPrefix>
+              <ListItemWithPrefix prefix='Capture card'>
+                GENKI Shadowcast
               </ListItemWithPrefix>
               <ListItemWithPrefix prefix='DAW'>
                 FL Studio / REAPER
