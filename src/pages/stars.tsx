@@ -23,7 +23,7 @@ interface StargazerEntryProps {
 
 const swrFetcher = url => fetch(url).then(r => r.json())
 
-const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
+const StargazerEntry = ({ repoName }: StargazerEntryProps) => {
   const { data, error } = useSWRImmutable<RepositoryStargazers[], Error>(
     `https://api.github.com/repos/angeloanan/${repoName}/stargazers`,
     swrFetcher
@@ -75,7 +75,7 @@ const StargazerEntry: React.FC<StargazerEntryProps> = ({ repoName }) => {
   )
 }
 
-const StarsPage: React.FC = () => {
+const StarsPage = () => {
   return (
     <>
       <NextSeo title='Stars' />

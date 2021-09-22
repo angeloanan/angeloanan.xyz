@@ -6,7 +6,7 @@ import { HStack, Icon, Link, VStack, VisuallyHidden } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import footerLinks from '../_data/footerLinks.json'
 
-const SocialMediaSection: React.FC = () => {
+const SocialMediaSection = () => {
   return (
     <HStack spacing={4} justify='center'>
       <NextLink href='https://github.com/angeloanan' passHref>
@@ -37,7 +37,7 @@ const SocialMediaSection: React.FC = () => {
   )
 }
 
-export const AppFooter: React.FC = () => {
+export const AppFooter = () => {
   return (
     <VStack as='footer' color='text.secondary' mt={16} mb={8} spacing={4}>
       <SocialMediaSection />

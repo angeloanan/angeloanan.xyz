@@ -69,7 +69,7 @@ interface HoverIconProps {
 /**
  * Helper for creating an icon
  */
-const HoverIcon: React.FC<HoverIconProps> = props => {
+const HoverIcon = (props: HoverIconProps) => {
   return (
     <Tooltip hasArrow placement='top' label={props.label} closeOnClick={false}>
       <span>
@@ -88,7 +88,7 @@ interface AboutPageProps {
   }>
 }
 
-const AboutPage: React.FC<AboutPageProps> = ({ lastfm: topTracks }) => {
+const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
   return (
     <>
       <NextSeo title='About Me' />

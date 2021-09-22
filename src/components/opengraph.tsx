@@ -11,7 +11,7 @@ interface OpenGraphProps {
   img?: string
 }
 
-const OpenGraph: React.FC<OpenGraphProps> = (props: OpenGraphProps) => {
+const OpenGraph = (props: OpenGraphProps) => {
   const currentPath = useRouter().pathname
 
   return (

@@ -7,7 +7,7 @@ import { FiExternalLink } from 'react-icons/fi'
 import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
 
-const ProjectsPage: React.FC = () => {
+const ProjectsPage = () => {
   return (
     <>
       <NextSeo title='Projects' />

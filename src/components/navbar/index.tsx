@@ -10,9 +10,7 @@ interface NavbarButtonProps {
   link: string
 }
 
-const NavbarButton: React.FC<NavbarButtonProps> = (
-  props: NavbarButtonProps
-) => {
+const NavbarButton = (props: NavbarButtonProps) => {
   const isActive = useRouter().pathname === props.link
 
   return (
@@ -39,7 +37,7 @@ const NavbarButton: React.FC<NavbarButtonProps> = (
   )
 }
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   return (
     <Flex as='nav' maxW='4xl' mx='auto' py={16}>
       <Link href='/' passHref>

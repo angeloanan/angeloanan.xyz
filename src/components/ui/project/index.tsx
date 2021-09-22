@@ -14,7 +14,7 @@ interface ProjectCardProps {
   url: string
 }
 
-export const ProjectEntry: React.FC<ProjectCardProps> = props => {
+export const ProjectEntry = (props: ProjectCardProps) => {
   return (
     <Link href={props.url} passHref>
       <HStack

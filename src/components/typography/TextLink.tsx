@@ -4,7 +4,7 @@ import type { LinkProps } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 
-export const TextLink: React.FC<NextLinkProps & LinkProps> = ({
+export const TextLink = ({
   href,
   replace,
   scroll,
@@ -12,7 +12,7 @@ export const TextLink: React.FC<NextLinkProps & LinkProps> = ({
   prefetch,
   locale,
   ...rest
-}) => {
+}: NextLinkProps & LinkProps) => {
   return (
     <NextLink
       href={href}

@@ -21,11 +21,11 @@ interface ContactsListItemProps {
   url: string
 }
 
-const ContactsListItem: React.FC<ContactsListItemProps> = ({
+const ContactsListItem = ({
   platform,
   description,
   url
-}) => {
+}: ContactsListItemProps) => {
   return (
     <ListItemWithLink url={url}>
       <Text color='contrast.200' as='span'>
@@ -36,7 +36,7 @@ const ContactsListItem: React.FC<ContactsListItemProps> = ({
   )
 }
 
-const ContactsPage: React.FC = () => {
+const ContactsPage = () => {
   const email = 'angelo@angeloanan.xyz'
   const { hasCopied, onCopy } = useClipboard(email)
 

@@ -9,7 +9,7 @@ import Image from 'next/image'
 import AngeloProfilePic from '../../public/pfp.png'
 import projectList from '../_data/projects.json'
 
-const AngeloAvatar: React.FC = props => {
+const AngeloAvatar = props => {
   return (
     <HStack {...props} aria-hidden>
       <Image
@@ -32,7 +32,7 @@ const AngeloAvatar: React.FC = props => {
   )
 }
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   return (
     <>
       <NextSeo

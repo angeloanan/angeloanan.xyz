@@ -26,7 +26,7 @@ const resolveFontWeight = (elementName: React.ElementType = 'h1'): number => {
   }
 }
 
-export const TextHeading: React.FC<TextHeadingProps> = props => {
+export const TextHeading = (props: TextHeadingProps) => {
   const fontSize = resolveFontSize(props.asstyle ?? props.as)
   const fontWeight = resolveFontWeight(props.asstyle ?? props.as)
 

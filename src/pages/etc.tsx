@@ -4,7 +4,7 @@ import { TextHeading, TextParagraph } from '../components/typography'
 
 import { NextSeo } from 'next-seo'
 
-const ETCPage: React.FC = () => {
+const ETCPage = () => {
   return (
     <>
       <NextSeo title='Other things' />

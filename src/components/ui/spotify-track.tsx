@@ -13,12 +13,7 @@ interface SpotifyTrackProps {
   url: string
 }
 
-const SpotifyTrack: React.FC<SpotifyTrackProps> = ({
-  title,
-  artist,
-  image,
-  url
-}) => {
+const SpotifyTrack = ({ title, artist, image, url }: SpotifyTrackProps) => {
   return (
     <NextLink href={url} passHref>
       <HStack

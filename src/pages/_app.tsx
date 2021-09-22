@@ -13,7 +13,7 @@ import Navbar from '../components/navbar'
 import theme from '../theme'
 import SEO from '../next-seo.config'
 
-const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <DefaultSeo {...SEO} />

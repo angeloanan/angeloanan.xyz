@@ -7,10 +7,7 @@ interface ListItemWithLinkProps extends ListItemProps {
   url: string
 }
 
-export const ListItemWithLink: React.FC<ListItemWithLinkProps> = ({
-  url,
-  children
-}) => {
+export const ListItemWithLink = ({ url, children }: ListItemWithLinkProps) => {
   return (
     <ListItem>
       <NextLink href={url} passHref>

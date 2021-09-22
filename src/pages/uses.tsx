@@ -107,7 +107,7 @@ const CategoryContent = ({ categoryData }) => (
   </UnorderedList>
 )
 
-const UsesPage: React.FC = () => {
+const UsesPage = () => {
   return (
     <>
       <NextSeo
