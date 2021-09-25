@@ -53,7 +53,7 @@ const ContactsPage = () => {
             <ContactsListItem
               platform='Discord'
               description='Angelo#0420'
-              url='https://discord.com/channels/@me/189769721653100546'
+              url='https://discord.com/users/189769721653100546'
             />
             <ContactsListItem
               platform='Telegram'
