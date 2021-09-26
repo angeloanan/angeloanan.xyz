@@ -44,7 +44,7 @@ const data: UsesData[] = [
         'Capture card': 'GENKI Shadowcast',
         DAW: 'FL Studio, Reaper',
         'Video Processing': 'Adobe Creative Suite',
-        'Other / Messing arount': 'Blender, Mine-imator, MikuMikuDance'
+        'Other / Messing around': 'Blender, Mine-imator, MikuMikuDance'
       },
       'Self-service': {
         'Note-taking': 'Notion',
