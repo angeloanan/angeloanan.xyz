@@ -61,7 +61,7 @@ const data: UsesData[] = [
     content: {
       'PC: Custom Gaming Rig': {
         CPU: 'AMD Ryzen 7 3700X',
-        Motherboard: 'MSI B310 Gaming Plus',
+        Motherboard: 'MSI B450 Gaming Plus MAX',
         RAM: 'KLEVV BOLT X DDR4 (32GB)',
         'Graphics Card': 'NVIDIA GeForce GTX 1660'
       },
