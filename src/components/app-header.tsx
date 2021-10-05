@@ -1,9 +1,11 @@
 import * as React from 'react'
 
 import Head from 'next/head'
+import Script from 'next/script'
 
 const AppHeader = () => {
   return (
+    <>
     <Head>
       <link
         rel='apple-touch-icon'
@@ -24,6 +26,8 @@ const AppHeader = () => {
       />
       <link rel='manifest' href='img/site.webmanifest' />
     </Head>
+      <Script src="https://static.cloudflareinsights.com/beacon.min.js" strategy="afterInteractive" data-cf-beacon='{"token": "cfd267d6703949c983f709fae0f5c5d9"}' />
+      </>
   )
 }
 
