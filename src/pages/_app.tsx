@@ -21,7 +21,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
         <AppHeader />
         <Navbar />
 
-        <Flex px={8} maxW='2xl' mx='auto' flexDir='column' as='main'>
+        <Flex px={[4, 6, 8]} maxW='2xl' mx='auto' flexDir='column' as='main'>
           <Component {...pageProps} />
         </Flex>
 

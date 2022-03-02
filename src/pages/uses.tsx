@@ -14,7 +14,7 @@ import { TextHeading, TextParagraph } from '../components/typography'
 
 import { NextSeo } from 'next-seo'
 
-const ListItemWithPrefix = ({ prefix, ...rest }) => (
+const ListItemWithPrefix = ({ prefix, ...rest }: { prefix: string }) => (
   <ListItem>
     <Text as='i' color='gray.400'>
       {prefix}:
@@ -23,11 +23,13 @@ const ListItemWithPrefix = ({ prefix, ...rest }) => (
   </ListItem>
 )
 
+type UsesDataContent = Record<string, string>
 interface UsesData {
   title: string
   desc: string
-  content: Record<string, Record<string, string>>
+  content: Record<string, UsesDataContent>
 }
+
 const data: UsesData[] = [
   {
     title: 'Software and Services',
@@ -94,7 +96,11 @@ const data: UsesData[] = [
   }
 ]
 
-const CategoryContent = ({ categoryData }) => (
+const CategoryContent = ({
+  categoryData
+}: {
+  categoryData: UsesDataContent
+}) => (
   <UnorderedList>
     {Object.keys(categoryData).map(k => (
       <ListItem key={k}>

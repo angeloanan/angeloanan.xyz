@@ -1,32 +1,22 @@
 const withPlugins = require('next-compose-plugins')
 
-const withPreact = require('next-plugin-preact')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 })
 
-module.exports = withPlugins([withPreact, withBundleAnalyzer], {
+/**
+ * @type {import('next').NextConfig}
+ **/
+ const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
+  optimizeFonts: true,
   experimental: {
-    optimizeImages: true,
-    optimizeCss: true,
-    stats: true
+    reactRoot: true,
   },
   i18n: {
-    // These are all the locales you want to support in
-    // your application
     locales: ['en-US'],
-    // This is the default locale you want to be used when visiting
-    // a non-locale prefixed path e.g. `/hello`
     defaultLocale: 'en-US'
-  },
-
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require('./scripts/generate-sitemap')()
-    }
-
-    return config
   },
 
   async headers() {
@@ -52,6 +42,9 @@ module.exports = withPlugins([withPreact, withBundleAnalyzer], {
   },
 
   images: {
-    domains: ['lastfm.freetls.fastly.net']
+    domains: ['lastfm.freetls.fastly.net'],
+    formats: ['image/avif', 'image/webp'],
   }
-})
+}
+
+module.exports = withPlugins([[withBundleAnalyzer]], nextConfig)

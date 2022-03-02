@@ -21,7 +21,7 @@ interface StargazerEntryProps {
   repoName: string
 }
 
-const swrFetcher = url => fetch(url).then(r => r.json())
+const swrFetcher = (url: string) => fetch(url).then(r => r.json())
 
 const StargazerEntry = ({ repoName }: StargazerEntryProps) => {
   const { data, error } = useSWRImmutable<RepositoryStargazers[], Error>(

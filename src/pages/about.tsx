@@ -53,13 +53,16 @@ import {
   Vultr as SiVultr,
   Windows as SiWindows,
   Vercel as SiZeit,
-  Upcloud as SiUpcloud
+  Upcloud as SiUpcloud,
+  Popos as SiPopos,
+  Spotify
 } from '@icons-pack/react-simple-icons'
 import { TextHeading, TextLink, TextParagraph } from '../components/typography'
 
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import SpotifyTrack from '../components/ui/spotify-track'
+import Listening from '../components/listening.server.tsx.back'
 
 interface HoverIconProps {
   label: string
@@ -79,16 +82,7 @@ const HoverIcon = (props: HoverIconProps) => {
   )
 }
 
-interface AboutPageProps {
-  lastfm: Array<{
-    title: string
-    artist: string
-    image: string
-    url: string
-  }>
-}
-
-const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
+const AboutPage = () => {
   return (
     <>
       <NextSeo title='About Me' />
@@ -102,16 +96,16 @@ const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
       </TextParagraph>
 
       <TextParagraph pt={4}>
-        I&apos;ve self taught myself to code out of curiosity when I was 13
-        years old (HTML and CSS). I then ventured out to learn backend stuff and
-        built{' '}
+        I was curious on how programs are created. When I was 13, I&apos;ve
+        taught myself how to code out of curiosity, starting with basic HTML and
+        CSS. I then ventured out to learn server-side development / backend by
+        learning NodeJS and built{' '}
         <TextLink href='https://lyrics-finder.angeloanan.xyz/about'>
           Lyrics Finder
         </TextLink>
-        , a Discord bot that scrapes lyrics from the Internet. It surprisingly
-        went popular due to the already existing music bots did not have a
-        reliable lyrics searching function. After understanding backend, I
-        continued my journey to learn new languages, contribute to open source
+        , a Discord bot which scrapes lyrics from the Internet. It blew up and
+        surprisingly went popular. After understanding server side development,
+        I continued my journey to learn new languages, contribute to open source
         projects, participating in community moderation and ultimately, creating
         my own things.
       </TextParagraph>
@@ -121,10 +115,11 @@ const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
         <TextLink href='https://kawalcovid19.id'>KawalCOVID-19</TextLink>, a
         volunteer effort to serve accurate and reliable information about the
         COVID-19 pandemic in Indonesia, and helped their content team to manage
-        and communicate with our developers. I am also a co-founder of{' '}
-        <TextLink href='https://feid.dev'>Frontend Indonesia</TextLink>, an
-        Indonesian community of frontend developers which attempts to unify the
-        separated and clustered Indonesian community into a one big community.
+        and communicate with the team&apos;s developers. I am also{' '}
+        <TextLink href='https://feid.dev'>Frontend Indonesia</TextLink>&apos;s
+        co-founder&apos;. Frontend Indonesia is a community of Indonesian
+        frontend developers which attempts to unify the separated and clustered
+        Indonesian community into a one big community.
       </TextParagraph>
 
       <TextParagraph pt={4}>
@@ -161,7 +156,7 @@ const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
           <HoverIcon label='Dart (Flutter)' icon={SiDart} />
           <HoverIcon label='C (Competitive programming)' icon={SiC} />
           <HoverIcon label='Rust (Learning)' icon={SiRust} />
-          <HoverIcon label='Java (Basic programming)' icon={SiJava} />
+          <HoverIcon label='Java' icon={SiJava} />
           <HoverIcon label='LaTeX (Katex, Technical Writing)' icon={SiLatex} />
         </HStack>
       </Box>
@@ -263,6 +258,7 @@ const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
         <HStack spacing={4} flexWrap='wrap'>
           <HoverIcon label='Windows' icon={SiWindows} />
           <HoverIcon label='Linux' icon={SiLinux} />
+          <HoverIcon label='Pop_OS!' icon={SiPopos} />
           <HoverIcon label='Debian' icon={SiDebian} />
           <HoverIcon label='Ubuntu' icon={SiUbuntu} />
           <HoverIcon label='Raspbian' icon={SiRaspberrypi} />
@@ -273,16 +269,15 @@ const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
 
       <Box>
         <HStack>
-          <Icon as={SiSpotify} color='spotify' boxSize='10' mr={2} />
+          <Icon as={Spotify} color='spotify' boxSize='10' mr={2} />
           <TextHeading as='h2'>What I&apos;ve been listening</TextHeading>
         </HStack>
         <TextParagraph my={4}>
           Wondering what&apos;s my music taste like? Here&apos;s my top 5 played
           music this week!{' '}
         </TextParagraph>
-        {/* TODO: Improve Copywriting */}
 
-        {topTracks.map(track => {
+        {topTracks.data?.map(track => {
           return (
             <SpotifyTrack
               key={track.url}
@@ -297,67 +292,4 @@ const AboutPage = ({ lastfm: topTracks }: AboutPageProps) => {
     </>
   )
 }
-
-interface LastFMTrack {
-  name: string
-  artist: { mbid: string }
-  playcount: string
-  mbid: ''
-  url: string
-  image: [
-    {
-      size: 'small'
-    },
-    {
-      size: 'medium'
-    },
-    {
-      size: 'large'
-    }
-  ]
-}
-
-export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
-  const encodedLastFMToken = encodeURIComponent(
-    process.env.LASTFM_KEY as string
-  )
-  const craftedEnpointURL = `http://ws.audioscrobbler.com/2.0/?method=user.getweeklytrackchart&user=angeloanan&api_key=${encodedLastFMToken}&format=json`
-
-  const fetchRequest = await fetch(craftedEnpointURL)
-  const fetchData = await fetchRequest.json()
-
-  const trackList = fetchData.weeklytrackchart.track as LastFMTrack[]
-  trackList.splice(5)
-
-  const generatedTrackList = await Promise.all(
-    trackList.map(async track => {
-      const encodedTrackName = encodeURIComponent(track.name)
-      const encodedArtistName = encodeURIComponent(track.artist['#text'])
-
-      const trackInfoFetch = await fetch(
-        `http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${encodedLastFMToken}&track=${encodedTrackName}&artist=${encodedArtistName}&format=json`
-      )
-      const { track: trackInfo } = await trackInfoFetch.json()
-
-      let trackImageUrl = trackInfo?.album?.image?.[1]['#text']
-      if (trackImageUrl == null || trackImageUrl === '')
-        trackImageUrl = '/img/unknown-album.webp'
-
-      return {
-        title: track.name,
-        artist: track.artist['#text'],
-        image: trackImageUrl,
-        url: track.url
-      }
-    })
-  )
-
-  return {
-    props: {
-      lastfm: generatedTrackList
-    },
-    revalidate: 300 // 5 Mins
-  }
-}
-
 export default AboutPage

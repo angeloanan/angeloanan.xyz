@@ -1,36 +1,12 @@
 import * as React from 'react'
 
-import { Box, HStack, Text, VStack } from '@chakra-ui/react'
+import { Box, VStack } from '@chakra-ui/react'
 import { TextHeading, TextParagraph } from '../components/typography'
 
 import { NextSeo } from 'next-seo'
 import { ProjectEntry } from '../components/ui/project'
-import Image from 'next/image'
-import AngeloProfilePic from '../../public/pfp.png'
 import projectList from '../_data/projects.json'
-
-const AngeloAvatar = props => {
-  return (
-    <HStack {...props} aria-hidden>
-      <Image
-        src={AngeloProfilePic}
-        alt="Christopher Angelo's Potrait Photo"
-        width='32px'
-        height='32px'
-      />
-      <Text
-        fontWeight={300}
-        fontFamily='text.secondary'
-        fontSize='md'
-        letterSpacing={1}
-        as='label'
-        textTransform='uppercase'
-      >
-        @angeloanan
-      </Text>
-    </HStack>
-  )
-}
+import AngeloAvatar from '../components/ui/AngeloAvatar'
 
 const HomePage = () => {
   return (
