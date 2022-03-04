@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.stylized-bg {
+  @apply bg-neutral-100;
+
+  background: radial-gradient(circle at bottom center, #ffb1e165, transparent 60%),
+    radial-gradient(circle at bottom left, #fff5f160, transparent 80%),
+    radial-gradient(circle at right, #ffb09660, transparent 40%), rgb(245 245 245);
+}
+
+.angelo-3d {
+  --gradient-to: #818cf8;
+  --gradient-from: #c026d3;
+  --shadow-color: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-to));
+
+  text-shadow: 1px 1px 0 var(--shadow-color), 2px 2px 0 var(--shadow-color),
+    3px 3px 0 var(--shadow-color), 4px 4px 0 var(--shadow-color), 5px 5px 0 var(--shadow-color),
+    6px 6px 0 var(--shadow-color), 7px 7px 0 var(--shadow-color), 8px 8px 0 var(--shadow-color),
+    9px 9px 0 var(--shadow-color), 10px 10px 0 var(--shadow-color), 11px 11px 0 var(--shadow-color);
+}
