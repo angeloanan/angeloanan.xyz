@@ -8,6 +8,7 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 
+import DefaultSEOConfig from '../../next-seo.config'
 import { MainNav } from '../components/Navbar'
 
 type CustomAppProps = AppProps & {
@@ -21,7 +22,7 @@ function CustomApp({ Component, pageProps }: CustomAppProps) {
     <Component {...pageProps} />
   ) : (
     <>
-      <DefaultSeo />
+      <DefaultSeo {...DefaultSEOConfig} />
       <div className='stylized-bg min-h-screen antialiased selection:bg-fuchsia-200'>
         <MainNav />
         <Component {...pageProps} />
