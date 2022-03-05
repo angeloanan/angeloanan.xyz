@@ -33,7 +33,7 @@
     "@types/react": "^17.0.39",
     "eslint": "7",
     "eslint-config-next": "^12.1.0",
-    "eslint-config-prettier": "^8.4.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-next": "^0.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
