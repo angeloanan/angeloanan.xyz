@@ -4,8 +4,11 @@
  * @type {import('next-seo').NextSeoProps}
  */
 const defaultSEOConfig = {
-  title: 'Christopher Angelo - Full-stack Developer',
-  titleTemplate: '%s | Christopher Angelo - Full-stack Developer',
+  title: 'Christopher Angelo — Full-stack Developer',
+  titleTemplate: '%s | Christopher Angelo — Full-stack Developer',
+
+  description:
+    'A Full-stack Software Engineer and a community leader with a passion for building software that improves the lives of others.',
 
   openGraph: {
     type: 'website',
