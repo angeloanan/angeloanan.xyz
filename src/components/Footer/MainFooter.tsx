@@ -16,7 +16,7 @@ const LinkLi = ({ href, text }: LinkLiProps) => {
 
 export const MainFooter = () => {
   return (
-    <div className='flex w-full flex-col items-center'>
+    <div className='flex w-full flex-col items-center px-8'>
       <footer className='w-full max-w-2xl'>
         <hr className='my-4 mx-auto border-neutral-400' />
 
