@@ -11,8 +11,8 @@ const Masthead = () => (
       Yo, my name is Angelo.
     </h1>
     <p className='pt-4 font-semibold leading-8 tracking-normal text-neutral-600'>
-      I&apos;m a full-stack developer, currently working at an undisclosed startup. This is my
-      personal website &mdash; where you&apos;ll find the highlights on stuff I&apos;m doing.
+      I&apos;m a software engineer currently working at an undisclosed startup. This is my personal
+      website showcasing variety of my latest ventures on stuff I&apos;m doing!
     </p>
 
     <div className='flex'>
