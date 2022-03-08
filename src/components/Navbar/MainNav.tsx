@@ -17,7 +17,7 @@ const MainNav = () => {
   const router = useRouter()
 
   return (
-    <header className='sticky top-0 flex w-full justify-between px-4 backdrop-blur-md sm:px-12'>
+    <header className='sticky top-0 z-20 flex w-full justify-between px-4 backdrop-blur-md sm:px-12'>
       <Link href='/' passHref>
         <a
           className='py-4 font-header text-lg font-extrabold'
