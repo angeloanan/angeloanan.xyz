@@ -9,6 +9,7 @@ import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 
 import DefaultSEOConfig from '../../next-seo.config'
+import { MainFooter } from '../components/Footer'
 import { MainNav } from '../components/Navbar'
 
 type CustomAppProps = AppProps & {
@@ -26,6 +27,7 @@ function CustomApp({ Component, pageProps }: CustomAppProps) {
       <div className='stylized-bg min-h-screen antialiased selection:bg-fuchsia-200'>
         <MainNav />
         <Component {...pageProps} />
+        <MainFooter />
       </div>
     </>
   )

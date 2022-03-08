@@ -31,7 +31,6 @@ const Masthead = () => (
 type ProjectEntryProps = ProjectsDataProps & {
   align: 'left' | 'right'
 }
-
 const ProjectEntry = ({
   title,
   duration,
@@ -75,7 +74,7 @@ const IndexPage = () => {
       <main className='flex w-full flex-col items-center'>
         <Masthead />
 
-        <section className='mt-16 w-full max-w-2xl p-4'>
+        <section className='my-16 mb-4 w-full max-w-2xl p-4'>
           <h2 className='font-header text-4xl font-extrabold tracking-tighter text-neutral-800'>
             Featured Projects
           </h2>
@@ -86,13 +85,6 @@ const IndexPage = () => {
             return <ProjectEntry key={index} {...project} align={align} />
           })}
         </section>
-
-        {/* Body */}
-        {/* <div className='w-full max-w-screen-xl p-4'>
-        <div>
-          <Image src={PFPImage} alt='A portrait image of Angelo' placeholder='blur' />
-        </div>
-      </div> */}
       </main>
     </>
   )
