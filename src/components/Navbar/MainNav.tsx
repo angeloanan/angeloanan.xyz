@@ -17,9 +17,13 @@ const MainNav = () => {
   const router = useRouter()
 
   return (
-    <header className='sticky top-0 flex w-full justify-between px-4 backdrop-blur-xl sm:px-12'>
+    <header className='sticky top-0 flex w-full justify-between px-4 backdrop-blur-md sm:px-12'>
       <Link href='/' passHref>
-        <a className='py-4 font-header text-lg font-extrabold'>
+        <a
+          className='py-4 font-header text-lg font-extrabold'
+          role='navigation'
+          aria-label='Angelo Site - Navigate to homepage'
+        >
           <span className='uppercase tracking-tight text-neutral-800'>Angelo</span>
           <span className='px-0.5'>·</span>
           <span className='uppercase tracking-tight text-fuchsia-500'>Site</span>
@@ -29,7 +33,6 @@ const MainNav = () => {
       <div className='flex select-none'>
         {NavLinks.map(({ href, text }) => {
           const isCurrentPath = router.pathname === href
-          console.log(router.pathname)
 
           return (
             <Link href={href} key={href} passHref>
