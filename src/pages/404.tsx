@@ -17,7 +17,7 @@ const NotFoundPage: NextPage = () => {
       </h1>
 
       <p className='mt-4 text-center text-lg font-semibold tracking-tight text-neutral-600'>
-        The page you were looking for doesn&apos;t exist or were moved.
+        The page you were looking for doesn&apos;t exist or was moved.
       </p>
       <p className='mt-2 text-lg font-light tracking-tight text-neutral-500'>Blåhaj is angry : (</p>
     </main>
