@@ -4,8 +4,8 @@
  * @type {import('next-seo').NextSeoProps}
  */
 const defaultSEOConfig = {
-  defaultTitle: 'Christopher Angelo — Full-stack Developer',
-  titleTemplate: '%s | Christopher Angelo — Full-stack Developer',
+  defaultTitle: 'Christopher Angelo — Software Engineer and Community Manager',
+  titleTemplate: '%s | Christopher Angelo — Software Engineer and Community Manager',
 
   description:
     'A Full-stack Software Engineer and a community leader with a passion for building software that improves the lives of others.',
