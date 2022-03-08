@@ -17,7 +17,7 @@ export const FeaturedProjects: ProjectsDataProps[] = [
   {
     title: 'Discord Punishment Appeals',
     summary:
-      'A work in progress privacy-focused, fully-featured, one-click deploy infraction / punishment appeals website for your Discord community',
+      'A work in progress privacy-focused, feature-packed, one-click deploy system for ban and punishment appeals for your Discord community',
     description: 'A verified Discord bot which searches for lyrics to music through Genius!',
     url: 'https://github.com/angeloanan/discord-punishment-appeal',
 
@@ -27,7 +27,7 @@ export const FeaturedProjects: ProjectsDataProps[] = [
   {
     title: 'Frontend Indonesia',
     summary:
-      'An Indonesian Frontend Web Developer community; The "melting pot" of many Indonesian Frontend Developer community',
+      'An Indoneisan Frontend Web Developer community; The "Melting Pot" of many developer communities within Indonesia',
     description: 'A verified Discord bot which searches for lyrics to music through Genius!',
     url: 'https://feid.dev',
 
@@ -37,7 +37,7 @@ export const FeaturedProjects: ProjectsDataProps[] = [
   {
     title: 'Lyrics Finder',
     summary:
-      'A verified Discord bot which searches for lyrics to a song. The bot is in more than 15K community reaching more than 600,000 users!',
+      'A verified Discord bot which searches and retrieves lyrics for a given song. The bot itself currently sits in over 15,000 communities servicing more than 600K+ users!',
     description: 'A verified Discord bot which searches for lyrics to music through Genius!',
     url: 'https://lyrics-finder.angeloanan.xyz',
 
