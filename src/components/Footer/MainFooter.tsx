@@ -6,9 +6,11 @@ interface LinkLiProps {
 }
 const LinkLi = ({ href, text }: LinkLiProps) => {
   return (
-    <li className='my-2 decoration-fuchsia-500 decoration-wavy decoration-2 underline-offset-2 transition-all hover:text-neutral-800 hover:underline'>
+    <li className='my-2'>
       <Link href={href} passHref>
-        <a>{text}</a>
+        <a className='decoration-fuchsia-500 decoration-wavy decoration-2 underline-offset-2 transition-all hover:text-neutral-800 hover:underline'>
+          {text}
+        </a>
       </Link>
     </li>
   )
@@ -21,16 +23,16 @@ export const MainFooter = () => {
         <hr className='my-4 mx-auto border-neutral-400' />
 
         <div className='my-4 grid grid-cols-3'>
-          <ul className='text font-medium tracking-tight text-neutral-600'>
+          <ul className='font-medium tracking-tight text-neutral-600'>
             <LinkLi href='/' text='Home' />
             <LinkLi href='/about' text='About' />
             <LinkLi href='/works' text='Works' />
           </ul>
-          <ul className='text font-medium tracking-tight text-neutral-600'>
+          <ul className='font-medium tracking-tight text-neutral-600'>
             <LinkLi href='https://github.com/angeloanan' text='GitHub' />
             <LinkLi href='https://twitter.com/UwUngelo' text='Twitter' />
           </ul>
-          <ul className='text font-medium tracking-tight text-neutral-600'>
+          <ul className='font-medium tracking-tight text-neutral-600'>
             <LinkLi href='https://discord.com/users/189769721653100546' text='Discord' />
             <LinkLi href='https://t.me/angeloanan' text='Telegram' />
             <LinkLi href='mailto:angelo@angeloanan.xyz' text='Email' />
