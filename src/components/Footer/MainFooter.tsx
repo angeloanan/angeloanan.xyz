@@ -22,7 +22,7 @@ export const MainFooter = () => {
 
         <div className='my-4 grid grid-cols-3'>
           <ul className='text font-medium tracking-tight text-neutral-600'>
-            <LinkLi href='/home' text='Home' />
+            <LinkLi href='/' text='Home' />
             <LinkLi href='/about' text='About' />
             <LinkLi href='/works' text='Works' />
           </ul>
