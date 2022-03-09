@@ -8,7 +8,7 @@ const NavLinks = [
     text: 'About'
   },
   {
-    href: '/work',
+    href: '/works',
     text: 'Works'
   }
 ]
