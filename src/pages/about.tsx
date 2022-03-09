@@ -1,10 +1,26 @@
-import { Disclosure } from '@headlessui/react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import * as React from 'react'
 
 import PFPImage from '../../public/pfp.png'
+
+const LanguageDisclosure = dynamic(
+  () => import('../components/DynamicDisclosures/LanguageDisclosure')
+)
+const WebDevelopmentDisclosure = dynamic(
+  () => import('../components/DynamicDisclosures/WebDevelopmentDisclosure')
+)
+const InfrastructureDisclosure = dynamic(
+  () => import('../components/DynamicDisclosures/InfrastructureDisclosure')
+)
+const ContentCreationDisclosure = dynamic(
+  () => import('../components/DynamicDisclosures/ContentCreationDisclosure')
+)
+const DevelopmentToolsDisclosure = dynamic(
+  () => import('../components/DynamicDisclosures/DevelopmentToolsDisclosure')
+)
 
 const InlineLink: React.FC<{ href: string }> = ({ href, children }) => (
   <Link href={href}>
@@ -14,17 +30,7 @@ const InlineLink: React.FC<{ href: string }> = ({ href, children }) => (
   </Link>
 )
 
-const KnowledgebaseDisclosure: React.FC<{ title: string }> = ({ title, children }) => (
-  <Disclosure>
-    <Disclosure.Button className='relative z-10 mt-4 flex w-full justify-between rounded-t-lg bg-white px-4 py-2 text-left text-sm font-medium text-fuchsia-600'>
-      {title}
-    </Disclosure.Button>
-
-    <Disclosure.Panel className='rounded-b-lg bg-fuchsia-50 p-4'>{children}</Disclosure.Panel>
-  </Disclosure>
-)
-
-const IndexPage = () => {
+const AboutPage = () => {
   return (
     <>
       <NextSeo title='About Me' />
@@ -101,103 +107,15 @@ const IndexPage = () => {
             management to content creation:
           </p>
 
-          <KnowledgebaseDisclosure title='Languages'>
-            <h3 className='font-header'>Web Development</h3>
-            <ul className='list-inside list-disc'>
-              <li>HTML5 and CSS3</li>
-              <li>Javascript (ES6+) and Typescript</li>
-              <li>NodeJS</li>
-              <li>GraphQL</li>
-            </ul>
-
-            <h3 className='mt-4 font-header'>Systems Language</h3>
-            <ul className='list-inside list-disc'>
-              <li>Rust</li>
-              <li>Java</li>
-              <li>C (Competitive Programming)</li>
-            </ul>
-
-            <h3 className='mt-4 font-header'>Others</h3>
-            <ul className='list-inside list-disc'>
-              <li>SQL</li>
-              <li>LaTeX</li>
-              <li>Dart (Flutter)</li>
-            </ul>
-          </KnowledgebaseDisclosure>
-
-          <KnowledgebaseDisclosure title='Web Development'>
-            <h3 className='font-header'>Frontend</h3>
-            <ul className='list-inside list-disc'>
-              <li>React</li>
-              <li>NextJS</li>
-              <li>Styled Components</li>
-              <li>Chakra UI</li>
-              <li>Tailwind CSS</li>
-            </ul>
-
-            <h3 className='mt-4 font-header'>Backend</h3>
-            <ul className='list-inside list-disc'>
-              <li>Firebase</li>
-              <li>Cloudflare Workers &amp; Pages</li>
-            </ul>
-          </KnowledgebaseDisclosure>
-
-          <KnowledgebaseDisclosure title='Infrastructure'>
-            <h3 className='font-header '>Host</h3>
-            <ul className='list-inside list-disc'>
-              <li>Cloudflare</li>
-              <li>Upcloud</li>
-              <li>Vultr</li>
-              <li>OVH</li>
-            </ul>
-
-            <h3 className='mt-4 font-header'>CI/CD</h3>
-            <ul className='list-inside list-disc'>
-              <li>GitHub actions</li>
-              <li>Docker</li>
-              <li>Kubernetes</li>
-            </ul>
-
-            <h3 className='mt-4 font-header'>Serverless Solutions</h3>
-            <ul className='list-inside list-disc'>
-              <li>Cloudflare</li>
-              <li>Vercel</li>
-              <li>Netlify</li>
-            </ul>
-
-            <h3 className='mt-4 font-header'>Operating Systems</h3>
-            <ul className='list-inside list-disc'>
-              <li>Windows</li>
-              <li>Linux (Debian, Ubuntu, Raspbian)</li>
-            </ul>
-          </KnowledgebaseDisclosure>
-
-          <KnowledgebaseDisclosure title='Content Creation'>
-            <ul className='list-inside list-disc'>
-              <li>Adobe Creative Suite (Pr, Ae, Ai, Ps)</li>
-              <li>Blender</li>
-            </ul>
-          </KnowledgebaseDisclosure>
-
-          <KnowledgebaseDisclosure title='Development Tools'>
-            <ul className='list-inside list-disc'>
-              <li>Git</li>
-              <li>Visual Studio Code</li>
-              <li>ESLint &amp; Prettier</li>
-              <li>Datadog</li>
-              <li>Grafana</li>
-              <li>InfluxDB</li>
-            </ul>
-
-            <ul className='mt-4 list-inside list-disc'>
-              <li>Notion</li>
-              <li>Figma</li>
-            </ul>
-          </KnowledgebaseDisclosure>
+          <LanguageDisclosure />
+          <WebDevelopmentDisclosure />
+          <InfrastructureDisclosure />
+          <ContentCreationDisclosure />
+          <DevelopmentToolsDisclosure />
         </section>
       </main>
     </>
   )
 }
 
-export default IndexPage
+export default AboutPage
