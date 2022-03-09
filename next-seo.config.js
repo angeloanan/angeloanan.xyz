@@ -13,6 +13,12 @@ const defaultSEOConfig = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: `${process.env.SITE_URL ?? 'https://angeloanan.xyz'}/images/og.png`,
+        alt: 'Christopher Angelo — Software Engineer and Community Manager'
+      }
+    ],
     url: process.env.SITE_URL ?? 'https://angeloanan.xyz',
     site_name: 'Christopher Angelo - Full-stack Developer'
   },
