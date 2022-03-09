@@ -50,7 +50,13 @@ const ProjectEntry = ({
           {/* Header thing */}
           <div className='flex items-center sm:items-start'>
             <div className='relative m-4 h-16 w-16 shrink-0 transition-all delay-100 group-hover:-translate-y-1 group-hover:shadow-lg md:h-24 md:w-24'>
-              <Image src={image} alt={`${title} Logo`} layout='fill' className='rounded-lg' />
+              <Image
+                src={image}
+                alt={`${title} Logo`}
+                layout='fill'
+                className='rounded-lg'
+                placeholder='blur'
+              />
             </div>
 
             <div className='my-4 mr-4 w-full'>
