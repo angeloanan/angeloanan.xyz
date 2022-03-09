@@ -6,20 +6,47 @@ import * as React from 'react'
 
 import PFPImage from '../../public/pfp.png'
 
+const DisclosurePlaceholder = (title: string) => {
+  const placeholderFn = () => {
+    return (
+      <div className='relative z-10 mt-4 flex w-full cursor-wait justify-between rounded-t-lg bg-white px-4 py-2 text-left text-sm font-medium text-fuchsia-600'>
+        {title}
+      </div>
+    )
+  }
+
+  return placeholderFn
+}
+
 const LanguageDisclosure = dynamic(
-  () => import('../components/DynamicDisclosures/LanguageDisclosure')
+  () => import('../components/DynamicDisclosures/LanguageDisclosure'),
+  {
+    loading: DisclosurePlaceholder('Languages')
+  }
 )
 const WebDevelopmentDisclosure = dynamic(
-  () => import('../components/DynamicDisclosures/WebDevelopmentDisclosure')
+  () => import('../components/DynamicDisclosures/WebDevelopmentDisclosure'),
+  {
+    loading: DisclosurePlaceholder('Web Development')
+  }
 )
 const InfrastructureDisclosure = dynamic(
-  () => import('../components/DynamicDisclosures/InfrastructureDisclosure')
+  () => import('../components/DynamicDisclosures/InfrastructureDisclosure'),
+  {
+    loading: DisclosurePlaceholder('Infrastructure')
+  }
 )
 const ContentCreationDisclosure = dynamic(
-  () => import('../components/DynamicDisclosures/ContentCreationDisclosure')
+  () => import('../components/DynamicDisclosures/ContentCreationDisclosure'),
+  {
+    loading: DisclosurePlaceholder('Content Creation')
+  }
 )
 const DevelopmentToolsDisclosure = dynamic(
-  () => import('../components/DynamicDisclosures/DevelopmentToolsDisclosure')
+  () => import('../components/DynamicDisclosures/DevelopmentToolsDisclosure'),
+  {
+    loading: DisclosurePlaceholder('Development Tools')
+  }
 )
 
 const InlineLink: React.FC<{ href: string }> = ({ href, children }) => (
@@ -103,8 +130,13 @@ const AboutPage = () => {
           </h2>
 
           <p className='mt-4 text-lg font-medium leading-8 tracking-tight text-neutral-700'>
-            I am knowledgeable in wide variety topics, ranging from software engineering, community
-            management to content creation:
+            Whether it is software engineering, community management or content creation, I am
+            proficient in a wide range of topics. In most cases, I can easily figure something out
+            if I don&apos;t know about it.
+          </p>
+
+          <p className='mt-4 text-lg font-medium leading-8 tracking-tight text-neutral-700'>
+            Here are some highlights of the things I know:
           </p>
 
           <LanguageDisclosure />
