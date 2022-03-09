@@ -83,9 +83,8 @@ const AboutPage = () => {
           </p>
 
           <p className='mt-4 text-lg font-medium leading-8 tracking-tight text-neutral-700'>
-            You can find me on <InlineLink href='https://github.com/angeloanan'>GitHub</InlineLink>,{' '}
-            <InlineLink href='https://twitter.com/UwUngelo'>Twitter</InlineLink> and{' '}
-            <InlineLink href='https://discord.com/users/189769721653100546'>Discord</InlineLink>!
+            You can find me on <InlineLink href='https://github.com/angeloanan'>GitHub</InlineLink>,
+            and <InlineLink href='https://twitter.com/UwUngelo'>Twitter</InlineLink>!
           </p>
         </section>
 
@@ -144,6 +143,24 @@ const AboutPage = () => {
           <InfrastructureDisclosure />
           <ContentCreationDisclosure />
           <DevelopmentToolsDisclosure />
+        </section>
+
+        <section className='mt-4 w-full max-w-2xl p-4'>
+          <h2 className='font-header text-4xl font-bold tracking-tight text-neutral-800'>
+            Contact Me
+          </h2>
+
+          <p className='mt-4 text-lg font-medium leading-8 tracking-tight text-neutral-700'>
+            Want to contact me about anything? You can contact me via email at{' '}
+            <InlineLink href='mailto:angelo@angeloanan.xyz'>angelo@angeloanan.xyz</InlineLink>,{' '}
+            <InlineLink href='https://t.me/angeloanan'>Telegram</InlineLink> or through{' '}
+            <InlineLink href='https://discord.com/users/189769721653100546'>Discord</InlineLink>.
+          </p>
+
+          <p className='mt-4 text-lg font-medium leading-8 tracking-tight text-neutral-700'>
+            If you want to have a more secure channel of communication, you can also reach me on{' '}
+            <InlineLink href='https://keybase.io/angeloanan'>Keybase</InlineLink>!
+          </p>
         </section>
       </main>
     </>
