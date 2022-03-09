@@ -3,7 +3,7 @@ import Link from 'next/link'
 import * as React from 'react'
 
 import type { ProjectsDataProps } from '../_data/projects'
-import { FeaturedProjects } from '../_data/projects'
+import { ProjectsData } from '../_data/projects'
 
 const Masthead = () => (
   <section className='mt-16 w-full max-w-2xl p-4' aria-label='Introduction'>
@@ -28,17 +28,17 @@ const Masthead = () => (
   </section>
 )
 
-type ProjectEntryProps = ProjectsDataProps & {
+type FeaturedProjectEntryProps = ProjectsDataProps & {
   align: 'left' | 'right'
 }
-const ProjectEntry = ({
+const FeaturedProjectEntry = ({
   title,
   duration,
   summary,
   image,
   align = 'right',
   url
-}: ProjectEntryProps) => (
+}: FeaturedProjectEntryProps) => (
   <Link href={url} passHref>
     <a className=''>
       <div className='group my-12'>
@@ -85,10 +85,10 @@ const IndexPage = () => {
             Featured Projects
           </h2>
 
-          {FeaturedProjects.map((project, index) => {
+          {ProjectsData.filter((p) => p.featured).map((project, index) => {
             const align = index % 2 === 0 ? 'left' : 'right'
 
-            return <ProjectEntry key={index} {...project} align={align} />
+            return <FeaturedProjectEntry key={index} {...project} align={align} />
           })}
         </section>
       </main>
