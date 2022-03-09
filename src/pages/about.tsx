@@ -102,7 +102,7 @@ const IndexPage = () => {
           </p>
 
           <KnowledgebaseDisclosure title='Languages'>
-            <h3>Web Development</h3>
+            <h3 className='font-header'>Web Development</h3>
             <ul className='list-inside list-disc'>
               <li>HTML5 and CSS3</li>
               <li>Javascript (ES6+) and Typescript</li>
@@ -110,24 +110,23 @@ const IndexPage = () => {
               <li>GraphQL</li>
             </ul>
 
-            <h3 className='mt-4'>Systems Language</h3>
+            <h3 className='mt-4 font-header'>Systems Language</h3>
             <ul className='list-inside list-disc'>
               <li>Rust</li>
               <li>Java</li>
               <li>C (Competitive Programming)</li>
             </ul>
 
-            <h3 className='mt-4'>Others</h3>
+            <h3 className='mt-4 font-header'>Others</h3>
             <ul className='list-inside list-disc'>
               <li>SQL</li>
-              <li>InfluxDB</li>
               <li>LaTeX</li>
               <li>Dart (Flutter)</li>
             </ul>
           </KnowledgebaseDisclosure>
 
           <KnowledgebaseDisclosure title='Web Development'>
-            <h3>Frontend</h3>
+            <h3 className='font-header'>Frontend</h3>
             <ul className='list-inside list-disc'>
               <li>React</li>
               <li>NextJS</li>
@@ -136,7 +135,7 @@ const IndexPage = () => {
               <li>Tailwind CSS</li>
             </ul>
 
-            <h3 className='mt-4'>Backend</h3>
+            <h3 className='mt-4 font-header'>Backend</h3>
             <ul className='list-inside list-disc'>
               <li>Firebase</li>
               <li>Cloudflare Workers &amp; Pages</li>
@@ -144,7 +143,7 @@ const IndexPage = () => {
           </KnowledgebaseDisclosure>
 
           <KnowledgebaseDisclosure title='Infrastructure'>
-            <h3 className=''>Host</h3>
+            <h3 className='font-header '>Host</h3>
             <ul className='list-inside list-disc'>
               <li>Cloudflare</li>
               <li>Upcloud</li>
@@ -152,21 +151,21 @@ const IndexPage = () => {
               <li>OVH</li>
             </ul>
 
-            <h3 className='mt-4'>CI/CD</h3>
+            <h3 className='mt-4 font-header'>CI/CD</h3>
             <ul className='list-inside list-disc'>
               <li>GitHub actions</li>
               <li>Docker</li>
               <li>Kubernetes</li>
             </ul>
 
-            <h3 className='mt-4'>Serverless Solutions</h3>
+            <h3 className='mt-4 font-header'>Serverless Solutions</h3>
             <ul className='list-inside list-disc'>
               <li>Cloudflare</li>
               <li>Vercel</li>
               <li>Netlify</li>
             </ul>
 
-            <h3 className='mt-4'>Operating Systems</h3>
+            <h3 className='mt-4 font-header'>Operating Systems</h3>
             <ul className='list-inside list-disc'>
               <li>Windows</li>
               <li>Linux (Debian, Ubuntu, Raspbian)</li>
