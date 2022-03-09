@@ -10,10 +10,11 @@ export interface ProjectsDataProps {
   url: string
 
   duration: string
+  featured: boolean
   image: StaticImageData
 }
 
-export const FeaturedProjects: ProjectsDataProps[] = [
+export const ProjectsData: ProjectsDataProps[] = [
   {
     title: 'Discord Punishment Appeals',
     summary:
@@ -22,16 +23,18 @@ export const FeaturedProjects: ProjectsDataProps[] = [
     url: 'https://github.com/angeloanan/discord-punishment-appeal',
 
     duration: 'Jan 2022 — present',
+    featured: true,
     image: PunismentAppealsImage
   },
   {
     title: 'Frontend Indonesia',
     summary:
-      'An Indoneisan Frontend Web Developer community; The "Melting Pot" of many developer communities within Indonesia',
+      'An Indonesian Frontend Web Developer community; The "Melting Pot" of many developer communities within Indonesia',
     description: 'A verified Discord bot which searches for lyrics to music through Genius!',
     url: 'https://feid.dev',
 
     duration: 'Aug 2020 — present',
+    featured: true,
     image: FEIDImage
   },
   {
@@ -42,6 +45,7 @@ export const FeaturedProjects: ProjectsDataProps[] = [
     url: 'https://lyrics-finder.angeloanan.xyz',
 
     duration: 'Jan 2019 — present',
+    featured: true,
     image: LFImage
   }
 ]
