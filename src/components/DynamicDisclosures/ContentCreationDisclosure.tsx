@@ -7,10 +7,11 @@ const ContentCreationDisclosure = () => {
     <KnowledgebaseDisclosure title='Content Creation'>
       <ul className='list-inside list-disc'>
         <li>
-          <Adobe className='inline' aria-hidden /> Adobe Creative Suite (Pr, Ae, Ai, Ps)
+          <Adobe className='inline' color='#FF0000' aria-hidden /> Adobe Creative Suite (Pr, Ae, Ai,
+          Ps)
         </li>
         <li>
-          <Blender className='inline' aria-hidden /> Blender
+          <Blender className='inline' color='#F5792A' aria-hidden /> Blender
         </li>
       </ul>
     </KnowledgebaseDisclosure>

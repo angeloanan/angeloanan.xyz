@@ -21,31 +21,31 @@ const LanguageDisclosure = () => {
       <h3 className='font-header'>Web Development</h3>
       <ul className='list-inside list-disc'>
         <li>
-          <Html5 className='inline' aria-hidden /> HTML5 and{' '}
-          <CssThree className='inline' aria-hidden /> CSS3
+          <Html5 className='inline' color='#E34F26' aria-hidden /> HTML5 and{' '}
+          <CssThree className='inline' color='#1572B6' aria-hidden /> CSS3
         </li>
         <li>
-          <Javascript className='inline' aria-hidden /> Javascript (ES6+) and{' '}
-          <Typescript className='inline' aria-hidden /> Typescript
+          <Javascript className='inline' color='#F7DF1E' aria-hidden /> Javascript (ES6+) and{' '}
+          <Typescript className='inline' color='#3178C6' aria-hidden /> Typescript
         </li>
         <li>
-          <Nodedotjs className='inline' aria-hidden /> NodeJS
+          <Nodedotjs className='inline' color='#339933' aria-hidden /> NodeJS
         </li>
         <li>
-          <Graphql className='inline' aria-hidden /> GraphQL
+          <Graphql className='inline' color='#E10098' aria-hidden /> GraphQL
         </li>
       </ul>
 
       <h3 className='mt-4 font-header'>Systems Language</h3>
       <ul className='list-inside list-disc'>
         <li>
-          <Rust className='inline' aria-hidden /> Rust
+          <Rust className='inline' color='#000' aria-hidden /> Rust
         </li>
         <li>
-          <Java className='inline' aria-hidden /> Java
+          <Java className='inline' color='#000' aria-hidden /> Java
         </li>
         <li>
-          <C className='inline' aria-hidden /> C (Competitive Programming)
+          <C className='inline' color='#A8B9CC' aria-hidden /> C (Competitive Programming)
         </li>
       </ul>
 
@@ -53,11 +53,11 @@ const LanguageDisclosure = () => {
       <ul className='list-inside list-disc'>
         <li>SQL</li>
         <li>
-          <Latex className='inline' aria-hidden /> LaTeX
+          <Latex className='inline' color='#008080' aria-hidden /> LaTeX
         </li>
         <li>
-          <Dart className='inline' aria-hidden /> Dart (<Flutter className='inline' aria-hidden />{' '}
-          Flutter)
+          <Dart className='inline' color='#0175C2' aria-hidden /> Dart (
+          <Flutter className='inline' color='#02569B' aria-hidden /> Flutter)
         </li>
       </ul>
     </KnowledgebaseDisclosure>

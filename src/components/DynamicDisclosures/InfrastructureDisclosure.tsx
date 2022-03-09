@@ -20,49 +20,49 @@ const InfrastructureDisclosure = () => {
       <h3 className='font-header '>Host</h3>
       <ul className='list-inside list-disc'>
         <li>
-          <Cloudflare className='inline' aria-hidden /> Cloudflare
+          <Cloudflare className='inline' color='#F38020' aria-hidden /> Cloudflare
         </li>
         <li>
-          <Upcloud className='inline' aria-hidden /> Upcloud
+          <Upcloud className='inline' color='#7B00FF' aria-hidden /> Upcloud
         </li>
         <li>
-          <Vultr className='inline' aria-hidden /> Vultr
+          <Vultr className='inline' color='#007BFC' aria-hidden /> Vultr
         </li>
         <li>
-          <Ovh className='inline' aria-hidden /> OVH
+          <Ovh className='inline' color='#123F6D' aria-hidden /> OVH
         </li>
       </ul>
 
       <h3 className='mt-4 font-header'>CI/CD</h3>
       <ul className='list-inside list-disc'>
         <li>
-          <Githubactions className='inline' aria-hidden /> GitHub actions
+          <Githubactions className='inline' color='#2088FF' aria-hidden /> GitHub actions
         </li>
         <li>
-          <Docker className='inline' aria-hidden /> Docker
+          <Docker className='inline' color='#2496ED' aria-hidden /> Docker
         </li>
         <li>
-          <Kubernetes className='inline' aria-hidden /> Kubernetes
+          <Kubernetes className='inline' color='#326CE5' aria-hidden /> Kubernetes
         </li>
       </ul>
 
       <h3 className='mt-4 font-header'>Serverless Solutions</h3>
       <ul className='list-inside list-disc'>
         <li>
-          <Cloudflare className='inline' aria-hidden /> Cloudflare
+          <Cloudflare className='inline' color='#F38020' aria-hidden /> Cloudflare
         </li>
         <li>
-          <Vercel className='inline' aria-hidden /> Vercel
+          <Vercel className='inline' color='#000' aria-hidden /> Vercel
         </li>
         <li>
-          <Netlify className='inline' aria-hidden /> Netlify
+          <Netlify className='inline' color='#00C7B7' aria-hidden /> Netlify
         </li>
       </ul>
 
       <h3 className='mt-4 font-header'>Operating Systems</h3>
       <ul className='list-inside list-disc'>
         <li>
-          <Windows className='inline' aria-hidden /> Windows
+          <Windows className='inline' color='#0078D6' aria-hidden /> Windows
         </li>
         <li>
           <Linux className='inline' aria-hidden /> Linux (Debian, Ubuntu, Raspbian)
