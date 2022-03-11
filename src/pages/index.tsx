@@ -1,9 +1,28 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
+import useSound from 'use-sound'
 
 import type { ProjectsDataProps } from '../_data/projects'
 import { ProjectsData } from '../_data/projects'
+
+const MoreAboutMeButton = () => {
+  const [playClick] = useSound('sfx/click.mp3', { volume: 0.65 })
+  const [playClack] = useSound('sfx/confirmClack.mp3', { volume: 0.65 })
+
+  return (
+    <Link href='/about'>
+      <a
+        className='group mt-8 rounded-full bg-fuchsia-200 py-4 px-8 font-header text-lg text-fuchsia-700 transition-colors hover:bg-fuchsia-300'
+        aria-label='Navigate to About me page'
+        onMouseDown={() => playClick()}
+        onMouseUp={() => playClack()}
+      >
+        More about me <span className='pl-1 transition-all group-hover:pl-2'>&rarr;</span>
+      </a>
+    </Link>
+  )
+}
 
 const Masthead = () => (
   <section className='mt-16 w-full max-w-2xl p-4' aria-label='Introduction'>
@@ -16,14 +35,7 @@ const Masthead = () => (
     </p>
 
     <div className='flex'>
-      <Link href='/about'>
-        <a
-          className='group mt-8 rounded-full bg-fuchsia-200 py-4 px-8 font-header text-lg text-fuchsia-700 transition-colors hover:bg-fuchsia-300'
-          aria-label='Navigate to About me page'
-        >
-          More about me <span className='pl-1 transition-all group-hover:pl-2'>&rarr;</span>
-        </a>
-      </Link>
+      <MoreAboutMeButton />
     </div>
   </section>
 )
