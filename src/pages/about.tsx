@@ -123,6 +123,7 @@ const AboutPage = () => {
           </p>
         </section>
 
+        {/* TODO: Consider moving this to /uses */}
         <section className='mt-4 w-full max-w-2xl p-4'>
           <h2 className='font-header text-4xl font-bold tracking-tight text-neutral-800'>
             Knowledgebase
