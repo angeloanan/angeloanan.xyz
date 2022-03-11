@@ -50,16 +50,25 @@ const FeaturedProjectEntry = ({
   image,
   align = 'right',
   url
-}: FeaturedProjectEntryProps) => (
-  <Link href={url} passHref>
-    <a className=''>
-      <div className='group my-12'>
-        <div
-          className={`rounded-lg border-2 border-neutral-100 bg-gradient-to-br from-neutral-50 shadow transition-all hover:-translate-y-2 hover:shadow-xl ${
-            align === 'right' ? 'md:ml-32 md:-mr-16' : 'md:mr-32 md:-ml-16'
-          }`}
-        >
-          {/* Header thing */}
+}: FeaturedProjectEntryProps) => {
+  const [playHover] = useSound('sfx/hover.mp3', { volume: 0.65, interrupt: true })
+
+  const [isHovering, setIsHovering] = React.useState(false)
+  React.useEffect(() => {
+    if (isHovering) {
+      playHover()
+    }
+  }, [isHovering, playHover])
+
+  return (
+    <div
+      className={`group my-12 rounded-lg border-2 border-neutral-100 bg-gradient-to-br from-neutral-50 shadow transition-all hover:-translate-y-2 hover:shadow-xl ${
+        align === 'right' ? 'md:ml-32 md:-mr-16' : 'md:mr-32 md:-ml-16'
+      }`}
+    >
+      <Link href={url} passHref>
+        <a onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+          {/* Left side thing */}
           <div className='flex items-center sm:items-start'>
             <div className='relative m-4 h-16 w-16 shrink-0 transition-all delay-100 group-hover:-translate-y-1 group-hover:shadow-lg md:h-24 md:w-24'>
               <Image
@@ -80,11 +89,11 @@ const FeaturedProjectEntry = ({
               <p className='mt-2 tracking-tight text-neutral-700 '>{summary}</p>
             </div>
           </div>
-        </div>
-      </div>
-    </a>
-  </Link>
-)
+        </a>
+      </Link>
+    </div>
+  )
+}
 
 const IndexPage = () => {
   return (
