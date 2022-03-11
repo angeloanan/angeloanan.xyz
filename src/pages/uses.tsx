@@ -103,8 +103,14 @@ const UsesImage = (props: UsesImagesData) => {
   const [source, target] = useSingleton({ overrides: ['render'] })
 
   return (
-    <div className='relative'>
-      <Image src={props.image} alt={props.alt ?? ''} placeholder='blur' sizes='90vw' />
+    <div className='relative w-full'>
+      <Image
+        src={props.image}
+        alt={props.alt ?? ''}
+        placeholder='blur'
+        layout='responsive'
+        sizes='640w, 800w, 1024w, 1280w'
+      />
       <Tippy
         singleton={source}
         hideOnClick={false}
