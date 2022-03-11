@@ -1,0 +1,7 @@
+* text=auto
+
+yarn.lock text -diff
+
+# Graphics
+*.png binary
+*.mp3 binary
