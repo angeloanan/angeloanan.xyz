@@ -153,7 +153,7 @@ const UsesImagesSection = (props: UsesImagesSectionProps) => {
 const UsesPage = () => {
   return (
     <>
-      <NextSeo title='About Me' />
+      <NextSeo title='Tools that I use' />
 
       <main className='flex w-full flex-col items-center'>
         <h1 className='mx-2 mt-16 text-center font-header text-5xl font-bold tracking-tight text-neutral-800'>
