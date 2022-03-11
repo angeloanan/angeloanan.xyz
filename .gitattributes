@@ -4,4 +4,8 @@ yarn.lock text -diff
 
 # Graphics
 *.png binary
+*.jpg binary
+*.jpeg binary
+
+# SFX
 *.mp3 binary

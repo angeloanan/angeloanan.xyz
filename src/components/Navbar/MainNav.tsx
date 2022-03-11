@@ -11,6 +11,10 @@ const NavLinks = [
   {
     href: '/works',
     text: 'Works'
+  },
+  {
+    href: '/uses',
+    text: 'Tools'
   }
 ]
 
