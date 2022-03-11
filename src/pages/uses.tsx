@@ -104,7 +104,7 @@ const UsesImage = (props: UsesImagesData) => {
 
   return (
     <div className='relative'>
-      <Image src={props.image} alt={props.alt ?? ''} placeholder='blur' />
+      <Image src={props.image} alt={props.alt ?? ''} placeholder='blur' sizes='90vw' />
       <Tippy
         singleton={source}
         hideOnClick={false}

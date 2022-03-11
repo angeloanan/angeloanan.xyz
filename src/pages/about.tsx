@@ -65,7 +65,13 @@ const AboutPage = () => {
       <main className='flex w-full flex-col items-center'>
         <section className='mt-16 w-full max-w-2xl p-4'>
           <div className='relative mb-8 h-32 w-32'>
-            <Image src={PFPImage} layout='fill' alt="Angelo's Profile Picture" placeholder='blur' />
+            <Image
+              src={PFPImage}
+              layout='fill'
+              alt="Angelo's Profile Picture"
+              placeholder='blur'
+              sizes='20vw'
+            />
           </div>
           <h1 className='font-header text-5xl font-bold tracking-tight text-neutral-800'>
             About Me
