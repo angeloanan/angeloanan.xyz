@@ -24,6 +24,7 @@ function CustomApp({ Component, pageProps }: CustomAppProps) {
   ) : (
     <>
       <DefaultSeo {...DefaultSEOConfig} />
+
       <div className='stylized-bg min-h-screen antialiased selection:bg-fuchsia-200'>
         <MainNav />
         <Component {...pageProps} />

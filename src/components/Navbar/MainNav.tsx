@@ -5,8 +5,6 @@ import { useRouter } from 'next/router'
 import * as React from 'react'
 import useSound from 'use-sound'
 
-import useMediaQuery from '../../hooks/useMediaQuery'
-
 const NavLinks = [
   {
     href: '/about',
@@ -71,41 +69,37 @@ const LinksNav: React.FC<LinksNavProps> = ({ href, children, ...rest }) => {
 }
 
 const MainNav = () => {
-  const isBigDevice = useMediaQuery('(min-width: 480px)')
-
   return (
     <header className='sticky top-0 z-20 flex w-full justify-between px-4 backdrop-blur-md sm:px-12'>
       <HomeNav />
 
-      {isBigDevice ? (
-        <div className='flex select-none'>
-          {NavLinks.map(({ href, text }) => {
-            return (
-              <LinksNav key={href} href={href}>
-                {text}
-              </LinksNav>
-            )
-          })}
-        </div>
-      ) : (
-        <div className='relative mx-4 mt-2 select-none '>
-          <Menu>
-            <Menu.Button className='rounded bg-white py-2 px-2 text-lg tracking-tight shadow'>
-              <MenuIcon className='h-6 w-6 text-black' />
-            </Menu.Button>
+      <div className='hidden select-none sm:flex'>
+        {NavLinks.map(({ href, text }) => {
+          return (
+            <LinksNav key={href} href={href}>
+              {text}
+            </LinksNav>
+          )
+        })}
+      </div>
 
-            <Menu.Items className='absolute right-0 mt-2 flex w-32 flex-col gap-1 rounded bg-white py-2 shadow'>
-              {NavLinks.map(({ href, text }) => {
-                return (
-                  <Menu.Item key={href}>
-                    <LinksNav href={href}>{text}</LinksNav>
-                  </Menu.Item>
-                )
-              })}
-            </Menu.Items>
-          </Menu>
-        </div>
-      )}
+      <div className='relative mx-4 mt-2 select-none sm:hidden'>
+        <Menu>
+          <Menu.Button className='rounded bg-white py-2 px-2 text-lg tracking-tight shadow'>
+            <MenuIcon className='h-6 w-6 text-black' />
+          </Menu.Button>
+
+          <Menu.Items className='absolute right-0 mt-2 flex w-32 flex-col gap-1 rounded bg-white py-2 shadow'>
+            {NavLinks.map(({ href, text }) => {
+              return (
+                <Menu.Item key={href}>
+                  <LinksNav href={href}>{text}</LinksNav>
+                </Menu.Item>
+              )
+            })}
+          </Menu.Items>
+        </Menu>
+      </div>
     </header>
   )
 }
