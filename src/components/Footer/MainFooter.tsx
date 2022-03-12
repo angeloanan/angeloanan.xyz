@@ -7,22 +7,6 @@ const IntlDateFormatter = new Intl.DateTimeFormat('en-US', {
   hour12: false
 })
 
-const calculateTimeslot = (date: Date) => {
-  const h = parseInt(IntlDateFormatter.format(date).split(':')[0])
-
-  if (h < 3) {
-    return { color: 'bg-red-600', string: 'Busy - Work' }
-  } else if (h < 8) {
-    return { color: 'bg-amber-600', string: 'Sleep' }
-  } else if (h < 14) {
-    return { color: 'bg-red-600', string: 'Busy - University' }
-  } else if (h < 20) {
-    return { color: 'bg-green-500', string: 'Free time' }
-  } else {
-    return { color: 'bg-red-600', string: 'Busy - Work' }
-  }
-}
-
 interface LinkLiProps {
   href: string
   text: string
@@ -40,18 +24,34 @@ const LinkLi = ({ href, text }: LinkLiProps) => {
 }
 
 const CurrentTimeDisplay = () => {
+  const timeslotFormatter = React.useCallback((date) => {
+    const h = parseInt(IntlDateFormatter.format(date).split(':')[0])
+
+    if (h < 3) {
+      return { color: 'bg-red-600', string: 'Busy - Work' }
+    } else if (h < 8) {
+      return { color: 'bg-amber-600', string: 'Sleep' }
+    } else if (h < 14) {
+      return { color: 'bg-red-600', string: 'Busy - University' }
+    } else if (h < 20) {
+      return { color: 'bg-green-500', string: 'Free time' }
+    } else {
+      return { color: 'bg-red-600', string: 'Busy - Work' }
+    }
+  }, [])
+
   const [currentTime, setCurrentTime] = React.useState(new Date())
-  const [timeslot, setTimeslot] = React.useState(calculateTimeslot(currentTime))
+  const [timeslot, setTimeslot] = React.useState(timeslotFormatter(currentTime))
 
   // Timer
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date())
-      setTimeslot(calculateTimeslot(currentTime))
+      setTimeslot(timeslotFormatter(currentTime))
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [currentTime])
+  }, [timeslotFormatter, currentTime])
 
   return (
     <>
