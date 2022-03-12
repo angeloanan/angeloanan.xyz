@@ -59,7 +59,9 @@ const CurrentTimeDisplay = () => {
         {IntlDateFormatter.format(currentTime)} GMT+7
       </p>
       <div className='flex items-center font-medium tracking-tight text-neutral-500'>
-        <div className={`ping mr-2 h-2 w-2 shrink-0 rounded-full ${timeslot.color}`} />
+        <div className={`mr-2 h-2 w-2 shrink-0 rounded-full ${timeslot.color}`}>
+          <div className={`${timeslot.color} mr-2 h-2 w-2 shrink-0 animate-ping rounded-full`} />
+        </div>
         {timeslot.string}
       </div>
     </>
