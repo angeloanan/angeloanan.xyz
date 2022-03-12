@@ -1,6 +1,28 @@
 import Link from 'next/link'
 import * as React from 'react'
 
+const IntlDateFormatter = new Intl.DateTimeFormat('en-US', {
+  timeStyle: 'short',
+  timeZone: 'Asia/Jakarta',
+  hour12: false
+})
+
+const calculateTimeslot = (date: Date) => {
+  const h = date.getHours()
+
+  if (h < 3) {
+    return { color: 'bg-red-600', string: 'Busy - Work' }
+  } else if (h < 8) {
+    return { color: 'bg-amber-600', string: 'Sleep' }
+  } else if (h < 14) {
+    return { color: 'bg-red-600', string: 'Busy - University' }
+  } else if (h < 20) {
+    return { color: 'bg-green-500', string: 'Free time' }
+  } else {
+    return { color: 'bg-red-600', string: 'Busy - Work' }
+  }
+}
+
 interface LinkLiProps {
   href: string
   text: string
@@ -17,45 +39,58 @@ const LinkLi = ({ href, text }: LinkLiProps) => {
   )
 }
 
-const IntlDateFormatter = new Intl.DateTimeFormat('en-US', {
-  timeStyle: 'short',
-  timeZone: 'Asia/Jakarta',
-  hour12: false
-})
-
 const CurrentTimeDisplay = () => {
   const [currentTime, setCurrentTime] = React.useState(new Date())
+  const [timeslot, setTimeslot] = React.useState(calculateTimeslot(currentTime))
+
+  // Timer
   React.useEffect(() => {
     const interval = setInterval(() => {
+      // Early return on same minute
+      if (currentTime.getMinutes() === new Date().getMinutes()) {
+        return
+      }
+
       setCurrentTime(new Date())
+      setTimeslot(calculateTimeslot(currentTime))
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [currentTime])
 
   return (
-    <p className='my-2 font-medium tabular-nums tracking-tight text-neutral-600'>
-      {IntlDateFormatter.format(currentTime)} GMT+7
-    </p>
+    <>
+      <p className='mt-2 font-medium tabular-nums tracking-tight text-neutral-600'>
+        {IntlDateFormatter.format(currentTime)} GMT+7
+      </p>
+      <div className='flex items-center font-medium tracking-tight text-neutral-500'>
+        <div className={`h-2 w-2 ${timeslot.color} ping mr-2 rounded-full`} />
+        {timeslot.string}
+      </div>
+    </>
   )
 }
 
 const AboutMeFooter = () => {
   return (
-    <section className='my-4 grid grid-cols-2 gap-4'>
+    <section className='my-4 grid grid-cols-2 sm:grid-cols-3'>
       <div>
         <h2 className='font-header text-lg font-bold uppercase tracking-tight text-neutral-600'>
           I am
         </h2>
 
         <p className='my-2 font-medium text-neutral-600'>Christopher Angelo</p>
-        {/* <ul className='my-2 list-inside list-["→"] font-medium text-neutral-600 marker:text-neutral-500'>
-          <li>Software Engineer</li>
-          <li>Community Manager</li>
-        </ul> */}
       </div>
 
-      {/* <div className='overflow-clip'>
+      <div>
+        <h2 className='font-header text-lg font-bold uppercase tracking-tight text-neutral-600'>
+          My current time
+        </h2>
+
+        <CurrentTimeDisplay />
+      </div>
+
+      <div className='overflow-clip'>
         <h2 className='font-header text-lg font-bold uppercase tracking-tight text-neutral-600'>
           Contact me
         </h2>
@@ -64,14 +99,6 @@ const AboutMeFooter = () => {
           <LinkLi href='mailto:angelo@angeloanan.xyz' text='Email' />
           <LinkLi href='https://linkedin.com/in/angeloanan' text='Linkedin' />
         </ul>
-      </div> */}
-
-      <div>
-        <h2 className='font-header text-lg font-bold uppercase tracking-tight text-neutral-600'>
-          My current time is
-        </h2>
-
-        <CurrentTimeDisplay />
       </div>
     </section>
   )
