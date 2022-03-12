@@ -1,7 +1,11 @@
+import { Menu } from '@headlessui/react'
+import { MenuIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
 import useSound from 'use-sound'
+
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 const NavLinks = [
   {
@@ -44,7 +48,7 @@ const HomeNav = () => {
 interface LinksNavProps {
   href: string
 }
-const LinksNav: React.FC<LinksNavProps> = ({ href, children }) => {
+const LinksNav: React.FC<LinksNavProps> = ({ href, children, ...rest }) => {
   const router = useRouter()
   const [playClick] = useSound('sfx/click.mp3', { volume: 0.65 })
   const [playClack] = useSound('sfx/naviClack.mp3', { volume: 0.65 })
@@ -58,6 +62,7 @@ const LinksNav: React.FC<LinksNavProps> = ({ href, children }) => {
         }`}
         onMouseDown={() => playClick()}
         onMouseUp={() => playClack()}
+        {...rest}
       >
         {children}
       </a>
@@ -66,19 +71,41 @@ const LinksNav: React.FC<LinksNavProps> = ({ href, children }) => {
 }
 
 const MainNav = () => {
+  const isBigDevice = useMediaQuery('(min-width: 480px)')
+
   return (
     <header className='sticky top-0 z-20 flex w-full justify-between px-4 backdrop-blur-md sm:px-12'>
       <HomeNav />
 
-      <div className='flex select-none'>
-        {NavLinks.map(({ href, text }) => {
-          return (
-            <LinksNav key={href} href={href}>
-              {text}
-            </LinksNav>
-          )
-        })}
-      </div>
+      {isBigDevice ? (
+        <div className='flex select-none'>
+          {NavLinks.map(({ href, text }) => {
+            return (
+              <LinksNav key={href} href={href}>
+                {text}
+              </LinksNav>
+            )
+          })}
+        </div>
+      ) : (
+        <div className='relative mx-4 mt-2 select-none '>
+          <Menu>
+            <Menu.Button className='rounded bg-white py-2 px-2 text-lg tracking-tight shadow'>
+              <MenuIcon className='h-6 w-6 text-black' />
+            </Menu.Button>
+
+            <Menu.Items className='absolute right-0 mt-2 flex w-32 flex-col gap-1 rounded bg-white py-2 shadow'>
+              {NavLinks.map(({ href, text }) => {
+                return (
+                  <Menu.Item key={href}>
+                    <LinksNav href={href}>{text}</LinksNav>
+                  </Menu.Item>
+                )
+              })}
+            </Menu.Items>
+          </Menu>
+        </div>
+      )}
     </header>
   )
 }
