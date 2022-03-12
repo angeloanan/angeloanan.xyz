@@ -64,7 +64,7 @@ const CurrentTimeDisplay = () => {
         {IntlDateFormatter.format(currentTime)} GMT+7
       </p>
       <div className='flex items-center font-medium tracking-tight text-neutral-500'>
-        <div className={`h-2 w-2 ${timeslot.color} ping mr-2 rounded-full`} />
+        <div className={`h-2 w-2 ${timeslot.color} ping mr-2 shrink-0 rounded-full`} />
         {timeslot.string}
       </div>
     </>
@@ -127,7 +127,6 @@ export const MainFooter = () => {
           <ul className='font-medium tracking-tight text-neutral-600'>
             <LinkLi href='https://discord.com/users/189769721653100546' text='Discord' />
             <LinkLi href='https://t.me/angeloanan' text='Telegram' />
-            <LinkLi href='mailto:angelo@angeloanan.xyz' text='Email' />
           </ul>
         </section>
 

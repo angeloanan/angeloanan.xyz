@@ -33,7 +33,7 @@ const UsesData = [
               'This is my secondary monitor. It is just a normal 1080p monitor with a sub-par color accuracy!'
           },
           {
-            posTop: '74%',
+            posTop: '73%',
             posLeft: '59%',
             url: 'https://www.lg.com/us/monitors/lg-22MK400H-B-led-monitor/',
             title: 'Keychron K2 Wireless (Blue, Non-hotswap v2)',
