@@ -8,7 +8,7 @@ const IntlDateFormatter = new Intl.DateTimeFormat('en-US', {
 })
 
 const calculateTimeslot = (date: Date) => {
-  const h = date.getHours()
+  const h = parseInt(IntlDateFormatter.format(date).split(':')[0])
 
   if (h < 3) {
     return { color: 'bg-red-600', string: 'Busy - Work' }
