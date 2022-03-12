@@ -85,7 +85,10 @@ const MainNav = () => {
 
       <div className='relative mx-4 mt-2 select-none sm:hidden'>
         <Menu>
-          <Menu.Button className='rounded bg-white py-2 px-2 text-lg tracking-tight shadow'>
+          <Menu.Button
+            className='rounded bg-white py-2 px-2 text-lg tracking-tight shadow'
+            aria-label='Toggle navigation'
+          >
             <MenuIcon className='h-6 w-6 text-black' />
           </Menu.Button>
 
