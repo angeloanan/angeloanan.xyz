@@ -46,11 +46,6 @@ const CurrentTimeDisplay = () => {
   // Timer
   React.useEffect(() => {
     const interval = setInterval(() => {
-      // Early return on same minute
-      if (currentTime.getMinutes() === new Date().getMinutes()) {
-        return
-      }
-
       setCurrentTime(new Date())
       setTimeslot(calculateTimeslot(currentTime))
     }, 1000)
@@ -64,7 +59,7 @@ const CurrentTimeDisplay = () => {
         {IntlDateFormatter.format(currentTime)} GMT+7
       </p>
       <div className='flex items-center font-medium tracking-tight text-neutral-500'>
-        <div className={`h-2 w-2 ${timeslot.color} ping mr-2 shrink-0 rounded-full`} />
+        <div className={`ping mr-2 h-2 w-2 shrink-0 rounded-full ${timeslot.color}`} />
         {timeslot.string}
       </div>
     </>
