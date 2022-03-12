@@ -3,6 +3,7 @@
 yarn.lock text -diff
 
 # Graphics
+*.ico binary
 *.png binary
 *.jpg binary
 *.jpeg binary

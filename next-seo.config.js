@@ -27,7 +27,20 @@ const defaultSEOConfig = {
     handle: '@uwungelo',
     site: '@uwungelo',
     cardType: 'summary_large_image'
-  }
+  },
+
+  additionalLinkTags: [
+    {
+      rel: 'icon',
+      href: 'favicon.ico'
+    }
+  ],
+  additionalMetaTags: [
+    {
+      name: 'theme-color',
+      content: '#d946ef'
+    }
+  ]
 }
 
 export default defaultSEOConfig
