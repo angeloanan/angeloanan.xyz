@@ -17,7 +17,6 @@
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^4.5.4",
     "@fontsource/inter": "^4.5.4",
-    "@fontsource/raleway": "^4.5.3",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@icons-pack/react-simple-icons": "^4.6.1",

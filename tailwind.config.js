@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        header: ['IBM Plex Sans', 'RalewayVariable', ...defaultTheme.fontFamily.sans],
+        header: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans]
       }
     }
