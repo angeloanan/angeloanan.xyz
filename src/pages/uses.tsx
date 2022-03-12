@@ -6,26 +6,27 @@ import * as React from 'react'
 import useSound from 'use-sound'
 
 import DesktopImage from '../../public/images/uses/desktop.jpg'
+import EntertainmentImage from '../../public/images/uses/entertainment.jpg'
 
 // TODO: Refactor this to _data
 const UsesData = [
   {
-    title: 'Workplace Desktop',
+    title: 'Home Desktop & Entertainment',
     entries: [
       {
         image: DesktopImage,
-        alt: "Angelo's main workplace desktop",
+        alt: "Angelo's main desktop setup",
         pins: [
           {
-            posTop: '35%',
-            posLeft: '62%',
+            posTop: '28%',
+            posLeft: '65%',
             url: 'https://www.asus.com/us/Displays-Desktops/Monitors/TUF-Gaming/TUF-Gaming-VG27AQ/',
             title: 'ASUS TUF Gaming VG27A',
             description:
               'This is my primary monitor! It is a 1440p HDR10 monitor that supports up to 165Hz refresh rate. I also use this to hook up my Nintendo Switch!'
           },
           {
-            posTop: '33%',
+            posTop: '27%',
             posLeft: '23%',
             url: 'https://www.lg.com/us/monitors/lg-22MK400H-B-led-monitor/',
             title: 'LG 22MK400H',
@@ -33,27 +34,97 @@ const UsesData = [
               'This is my secondary monitor. It is just a normal 1080p monitor with a sub-par color accuracy!'
           },
           {
-            posTop: '73%',
-            posLeft: '59%',
+            posTop: '67%',
+            posLeft: '51%',
             url: 'https://www.lg.com/us/monitors/lg-22MK400H-B-led-monitor/',
             title: 'Keychron K2 Wireless (Blue, Non-hotswap v2)',
             description:
               'My first mechanical keyboard that I own. I have regretted choosing blue switches over linears. I have replaced the default keycaps with a generic blank keycaps.'
           },
           {
-            posTop: '83%',
-            posLeft: '83.8%',
+            posTop: '73%',
+            posLeft: '75%',
             url: 'https://www.pcgamingrace.com/products/glorious-model-o-black',
             title: 'Glorious Model O',
             description: 'An ultra-light gaming mouse that is damn well worth it.'
           },
           {
-            posTop: '60%',
-            posLeft: '10%',
-            url: 'https://www.lg.com/us/monitors/lg-22MK400H-B-led-monitor/',
+            posTop: '58%',
+            posLeft: '18%',
+            url: 'https://electronics.sony.com/audio/headphones/headband/p/wh1000xm4-b/',
             title: 'Sony WH-1000XM4',
             description:
               'My primary noise-cancelling headphone. Used with a Custom EQ to make my music sound better!'
+          },
+          {
+            posTop: '84%',
+            posLeft: '67%',
+            url: 'http://www.samsontech.com/samson/products/microphones/usb-microphones/gtrackpro/',
+            title: 'Samson G-Track Pro',
+            description:
+              'An USB Microphone that I use for voice chats and some small-scale recording / music production.'
+          },
+          {
+            posTop: '49.5%',
+            posLeft: '49.5%',
+            url: 'https://store.google.com/us/product/google_nest_mini/',
+            title: 'Google Nest (Home) Mini',
+            description:
+              'A friend of mine gifted this Smart Speaker to me. I use it to control my room with smart bulbs and a custom Google Home app for other stuff.'
+          },
+          {
+            posTop: '55%',
+            posLeft: '28%',
+            url: 'https://vercel.com',
+            title: 'NextJS Mug',
+            description:
+              'NextJS mug NextJS mug NextJS mug NextJS mug NextJS mug NextJS mug NextJS mug NextJS mug NextJS mug'
+          }
+        ]
+      },
+
+      {
+        image: EntertainmentImage,
+        alt: "Angelo's entertainment setup",
+        pins: [
+          {
+            posTop: '62%',
+            posLeft: '87%',
+            url: 'https://www.nintendo.com/store/products/nintendo-switch-animal-crossing-new-horizons-edition/',
+            title: 'Nintendo Switch - AC:NH',
+            description:
+              "Actual first console that I own. You are more welcome to add me as friends! My friend code is SW-2297-0506-9408 (Please DM me when you've added me)"
+          },
+          {
+            posTop: '74%',
+            posLeft: '84%',
+            url: 'https://www.nintendo.com/store/products/pro-controller/',
+            title: 'Nintendo Switch Pro Controller',
+            description:
+              'To be honest, this generally is my favorite controller to use when gaming really casually.'
+          },
+          {
+            posTop: '75%',
+            posLeft: '64%',
+            url: 'https://wii.com/',
+            title: 'Nintendo Wii Controller + Nunchuck',
+            description: "Wii games are revolutionary. 'Nuff said."
+          },
+          {
+            posTop: '64%',
+            posLeft: '27%',
+            url: 'https://www.oculus.com/quest-2/',
+            title: 'Oculus Quest 2',
+            description:
+              'I play and do some content creation in VR with this headset. This is a great VR headset for their price. Though, with limited upgradability and expandability, I am looking forward to upgrading to a Valve Index'
+          },
+          {
+            posTop: '53%',
+            posLeft: '33.5%',
+            url: 'https://www.thecubicle.com/products/yj-mgc-4x4',
+            title: 'YJ MGC (3x3, 4x4 and 5x5)',
+            description:
+              'These are my rubiks cubes. I like to speed cube as a hobby. Though, these cubes serves a second purpose: fidget toys for my brain.'
           }
         ]
       }
