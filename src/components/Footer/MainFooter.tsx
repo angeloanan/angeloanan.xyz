@@ -7,6 +7,23 @@ const IntlDateFormatter = new Intl.DateTimeFormat('en-US', {
   hour12: false
 })
 
+const timeslotFormatter = (date?: Date) => {
+  if (date == null) return { color: '', string: '' }
+  const h = parseInt(IntlDateFormatter.format(date).split(':')[0])
+
+  if (h < 3) {
+    return { color: 'bg-red-600', string: 'Busy - Work' }
+  } else if (h < 8) {
+    return { color: 'bg-amber-600', string: 'Sleep' }
+  } else if (h < 14) {
+    return { color: 'bg-red-600', string: 'Busy - University' }
+  } else if (h < 20) {
+    return { color: 'bg-green-500', string: 'Free time' }
+  } else {
+    return { color: 'bg-red-600', string: 'Busy - Work' }
+  }
+}
+
 interface LinkLiProps {
   href: string
   text: string
@@ -24,34 +41,22 @@ const LinkLi = ({ href, text }: LinkLiProps) => {
 }
 
 const CurrentTimeDisplay = () => {
-  const timeslotFormatter = React.useCallback((date) => {
-    const h = parseInt(IntlDateFormatter.format(date).split(':')[0])
+  const [currentTime, setCurrentTime] = React.useState<Date>()
+  const [timeslot, setTimeslot] = React.useState<{ color: string; string: string }>()
 
-    if (h < 3) {
-      return { color: 'bg-red-600', string: 'Busy - Work' }
-    } else if (h < 8) {
-      return { color: 'bg-amber-600', string: 'Sleep' }
-    } else if (h < 14) {
-      return { color: 'bg-red-600', string: 'Busy - University' }
-    } else if (h < 20) {
-      return { color: 'bg-green-500', string: 'Free time' }
-    } else {
-      return { color: 'bg-red-600', string: 'Busy - Work' }
-    }
+  const calculateTime = React.useCallback(() => {
+    const now = new Date()
+    setCurrentTime(now)
+    setTimeslot(timeslotFormatter(now))
   }, [])
-
-  const [currentTime, setCurrentTime] = React.useState(new Date())
-  const [timeslot, setTimeslot] = React.useState(timeslotFormatter(currentTime))
 
   // Timer
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date())
-      setTimeslot(timeslotFormatter(currentTime))
-    }, 1000)
+    calculateTime()
 
+    const interval = setInterval(calculateTime, 1000)
     return () => clearInterval(interval)
-  }, [timeslotFormatter, currentTime])
+  }, [calculateTime])
 
   return (
     <>
@@ -59,10 +64,10 @@ const CurrentTimeDisplay = () => {
         {IntlDateFormatter.format(currentTime)} GMT+7
       </p>
       <div className='flex items-center font-medium tracking-tight text-neutral-500'>
-        <div className={`mr-2 h-2 w-2 shrink-0 rounded-full ${timeslot.color}`}>
-          <div className={`${timeslot.color} mr-2 h-2 w-2 shrink-0 animate-ping rounded-full`} />
+        <div className={`mr-2 h-2 w-2 shrink-0 rounded-full ${timeslot?.color}`}>
+          <div className={`${timeslot?.color} mr-2 h-2 w-2 shrink-0 animate-ping rounded-full`} />
         </div>
-        {timeslot.string}
+        {timeslot?.string}
       </div>
     </>
   )
