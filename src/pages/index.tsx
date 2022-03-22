@@ -7,8 +7,8 @@ import type { ProjectsDataProps } from '../_data/projects'
 import { ProjectsData } from '../_data/projects'
 
 const MoreAboutMeButton = () => {
-  const [playClick] = useSound('sfx/click.mp3', { volume: 0.65 })
-  const [playClack] = useSound('sfx/confirmClack.mp3', { volume: 0.65 })
+  const [playClick] = useSound('sfx/click.mp3', { volume: 0.5 })
+  const [playClack] = useSound('sfx/confirmClack.mp3', { volume: 0.5 })
 
   return (
     <Link href='/about'>

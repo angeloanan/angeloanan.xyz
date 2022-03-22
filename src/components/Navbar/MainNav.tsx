@@ -21,8 +21,8 @@ const NavLinks = [
 ]
 
 const HomeNav = () => {
-  const [playClick] = useSound('sfx/click.mp3', { volume: 0.65 })
-  const [playClack] = useSound('sfx/homeClack.mp3', { volume: 0.65 })
+  const [playClick] = useSound('sfx/click.mp3', { volume: 0.5 })
+  const [playClack] = useSound('sfx/homeClack.mp3', { volume: 0.5 })
 
   return (
     <Link href='/' passHref>
@@ -48,8 +48,8 @@ interface LinksNavProps {
 }
 const LinksNav: React.FC<LinksNavProps> = ({ href, children, ...rest }) => {
   const router = useRouter()
-  const [playClick] = useSound('sfx/click.mp3', { volume: 0.65 })
-  const [playClack] = useSound('sfx/naviClack.mp3', { volume: 0.65 })
+  const [playClick] = useSound('sfx/click.mp3', { volume: 0.5 })
+  const [playClack] = useSound('sfx/naviClack.mp3', { volume: 0.5 })
   const isCurrentPath = router.pathname === href
 
   return (
