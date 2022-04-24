@@ -70,12 +70,12 @@ const FeaturedProjectEntry = ({
         <a onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
           {/* Left side thing */}
           <div className='flex items-center sm:items-start'>
-            <div className='relative m-4 h-16 w-16 shrink-0 transition-all delay-100 group-hover:-translate-y-1 group-hover:shadow-lg md:h-24 md:w-24'>
+            <div className='relative m-4 h-16 w-16 shrink-0 transition-all delay-100 group-hover:-translate-y-1 md:h-24 md:w-24'>
               <Image
                 src={image}
                 alt={`${title} Logo`}
                 layout='fill'
-                className='rounded-lg'
+                className='rounded-lg transition-all delay-75 group-hover:drop-shadow-lg'
                 placeholder='blur'
               />
             </div>

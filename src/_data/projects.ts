@@ -1,4 +1,5 @@
 import Bonkmarmu from '../../public/images/projects/bonkmarmu.png'
+import CafeImage from '../../public/images/projects/cafe.png'
 import FEIDImage from '../../public/images/projects/frontend-id.png'
 import LFImage from '../../public/images/projects/lyrics-finder.png'
 import PunishmentAppealsImage from '../../public/images/projects/punishment-appeals.png'
@@ -20,6 +21,16 @@ export interface ProjectsDataProps {
 
 export const ProjectsData: ProjectsDataProps[] = [
   {
+    title: 'café',
+    summary: 'An album release page for narpy\'s new lo-fi hiphop album called "café"',
+    description: '',
+    url: 'https://narpy.cafe',
+
+    duration: 'Jan 2022 — Mar 2022',
+    featured: true,
+    image: CafeImage
+  },
+  {
     title: 'Bonkmarmu',
     summary:
       "A Twitch Extension which tracks and shows a leaderboard of user's channel point redemption, made specifically for OmarmuLIVE",
@@ -38,7 +49,7 @@ export const ProjectsData: ProjectsDataProps[] = [
     url: 'https://github.com/angeloanan/discord-punishment-appeal',
 
     duration: 'Jan 2022 — present',
-    featured: true,
+    featured: false,
     image: PunishmentAppealsImage
   },
   {
