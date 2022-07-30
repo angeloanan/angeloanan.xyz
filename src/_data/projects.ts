@@ -1,6 +1,7 @@
 import Bonkmarmu from '../../public/images/projects/bonkmarmu.png'
 import CafeImage from '../../public/images/projects/cafe.png'
 import FEIDImage from '../../public/images/projects/frontend-id.png'
+import KominfodImage from '../../public/images/projects/kominfod.png'
 import LFImage from '../../public/images/projects/lyrics-finder.png'
 import PunishmentAppealsImage from '../../public/images/projects/punishment-appeals.png'
 import RoleButtonsImage from '../../public/images/projects/role-buttons.png'
@@ -21,6 +22,17 @@ export interface ProjectsDataProps {
 
 export const ProjectsData: ProjectsDataProps[] = [
   {
+    title: "kominfo'd",
+    summary:
+      "A website that checks on services, whether it will be blocked after Indonesia's Minister of Communication and Information law has passed",
+    description: '',
+    url: 'https://kominfod.angelo.fyi',
+
+    duration: 'July 2022 — Aug 2022',
+    featured: true,
+    image: KominfodImage
+  },
+  {
     title: 'café',
     summary: 'An album release page for narpy\'s new lo-fi hiphop album called "café"',
     description: '',
@@ -33,9 +45,9 @@ export const ProjectsData: ProjectsDataProps[] = [
   {
     title: 'Bonkmarmu',
     summary:
-      "A Twitch Extension which tracks and shows a leaderboard of user's channel point redemption, made specifically for OmarmuLIVE",
+      "A Twitch Extension which tracks and shows a leaderboard of user's channel point redemption, made specifically for Omarmu",
     description: '',
-    url: '',
+    url: 'https://www.twitch.tv/OmarmuLIVE/about',
 
     duration: 'Feb 2022 — Mar 2022',
     featured: false,
@@ -57,7 +69,7 @@ export const ProjectsData: ProjectsDataProps[] = [
     summary:
       'A simple Discord bot that handles user self-assignable roles for your Discord community',
     description: '',
-    url: '',
+    url: 'https://discord.gg/qDG5SmDRnr',
 
     duration: 'Dec 2021 — present',
     featured: false,
@@ -68,7 +80,7 @@ export const ProjectsData: ProjectsDataProps[] = [
     summary:
       'A simple Rust app which annoys you when your microphone is accidentally unplugged. Built for a friend who streams on Twitch',
     description: '',
-    url: '',
+    url: 'https://github.com/angeloanan/unplugged-mic-notification',
 
     duration: 'Dec 2021',
     featured: false,
