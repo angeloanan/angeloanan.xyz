@@ -36,7 +36,7 @@ const UsesData = [
           {
             posTop: '67%',
             posLeft: '51%',
-            url: 'https://www.lg.com/us/monitors/lg-22MK400H-B-led-monitor/',
+            url: 'https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard',
             title: 'Keychron K2 Wireless (Blue, Non-hotswap v2)',
             description:
               'My first mechanical keyboard that I own. I have regretted choosing blue switches over linears. I have replaced the default keycaps with a generic blank keycaps.'
@@ -59,7 +59,7 @@ const UsesData = [
           {
             posTop: '84%',
             posLeft: '67%',
-            url: 'http://www.samsontech.com/samson/products/microphones/usb-microphones/gtrackpro/',
+            url: 'https://www.samsontech.com/samson/products/microphones/usb-microphones/gtrackpro/',
             title: 'Samson G-Track Pro',
             description:
               'An USB Microphone that I use for voice chats and some small-scale recording / music production.'
