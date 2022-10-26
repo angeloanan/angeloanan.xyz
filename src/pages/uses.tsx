@@ -1,4 +1,5 @@
 import Tippy, { useSingleton } from '@tippyjs/react/headless'
+import type { StaticImageData } from 'next/image'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
@@ -152,17 +153,24 @@ interface UsesImagesPinData {
 }
 
 // TODO: Make refactor to components folder
-const PinPopup = ({ attr, pinData }: { attr: unknown; pinData: UsesImagesPinData }) => {
+const PinPopup = ({
+  attr,
+  pinData
+}: {
+  attr: Record<string, unknown>
+  pinData: UsesImagesPinData
+}) => {
   if (!pinData) {
     return <></>
   }
 
   return (
     <div className='max-w-xs rounded bg-neutral-100 p-2 shadow-2xl' {...attr}>
-      <Link href={pinData.url}>
-        <a className='font-header text-xl font-bold tracking-tight text-neutral-800 decoration-fuchsia-500 decoration-wavy hover:text-blue-700 hover:underline'>
-          {pinData.title} &rarr;
-        </a>
+      <Link
+        href={pinData.url}
+        className='font-header text-xl font-bold tracking-tight text-neutral-800 decoration-fuchsia-500 decoration-wavy hover:text-blue-700 hover:underline'
+      >
+        {pinData.title} &rarr;
       </Link>
       <p className='mt-2 text-sm font-medium text-neutral-700'>{pinData.description}</p>
     </div>
@@ -179,7 +187,6 @@ const UsesImage = (props: UsesImagesData) => {
         src={props.image}
         alt={props.alt ?? ''}
         placeholder='blur'
-        layout='responsive'
         sizes='640w, 800w, 1024w, 1280w'
       />
       <Tippy
@@ -199,6 +206,7 @@ const UsesImage = (props: UsesImagesData) => {
       {props.pins.map((pinData) => (
         <div key={pinData.title}>
           {/* ^ A11y, don't remove: https://atomiks.github.io/tippyjs/v6/accessibility/#interactivity */}
+          {/* @ts-expect-error L199 - https://github.com/atomiks/tippyjs-react/discussions/355 */}
           <Tippy singleton={target} content={pinData}>
             <button
               style={{ top: pinData.posTop, left: pinData.posLeft }}

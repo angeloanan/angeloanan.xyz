@@ -1,3 +1,5 @@
+import type { StaticImageData } from 'next/image'
+
 import Bonkmarmu from '../../public/images/projects/bonkmarmu.png'
 import CafeImage from '../../public/images/projects/cafe.png'
 import FEIDImage from '../../public/images/projects/frontend-id.png'

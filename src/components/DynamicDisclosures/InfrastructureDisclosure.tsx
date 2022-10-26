@@ -12,7 +12,7 @@ import {
   Windows
 } from '@icons-pack/react-simple-icons'
 
-import { KnowledgebaseDisclosure } from './'
+import { KnowledgebaseDisclosure } from '.'
 
 const InfrastructureDisclosure = () => {
   return (

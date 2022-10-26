@@ -1,6 +1,6 @@
 import { Adobe, Blender } from '@icons-pack/react-simple-icons'
 
-import { KnowledgebaseDisclosure } from './'
+import { KnowledgebaseDisclosure } from '.'
 
 const ContentCreationDisclosure = () => {
   return (

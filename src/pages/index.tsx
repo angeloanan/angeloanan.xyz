@@ -11,15 +11,15 @@ const MoreAboutMeButton = () => {
   const [playClack] = useSound('sfx/confirmClack.mp3', { volume: 0.5 })
 
   return (
-    <Link href='/about'>
-      <a
-        className='group mt-8 rounded-full bg-fuchsia-200 py-4 px-8 font-header text-lg text-fuchsia-700 transition-colors hover:bg-fuchsia-300'
-        aria-label='Navigate to About me page'
-        onMouseDown={() => playClick()}
-        onMouseUp={() => playClack()}
-      >
-        More about me <span className='pl-1 transition-all group-hover:pl-2'>&rarr;</span>
-      </a>
+    <Link
+      href='/about'
+      passHref
+      className='group mt-8 rounded-full bg-fuchsia-200 py-4 px-8 font-header text-lg text-fuchsia-700 transition-colors hover:bg-fuchsia-300'
+      aria-label='Navigate to About me page'
+      onMouseDown={() => playClick()}
+      onMouseUp={() => playClack()}
+    >
+      More about me <span className='pl-1 transition-all group-hover:pl-2'>&rarr;</span>
     </Link>
   )
 }
@@ -66,30 +66,33 @@ const FeaturedProjectEntry = ({
         align === 'right' ? 'md:ml-32 md:-mr-16' : 'md:mr-32 md:-ml-16'
       }`}
     >
-      <Link href={url} passHref>
-        <a onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-          {/* Left side thing */}
-          <div className='flex items-center sm:items-start'>
-            <div className='relative m-4 h-16 w-16 shrink-0 transition-all delay-100 group-hover:-translate-y-1 md:h-24 md:w-24'>
-              <Image
-                src={image}
-                alt={`${title} Logo`}
-                layout='fill'
-                className='rounded-lg transition-all delay-75 group-hover:drop-shadow-lg'
-                placeholder='blur'
-              />
-            </div>
-
-            <div className='my-4 mr-4 w-full'>
-              <div className='flex w-full flex-col md:flex-row md:justify-between'>
-                <span className='font-header text-xl font-semibold tracking-tight'>{title}</span>
-                <span className='font-light tracking-tight'>{duration}</span>
-              </div>
-
-              <p className='mt-2 tracking-tight text-neutral-700 '>{summary}</p>
-            </div>
+      <Link
+        href={url}
+        passHref
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {/* Left side thing */}
+        <div className='flex items-center sm:items-start'>
+          <div className='relative m-4 h-16 w-16 shrink-0 transition-all delay-100 group-hover:-translate-y-1 md:h-24 md:w-24'>
+            <Image
+              src={image}
+              alt={`${title} Logo`}
+              className='rounded-lg transition-all delay-75 group-hover:drop-shadow-lg'
+              fill
+              placeholder='blur'
+            />
           </div>
-        </a>
+
+          <div className='my-4 mr-4 w-full'>
+            <div className='flex w-full flex-col md:flex-row md:justify-between'>
+              <span className='font-header text-xl font-semibold tracking-tight'>{title}</span>
+              <span className='font-light tracking-tight'>{duration}</span>
+            </div>
+
+            <p className='mt-2 tracking-tight text-neutral-700 '>{summary}</p>
+          </div>
+        </div>
       </Link>
     </div>
   )

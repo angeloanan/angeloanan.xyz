@@ -10,22 +10,20 @@ type ProjectEntryProps = ProjectsDataProps & {
 }
 const ProjectEntry = ({ align = 'right', title, duration, summary, url }: ProjectEntryProps) => {
   return (
-    <Link href={url}>
-      <a>
-        <div
-          className={`min-h-[24rem] w-full rounded-2xl bg-gradient-to-br from-neutral-50 shadow transition-all hover:-translate-y-2 hover:shadow-xl ${
-            align === 'right' ? 'md:ml-16 md:-mr-0' : 'md:mr-32 md:-ml-16'
-          }`}
-        >
-          <div className='p-8'>
-            <div className='font-light uppercase tabular-nums tracking-wider'>{duration}</div>
-            <div className='font-header text-4xl font-bold tracking-tight'>{title} &mdash;</div>
-            <div className='mt-6 pr-12 font-header text-2xl tracking-tight text-neutral-700'>
-              {summary}
-            </div>
+    <Link href={url} passHref>
+      <div
+        className={`min-h-[24rem] w-full rounded-2xl bg-gradient-to-br from-neutral-50 shadow transition-all hover:-translate-y-2 hover:shadow-xl ${
+          align === 'right' ? 'md:ml-16 md:-mr-0' : 'md:mr-32 md:-ml-16'
+        }`}
+      >
+        <div className='p-8'>
+          <div className='font-light uppercase tabular-nums tracking-wider'>{duration}</div>
+          <div className='font-header text-4xl font-bold tracking-tight'>{title} &mdash;</div>
+          <div className='mt-6 pr-12 font-header text-2xl tracking-tight text-neutral-700'>
+            {summary}
           </div>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }

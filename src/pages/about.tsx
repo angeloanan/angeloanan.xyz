@@ -49,11 +49,17 @@ const DevelopmentToolsDisclosure = dynamic(
   }
 )
 
-const InlineLink: React.FC<{ href: string }> = ({ href, children }) => (
-  <Link href={href}>
-    <a className='relative inline-block text-fuchsia-600 before:absolute before:-inset-1 before:block before:-skew-y-3 hover:text-fuchsia-800 before:hover:bg-fuchsia-200'>
-      <span className='relative skew-y-3'>{children}</span>
-    </a>
+type InlineLinkProps = {
+  href: string
+  children: React.ReactNode
+}
+const InlineLink = ({ href, children }: InlineLinkProps) => (
+  <Link
+    href={href}
+    passHref
+    className='relative inline-block text-fuchsia-600 before:absolute before:-inset-1 before:block before:-skew-y-3 hover:text-fuchsia-800 before:hover:bg-fuchsia-200'
+  >
+    <span className='relative skew-y-3'>{children}</span>
   </Link>
 )
 
@@ -67,10 +73,10 @@ const AboutPage = () => {
           <div className='relative mb-8 h-32 w-32'>
             <Image
               src={PFPImage}
-              layout='fill'
               alt="Angelo's Profile Picture"
               placeholder='blur'
               sizes='20vw'
+              fill
             />
           </div>
           <h1 className='font-header text-5xl font-bold tracking-tight text-neutral-800'>

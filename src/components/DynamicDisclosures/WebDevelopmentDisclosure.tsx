@@ -8,7 +8,7 @@ import {
   Tailwindcss
 } from '@icons-pack/react-simple-icons'
 
-import { KnowledgebaseDisclosure } from './'
+import { KnowledgebaseDisclosure } from '.'
 
 const WebDevelopmentDisclosure = () => {
   return (

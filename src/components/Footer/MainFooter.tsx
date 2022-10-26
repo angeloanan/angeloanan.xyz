@@ -31,10 +31,12 @@ interface LinkLiProps {
 const LinkLi = ({ href, text }: LinkLiProps) => {
   return (
     <li className='my-2'>
-      <Link href={href} passHref>
-        <a className='decoration-fuchsia-500 decoration-wavy decoration-2 underline-offset-2 transition-all hover:text-neutral-800 hover:underline'>
-          {text}
-        </a>
+      <Link
+        href={href}
+        passHref
+        className='decoration-fuchsia-500 decoration-wavy decoration-2 underline-offset-2 transition-all hover:text-neutral-800 hover:underline'
+      >
+        {text}
       </Link>
     </li>
   )
