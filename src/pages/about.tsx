@@ -96,7 +96,8 @@ const AboutPage = () => {
 
           <p className='mt-4 text-lg font-medium leading-8 tracking-tight text-neutral-700'>
             You can find me on <InlineLink href='https://github.com/angeloanan'>GitHub</InlineLink>,
-            and <InlineLink href='https://twitter.com/UwUngelo'>Twitter</InlineLink>!
+            and <InlineLink href='https://twitter.com/UwUngelo'>Twitter</InlineLink>. Here is my{' '}
+            <InlineLink href='https://angeloanan.xyz/resume'>Resume</InlineLink> if you need it!
           </p>
         </section>
 

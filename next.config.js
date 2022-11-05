@@ -19,6 +19,20 @@ const nextConfig = {
   i18n: {
     locales: ['en-US'],
     defaultLocale: 'en-US'
+  },
+  redirects: async () => {
+    return [
+      {
+        source: '/cv',
+        destination: '/cv.pdf',
+        permanent: true
+      },
+      {
+        source: '/resume',
+        destination: '/cv.pdf',
+        permanent: true
+      }
+    ]
   }
 }
 

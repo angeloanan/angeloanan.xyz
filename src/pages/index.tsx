@@ -62,9 +62,8 @@ const FeaturedProjectEntry = ({
 
   return (
     <div
-      className={`group my-12 rounded-lg border-2 border-neutral-100 bg-gradient-to-br from-neutral-50 shadow transition-all hover:-translate-y-2 hover:shadow-xl ${
-        align === 'right' ? 'md:ml-32 md:-mr-16' : 'md:mr-32 md:-ml-16'
-      }`}
+      className={`group my-12 rounded-lg border-2 border-neutral-100 bg-gradient-to-br from-neutral-50 shadow transition-all hover:-translate-y-2 hover:shadow-xl ${align === 'right' ? 'md:ml-32 md:-mr-16' : 'md:mr-32 md:-ml-16'
+        }`}
     >
       <Link
         href={url}
@@ -80,6 +79,7 @@ const FeaturedProjectEntry = ({
               alt={`${title} Logo`}
               className='rounded-lg transition-all delay-75 group-hover:drop-shadow-lg'
               fill
+              sizes='14vw'
               placeholder='blur'
             />
           </div>
