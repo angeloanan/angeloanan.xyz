@@ -27,12 +27,14 @@ const timeslotFormatter = (date?: Date) => {
 interface LinkLiProps {
   href: string
   text: string
+  rel?: 'me'
 }
-const LinkLi = ({ href, text }: LinkLiProps) => {
+const LinkLi = ({ href, text, rel }: LinkLiProps) => {
   return (
     <li className='my-2'>
       <Link
         href={href}
+        rel={rel}
         passHref
         className='decoration-fuchsia-500 decoration-wavy decoration-2 underline-offset-2 transition-all hover:text-neutral-800 hover:underline'
       >
@@ -131,6 +133,7 @@ export const MainFooter = () => {
           <ul className='font-medium tracking-tight text-neutral-600'>
             <LinkLi href='https://discord.com/users/189769721653100546' text='Discord' />
             <LinkLi href='https://t.me/angeloanan' text='Telegram' />
+            <LinkLi href='https://flushed.party/@xy' text='Fediverse' rel='me' />
           </ul>
         </section>
 
