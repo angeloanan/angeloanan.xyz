@@ -8,7 +8,16 @@ const NotFoundPage: NextPage = () => {
   return (
     <main className='flex w-full flex-col items-center justify-center px-4'>
       <div className='mt-16 w-48 sm:w-72'>
-        <Image src={BlahajImage} alt='' className='rounded-3xl shadow-md' placeholder='blur' />
+        <Image
+          src={BlahajImage}
+          alt=''
+          className='rounded-3xl shadow-md'
+          placeholder='blur'
+          style={{
+            maxWidth: '100%',
+            height: 'auto'
+          }}
+        />
       </div>
 
       <h1 className='mt-8 flex flex-col text-center font-header font-extrabold text-fuchsia-500'>

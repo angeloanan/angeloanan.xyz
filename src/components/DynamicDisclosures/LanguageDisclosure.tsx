@@ -5,10 +5,10 @@ import {
   Flutter,
   Graphql,
   Html5,
-  Java,
   Javascript,
   Latex,
   Nodedotjs,
+  Openjdk,
   Rust,
   Typescript
 } from '@icons-pack/react-simple-icons'
@@ -42,7 +42,7 @@ const LanguageDisclosure = () => {
           <Rust className='inline' color='#000' aria-hidden /> Rust
         </li>
         <li>
-          <Java className='inline' color='#000' aria-hidden /> Java
+          <Openjdk className='inline' color='#000' aria-hidden /> Java
         </li>
         <li>
           <C className='inline' color='#A8B9CC' aria-hidden /> C (Competitive Programming)

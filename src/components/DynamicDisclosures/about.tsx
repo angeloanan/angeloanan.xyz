@@ -1,7 +1,11 @@
 import { Disclosure } from '@headlessui/react'
+import * as React from 'react'
 import useSound from 'use-sound'
 
-export const KnowledgebaseDisclosure: React.FC<{ title: string }> = ({ title, children }) => {
+export const KnowledgebaseDisclosure: React.FC<{ title: string; children: React.ReactNode }> = ({
+  title,
+  children
+}) => {
   const [playSpread] = useSound('sfx/spread.mp3', {
     volume: 0.75,
     interrupt: true
@@ -14,6 +18,7 @@ export const KnowledgebaseDisclosure: React.FC<{ title: string }> = ({ title, ch
       </Disclosure.Button>
 
       <Disclosure.Panel className='rounded-b-lg bg-fuchsia-50 p-4'>
+        {/* @ts-expect-error */}
         {({ open }) => {
           playSpread()
 
