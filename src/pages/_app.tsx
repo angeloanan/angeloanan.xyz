@@ -6,6 +6,7 @@ import '../style/globals.css'
 
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import PlausibleProvider from 'next-plausible'
 import { DefaultSeo } from 'next-seo'
 
 import DefaultSEOConfig from '../../next-seo.config'
@@ -22,7 +23,13 @@ function CustomApp({ Component, pageProps }: CustomAppProps) {
   return Component.disableLayout ? (
     <Component {...pageProps} />
   ) : (
-    <>
+    <PlausibleProvider
+      domain='angeloanan.xyz'
+      customDomain='a.angelo.fyi'
+      selfHosted
+      trackOutboundLinks
+      trackFileDownloads
+    >
       <DefaultSeo {...DefaultSEOConfig} />
 
       <div className='stylized-bg min-h-screen antialiased selection:bg-fuchsia-200'>
@@ -30,7 +37,7 @@ function CustomApp({ Component, pageProps }: CustomAppProps) {
         <Component {...pageProps} />
         <MainFooter />
       </div>
-    </>
+    </PlausibleProvider>
   )
 }
 
