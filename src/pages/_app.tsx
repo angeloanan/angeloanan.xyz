@@ -25,7 +25,7 @@ function CustomApp({ Component, pageProps }: CustomAppProps) {
   ) : (
     <PlausibleProvider
       domain='angeloanan.xyz'
-      customDomain='a.angelo.fyi'
+      customDomain='https://a.angelo.fyi'
       selfHosted
       trackOutboundLinks
       trackFileDownloads
