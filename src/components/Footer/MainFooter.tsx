@@ -114,11 +114,11 @@ export const MainFooter = () => {
   return (
     <div className='mt-8 flex w-full flex-col items-center px-8'>
       <footer className='w-full max-w-2xl'>
-        <hr className='my-4 mx-auto border-neutral-400' />
+        <hr className='mx-auto my-4 border-neutral-400' />
 
         <AboutMeFooter />
 
-        <hr className='my-4 mx-auto border-neutral-400' />
+        <hr className='mx-auto my-4 border-neutral-400' />
 
         <section className='my-4 grid grid-cols-3'>
           <ul className='font-medium tracking-tight text-neutral-600'>
@@ -127,13 +127,12 @@ export const MainFooter = () => {
             <LinkLi href='/works' text='Works' />
           </ul>
           <ul className='font-medium tracking-tight text-neutral-600'>
-            <LinkLi href='https://github.com/angeloanan' text='GitHub' />
-            <LinkLi href='https://twitter.com/UwUngelo' text='Twitter' />
+            <LinkLi href='https://github.com/angeloanan' text='GitHub' rel='me' />
+            <LinkLi href='https://twitter.com/UwUngelo' text='Twitter' rel='me' />
           </ul>
           <ul className='font-medium tracking-tight text-neutral-600'>
             <LinkLi href='https://discord.com/users/189769721653100546' text='Discord' />
             <LinkLi href='https://t.me/angeloanan' text='Telegram' />
-            <LinkLi href='https://flushed.party/@xy' text='Fediverse' rel='me' />
           </ul>
         </section>
 
